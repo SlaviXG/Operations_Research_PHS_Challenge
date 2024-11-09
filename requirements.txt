@@ -89,6 +89,7 @@ rfc3339-validator
 rfc3986-validator
 rpds-py
 scipy
+seabord
 Send2Trash
 six
 sniffio
