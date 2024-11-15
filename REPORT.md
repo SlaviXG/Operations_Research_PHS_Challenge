@@ -16,3 +16,7 @@
 
 ![Correlation Matrix](output.png)
 
+
+## Modelling
+### To create an equation for minimizing unnecessary A&E attendances through reallocation and pre-arrival guidance, we’ll define a score or index that reflects the necessity for a patient to go to a full Emergency Department (ED) versus a Minor Injury Unit (MIU) or GP. The goal is to route patients to the most appropriate care level based on their condition, distance, wait time, and site availability. This score could guide us in deciding if a patient should be advised to visit an ED or if they can be directed to an alternative healthcare provider.
+
