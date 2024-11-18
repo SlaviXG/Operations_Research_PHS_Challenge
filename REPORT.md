@@ -17,9 +17,9 @@
 ![Correlation Matrix](output.png)
 
 
-## Mathematical Modelling
-### Performance Measures
-### Alternative Courses of Action
+## Mathematical Modelling - Using Queuing Theory for Wait Times & Linear Optimizing website for the main re-allocation problem. 
+### Performance Measures - Wait Times and Effective Re-allocation. Thinking only about the worst case scenario: everyone that comes into the department is a new - unplanned attendance. 
+### Alternative Courses of Action - Use of Event Driven Process Chains and or State Tables
 
 ## Choosing Resolving Method
 ### Analyze the Alternatives to understand outcomes of each (consequences)
