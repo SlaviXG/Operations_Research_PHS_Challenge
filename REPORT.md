@@ -22,7 +22,7 @@
 ### Alternative Courses of Action - An Airport Style attendance management system might be useful here. Use of Event Driven Process Chains and or State Tables to demonstrate the System. 
  - Grouping MIU/Other patients as one entity and then use the Queuing theory. Where we can apply First Come First Serve instead of a Priority based queue.
  - Grouping ED patients as another entity where we can apply a priority based service.
- -  
+ - Solution to the problem of re-allocation will include a hybrid approach that Airports and Casinos use to manage peopl eand sort them around.  
 
 ## Choosing Resolving Method
 ### Analyze the Alternatives to understand outcomes of each (consequences)
