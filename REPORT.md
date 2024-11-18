@@ -19,7 +19,10 @@
 
 ## Mathematical Modelling - Using Queuing Theory for Wait Times & Linear Optimizing website for the main re-allocation problem. 
 ### Performance Measures - Wait Times and Effective Re-allocation. Thinking only about the worst case scenario: everyone that comes into the department is a new - unplanned attendance. 
-### Alternative Courses of Action - Use of Event Driven Process Chains and or State Tables
+### Alternative Courses of Action - An Airport Style attendance management system might be useful here. Use of Event Driven Process Chains and or State Tables to demonstrate the System. 
+ - Grouping MIU/Other patients as one entity and then use the Queuing theory. Where we can apply First Come First Serve instead of a Priority based queue.
+ - Grouping ED patients as another entity where we can apply a priority based service.
+ -  
 
 ## Choosing Resolving Method
 ### Analyze the Alternatives to understand outcomes of each (consequences)
