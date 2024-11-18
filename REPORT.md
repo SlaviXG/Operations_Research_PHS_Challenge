@@ -1,9 +1,9 @@
 # Operational Research Challenge
 
-## Problem Description
+## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services within a defined geographic area. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
-# Key Questions to Address
+# Key Questions to Address (Objectives)
  - How can we reduce unnecessary A&E attendances through reallocation and pre-arrival guidance?
  - What are the optimal resource allocation strategies to minimize waiting times at A&E?
  - Where should additional resources (e.g., MIUs, GP capacity) be allocated geographically to ease pressure on A&E?
@@ -17,8 +17,19 @@
 ![Correlation Matrix](output.png)
 
 
-## Modelling
-###
+## Mathematical Modelling
+### Performance Measures
+### Alternative Courses of Action
+
+## Choosing Resolving Method
+### Analyze the Alternatives to understand outcomes of each (consequences)
+### Comparison of the consequences and selection of the right alternative
+
+## Resolving Problem
+### Results and Conclusions
+
+## Implementation of Solution
+### Implementation of the result and evaluation of the degree/percentage of success.
 
 
 
