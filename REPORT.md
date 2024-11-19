@@ -44,6 +44,9 @@
     - At airports the number of service counters are open are adjusted dynamically based on the passenger inflow.
     - Applying to the A&E: Using real-time monitoring similar to boarding queues to shft staff between departments or adjust priorities. We can also use the historical data to find out patterns and predict the patient inflow to adjust staff and resources.
 
+## Casino Psychology
+### Casinos excel at altering people's perception of time to keep them engaged. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
+
 ## Choosing Resolving Method
 ### Analyze the Alternatives to understand outcomes of each (consequences)
 ### Comparison of the consequences and selection of the right alternative
