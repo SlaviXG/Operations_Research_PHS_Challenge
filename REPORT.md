@@ -55,6 +55,17 @@
      
 <h3>The goal here is to calculate <i>a Loading Score</i> for each A&E sites dynamicaly.</h3>
  - The Statistical/ML Approach
+   The <i>Loading Function</i> can be applied to each A&E site to get Ditribution of Patient Load across all sites in the network. Sites with a lower load score will take on more patients. Hospitals with higher laod scores will take on fewer patients or will redirect patients. Then we minimize the standard deviation from this distribution. By minimizing the standard deviation of the load scores, we ensure that no single site is being overwhelmed while others remian underused. This aligns with the Airport Analogy of directing passengers to less bsuy counters or terminals to balance the service demands.
+
+### Enhanced Airport-Style Management along with the Loading Function
+  - Segementation and Pre-Sorting
+      - Improvement with the Loading Function: In addition to patient severity and syptoms, the Load Score becomes a key-factor in the pre-arrival triage:
+      - If Site A has a high load score and Site B has a low load score, non-urgent cases are rerouted to the Site B automatically.
+  - Real-Time updates adjust these scores, ensuring dynamic re-allocation
+  - Patients receive messages like:
+     - <i>"Site A is currently full. Please proceed to MIU Site B for faster care"</i>
+     - <i>"Estimated Wait Time at Site B: 2 hours. Estimated Wait Time at Site C: 30 mins"</i>
+  <b>Example: Apps or Kiosks can Compute the best A&E site option the following way: <br>Best A&E Site = min(Load Score + Travel Time)</b>
 
 
 ## Casino Psychology
