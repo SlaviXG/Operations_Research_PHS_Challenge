@@ -64,7 +64,7 @@
   - Real-Time updates adjust these scores, ensuring dynamic re-allocation
   - Patients receive messages like:
      - <i>"Site A is currently full. Please proceed to MIU Site B for faster care"</i>
-     - <i>"Estimated Wait Time at Site B: 2 hours. Estimated Wait Time at Site C: 30 mins"</i>
+     - <i>"Estimated Wait Time at Site B: 2 hours. Estimated Wait Time at Site C: 30 mins"</i><br>
   <b>Example: Apps or Kiosks can Compute the best A&E site option the following way: <br>Best A&E Site = min(Load Score + Travel Time)</b>
 
 
