@@ -65,12 +65,36 @@
   - Patients receive messages like:
      - <i>"Site A is currently full. Please proceed to MIU Site B for faster care"</i>
      - <i>"Estimated Wait Time at Site B: 2 hours. Estimated Wait Time at Site C: 30 mins"</i><br>
-  <b>Example: Apps or Kiosks can Compute the best A&E site option the following way: <br>Best A&E Site = min(Load Score + Travel Time)</b>
-
-
+  <b>Example: Apps or Kiosks can Compute the best A&E site option the following way: <br>Best A&E Site = min(Load Score + Travel Time)</b><br>
+ - Visual Cues and Navigation
+     - Improvement with the loading function: Real-time load distribution is reflected in central signage or web apps, displaying current load and expected wait-times across A&E sites. The digital wayfinding signboards and directions will direct patients away from overburdened facilities towards less busy ones, reducing localised congestion. Example:
+        - "Site A: 90% capacity. Est. Wait Time: 2 hours."
+        - "Site B: 50% capacity. Est. Wait Time: 30 minutes."    
+ - Anticipatory Resource Allocation
+     - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
+        - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."
+       
 ## Casino Psychology
-### Casinos excel at altering people's perception of time to keep them engaged. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
-
+### Casinos excel at altering people's perception of time to keep them engaged. Casinos also use specific colors, special lighting and even music to keep the people as relaxed as possible. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
+ - Environmental Variables
+     - Casinos use environmental stimuli (lighting, layout, background music) to distract patrons and create a seamless flow.
+     - Applying it to the A&E sites:
+        - Introducing Pleasant lighting, soothing colors.
+        - Using music or audio cues in waiting rooms to reduce stress and create a sense of progress. Examle. Notification - "You're number is next!".
+ - Perception of Progress
+      - People feel a sense of progress even when they are staionary, for example spinning wheels and flashy animations.
+      - Applying it to the A&E sites:
+         - Provide small "wins" like quicker assessments or initial consultations, without compromising the quality of the consultation, even if full treatment isn't immediate.
+         - Giving people an udpate on the queue. Example:
+            - "3 patients are ahead of you."
+  - Controlled Choices
+      - In casinos people are given apparent choices that feel empowering but lead them where the system wants.
+      - Applying it to the A&E sites:
+         - Creating a flow that directs people to the correct Site type by offering them guided choices. Example:
+            - "MIU team at Site A is ready to assist you now."
+            - "Would you like to skip the wait? Specialists at Site B are available immediately."
+            - "We’ve reserved a spot for you at the MIU Site B. Follow the path provided for quick care.
+          
 ## Choosing Resolving Method
 ### Analyze the Alternatives to understand outcomes of each (consequences)
 ### Comparison of the consequences and selection of the right alternative
