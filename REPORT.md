@@ -3,7 +3,7 @@
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services within a defined geographic area. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
-# Key Questions to Address (Objectives)
+# Key Questions to Address
  - How can we reduce unnecessary A&E attendances through reallocation and pre-arrival guidance?
  - What are the optimal resource allocation strategies to minimize waiting times at A&E?
  - Where should additional resources (e.g., MIUs, GP capacity) be allocated geographically to ease pressure on A&E?
@@ -16,13 +16,70 @@
 
 ![Correlation Matrix](output.png)
 
+## Objective:
+### Optimize patient flow and resource allocation in A&E departments under the worst-case scenario: all patients are unplanned, requiring immediate attention.
 
-## Mathematical Modelling - Using Queuing Theory for Wait Times & Linear Optimizing website for the main re-allocation problem. 
-### Performance Measures - Wait Times and Effective Re-allocation. Thinking only about the worst case scenario: everyone that comes into the department is a new - unplanned attendance. 
-### Alternative Courses of Action - An Airport Style attendance management system might be useful here. Use of Event Driven Process Chains and or State Tables to demonstrate the System. 
- - Grouping MIU/Other patients as one entity and then use the Queuing theory. Where we can apply First Come First Serve instead of a Priority based queue.
- - Grouping ED patients as another entity where we can apply a priority based service.
- - Solution to the problem of re-allocation will include a hybrid approach that Airports and Casinos use to manage peopl eand sort them around.
+## Mathematical Modelling - Hybrid Queuing + Loading Function for Dynamic Flow. 
+### Queuing Theory for Grouped Patients
+To simplify the complexity, patient categories are grouped and modeled.
+ - MIU/Other:
+    - Treated as First Come First Serve (FCFS) for low-acuity cases.
+    - Simplified queue for predicting wait times and optimizing resource allocation (eg. triage nurses, rooms)
+    - Goal: Minimize the wait times for minor injuries, avoiding bottlenecks
+ - ED (Emergency Department):
+    - Modeled as Priority Queuing System for high-acuity cases.
+    - Cases with priority:
+       - High-priority cases bypass queues.
+       - Low-priority cases wait until resources are free.
+    - Goal: Minimize delays for critical patients while balancing fairness.
+      
+### Loading function for System-Wide Balance
+ - Incorporate real-time data  to compute site load scores:
+    - Load Score = (Beds Occupied / Site Capacity) + Travel Time + Patient Wait Time
+       1. Current Patients: The number of patients currently being treated or waiting at the site.
+       2. Site Capacity: The maximum number of patients the site can handle effectively at a given time.(based on available staff, rooms, and resources)
+       3. Travel Time: Time it takes for a patient to reach the site (based on location).
+       4. Patient Wait Time: Current average wait time for patients at the site.
+    - Adjust routing to ditribute patients evenly across sites.
+    - Goal: Prevent site oberload by re-routing non-urgent cases to less crowded sites.  
+      
+### Performance Measures - Efficiency and Fairness
+Wait Times
+ - Use queuing metrics (eg. average wait time Wq) to measure performance:
+    - MIU/Other: Evaluate average wait time for all patients.
+    - ED: Measure critical patient delay and overall system throughput
+ - Effective re-allocation
+    - Track patient distribution to avoid overburdening any single facility.
+    - Optimize allocation dynamically by minimizing the standard deviation of load scores across sites:
+       - Metric = Minimize Load Variability.
+         
+## Alternative Courses of Action: Leverage an Airport + Casino Hybrid to streamline patient flow
+### An Airport-Inspired Attendance Managemnet System
+ - Segementation and Pre-Sorting
+     - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
+        - Symptom severity
+        - Wait times and Site capacity
+        - Location and travel distance
+     - Re-Routing:
+        - Just as Airports manage over-crowding by re-directing passengers, patients are guided to nearby MIUs or GP to reduce A&E congestion.
+
+### casino Psychology for Behavioural Guidance
+ - Use visual cues and choice framing to direct patient flow to optimal options:
+    - Subtly encourage non-critical patients to select MIU/Other with prompts such as:
+       - "Receive care faster at our MIU, specialized for cases like yours"
+    - Real-time updates provide transparency, building trust in the system.
+
+### Event-Driven Process Chains (EPC) and State Tables
+ - Document the flow of patients through the system using EPCs or state tables to:
+    - Identify ineffeciencies and decision points.
+    - Clearly define transitions, eg:
+       - Patient Arrival -> Triage -> Department Assignment -> Treatment -> Exit.
+ - Incorporate automation triggers, eg: re-routing based on load scores.
+<hr>
+
+## Focus on Worst Case Scenario
+### By using the worst-case scenario as the foundation for planning, the solution is designed to remain robust and efficient even during peak demand periods. 
+<hr>
 
 ## The Airport Analogy
 ### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
