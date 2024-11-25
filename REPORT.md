@@ -152,7 +152,7 @@ Wait Times
             - "Would you like to skip the wait? Specialists at Site B are available immediately."
             - "We’ve reserved a spot for you at the MIU Site B. Follow the path provided for quick care.
 
-## Event Driven Process Chain and State Table to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
+## Event Driven Process Chain to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
 
 ### 1. Patient is at the site already.
 
@@ -163,6 +163,26 @@ Wait Times
 ### 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)
 
 ![Correlation Matrix](home.jpg)
+
+<hr>
+
+### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
+
+### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
+ 
+How it would work: 
+ - For each patient, calculate the distance to the closest department.
+ - Store the distances in an array and sort it in descending order.
+ - Take the Weighted Mean of their X and Y co-ordinates: This will be the New Departments location. 
+
+ - Formula -> Weighted Mean = (Items * Weight) / Sum of all Weights
+   - Items: represents Patient X and Y (separately)
+   - Weight: represents the distance for each patient to the closest department
+
+  Xn = ∑ di X1 / ∑ di
+  Yn = ∑ di Y1 / ∑ di
+   
+NOTE: Could we possibly reverse engineer the Pat_Loc_GPs = No of GPs within the postcode area of the patient to use the postcode to group all the patients for easy calculation? 
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
