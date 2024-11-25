@@ -152,9 +152,14 @@ Wait Times
             - "Would you like to skip the wait? Specialists at Site B are available immediately."
             - "We’ve reserved a spot for you at the MIU Site B. Follow the path provided for quick care.
 
-## Event Driven Process Chain and State Table to Demonstrate the analogy in action. <br>Two scenarios:<br> 1. Patient is at the site already.<br> 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)  
+## Event Driven Process Chain and State Table to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
+
+1. Patient is at the site already.
 
 ![Correlation Matrix](arrived.jpg)
+<hr>
+2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)<br>
+
 ![Correlation Matrix](home.jpg)
 
 ## Choosing Resolving Method 
