@@ -154,6 +154,7 @@ Wait Times
 
 ## Event Driven Process Chain and State Table to Demonstrate the analogy in action. <br>Two scenarios:<br> 1. Patient is at the site already.<br> 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)  
 
+![Event Driven Process Chain-Direct](Arrival_Triage(Direct Arrivals).jpg)
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
