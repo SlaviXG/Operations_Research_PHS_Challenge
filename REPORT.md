@@ -168,19 +168,25 @@ Wait Times
 
 ### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
 
-### Data Collection: To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient. (Question since it is possible that the patient is not at home, will it better to take the co-ordinates with a desnse population/traffic flow during each day of the week and according to specific hours)      
+### Data Collection: To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient.
 
+ - Things to consider:
+    - Patients may not be at home, and dense population/traffic flow might be better indicators.
+       <p>So instead of solely relying on Patients X and Y, integrate data about population density and traffic flow patterns for specific days and hours. Using the weighted-mean of high-traffic areas or population centres during peak demand times to better predict the optimal new department location. Leveraging data like: mobile phone density or traffic counters (if available) and Pat_Loc_GPs to identify regions with high patient registrations.</p>
+
+       
 ### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
  
 How it would work: 
  - For each patient, calculate the distance to the closest department.
- - Store the distances in an array and sort it in descending order.
+ - Store the distances in an array and sort it in descending order. Sort distances to identify outliers that might disproportionately influence the mean. Consider limiting weights for patients far outside the target area (eg. > 40 miles).
  - Take the Weighted Mean of their X and Y co-ordinates: This will be the New Departments location. 
 
  - Formula -> Weighted Mean = (Items * Weight) / Sum of all Weights
    - Items: represents Patient X and Y (separately)
    - Weight: represents the distance for each patient to the closest department
 
+  Insert Formula SC here.
   Xn = ∑ di X1 / ∑ di
   <br>
   Yn = ∑ di Y1 / ∑ di
@@ -193,12 +199,17 @@ How it would work:
    - di: is the the distance for each patient to the closest department
    - X1: is the X co-ordinate of the patient
    - Y1: is the Y co-ordinate of the patient
-     
-  Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and is   
-  not acting as a separate entity. This is to avoid situations where the symptoms are critical and we must transport the patient to the main site. We will also    
-  take into make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. 
-     
-NOTE: Could we possibly reverse engineer the Pat_Loc_GPs = No of GPs within the postcode area of the patient to use the postcode to group all the patients for easy calculation?  
+
+  <h4>Associating New Sites with Main Sites</h4>   
+  <p>Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and not acting as a separate entity. This ensures continuity and avoiding isolation of critical care. New departments are tagged as satellite or support units for a mian site. Eg. Main_Site_X -> Satellite_MIUs, telemedicine zones, or urgent care units. Devlop rules for transferring patients with esclating symptoms to the main site. E.g., “If symptoms are flagged critical at a satellite unit, immediate transport to Main_Site_X is initiated”.</p>
+
+  <h4>Assumptions</h4>
+  <p>We will also make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. While assuming available space is practical for initial calculations, it is essential to analyze real-world constraints like land availability, building costs, and zoning laws. Using cost-weighted decision-making to prioritize feasible locations. we must also consider the Main Site transport feasbility. Ensure that transport infrastructure supports quick patient transfers between satellites and main sites. Factoring in the availability of an ambulance and average response times.</p>
+
+  <h4>An Alternative to Simplify the Calculation</h4> 
+  To simplify calculations we can group patients by postcode or GP cluster. Reverse-Engineering the Pat_Loc_GPs we can group patients by postcode or GP area to simplify calculations for the weighted mean. Aggregate data by groups, then using Pat_Loc_GPs as a proxy for grouping patients into clusters. For Example:
+   - Patients within the same postcode or within a specific radius of a GP cann be treated as a single group.
+   - Assign a central point for each group, reducing the computational complexity.   
 
  
 
