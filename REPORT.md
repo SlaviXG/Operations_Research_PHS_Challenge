@@ -168,6 +168,8 @@ Wait Times
 
 ### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
 
+### Data Collection: To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient. (Question since it is possible that the patient is not at home, will it better to take the co-ordinates with a desnse population/traffic flow during each day of the week and according to specific hours)      
+
 ### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
  
 How it would work: 
@@ -180,9 +182,25 @@ How it would work:
    - Weight: represents the distance for each patient to the closest department
 
   Xn = ∑ di X1 / ∑ di
+  <br>
   Yn = ∑ di Y1 / ∑ di
-   
-NOTE: Could we possibly reverse engineer the Pat_Loc_GPs = No of GPs within the postcode area of the patient to use the postcode to group all the patients for easy calculation? 
+  <br>
+  
+  Meaning of the Symbols - <br>
+   - Xn: is the X co-ordinate for the new department.
+   - Yn: is the Y co-ordinate for the new department.
+   - ∑: is the Symbol for Summation or to declare that we must take the sum of all values present.
+   - di: is the the distance for each patient to the closest department
+   - X1: is the X co-ordinate of the patient
+   - Y1: is the Y co-ordinate of the patient
+     
+  Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and is   
+  not acting as a separate entity. This is to avoid situations where the symptoms are critical and we must transport the patient to the main site. We will also    
+  take into make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. 
+     
+NOTE: Could we possibly reverse engineer the Pat_Loc_GPs = No of GPs within the postcode area of the patient to use the postcode to group all the patients for easy calculation?  
+
+ 
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
