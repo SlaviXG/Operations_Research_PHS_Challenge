@@ -192,12 +192,12 @@ How it would work:
   <br>
   
   Meaning of the Symbols - <br>
-   - Xn: is the X co-ordinate for the new department.
-   - Yn: is the Y co-ordinate for the new department.
-   - ∑: is the Symbol for Summation or to declare that we must take the sum of all values present.
-   - di: is the the distance for each patient to the closest department
-   - X1: is the X co-ordinate of the patient
-   - Y1: is the Y co-ordinate of the patient
+   - Xn : is the X co-ordinate for the new department.
+   - Yn : is the Y co-ordinate for the new department.
+   - ∑ : is the Symbol for Summation or to declare that we must take the sum of all values present.
+   - di : is the the distance for each patient to the closest department
+   - X1 : is the X co-ordinate of the patient
+   - Y1 : is the Y co-ordinate of the patient
 
   <h4>Associating New Sites with Main Sites</h4>   
   <p>Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and not acting as a separate entity. This ensures continuity and avoiding isolation of critical care. New departments are tagged as satellite or support units for a mian site. Eg. Main_Site_X -> Satellite_MIUs, telemedicine zones, or urgent care units. Devlop rules for transferring patients with esclating symptoms to the main site. E.g., “If symptoms are flagged critical at a satellite unit, immediate transport to Main_Site_X is initiated”.</p>
