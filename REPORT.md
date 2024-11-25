@@ -156,13 +156,13 @@ Wait Times
 
 ### 1. Patient is at the site already.
 
-![Correlation Matrix](arrived.jpg)
+![Patient at Site](arrived.jpg)
 
 <hr>
 
 ### 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)
 
-![Correlation Matrix](home.jpg)
+![Patient Not at Site](home.jpg)
 
 <hr>
 
@@ -185,11 +185,8 @@ How it would work:
  - Formula -> Weighted Mean = (Items * Weight) / Sum of all Weights
    - Items: represents Patient X and Y (separately)
    - Weight: represents the distance for each patient to the closest department
-
-  Insert Formula SC here.
-  Xn = ∑ di X1 / ∑ di
   <br>
-  Yn = ∑ di Y1 / ∑ di
+  ![Weighted Mean Formula](formulas.png)
   <br>
   
   Meaning of the Symbols - <br>
