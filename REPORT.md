@@ -154,11 +154,13 @@ Wait Times
 
 ## Event Driven Process Chain and State Table to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
 
-1. Patient is at the site already.
+### 1. Patient is at the site already.
 
 ![Correlation Matrix](arrived.jpg)
+
 <hr>
-2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)<br>
+
+### 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)
 
 ![Correlation Matrix](home.jpg)
 
