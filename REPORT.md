@@ -186,7 +186,9 @@ How it would work:
    - Items: represents Patient X and Y (separately)
    - Weight: represents the distance for each patient to the closest department
   <br>
+  
   ![Weighted Mean Formula](formulas.png)
+  
   <br>
   
   Meaning of the Symbols - <br>
