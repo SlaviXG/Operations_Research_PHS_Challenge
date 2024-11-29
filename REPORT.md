@@ -210,7 +210,48 @@ How it would work:
    - Patients within the same postcode or within a specific radius of a GP cann be treated as a single group.
    - Assign a central point for each group, reducing the computational complexity.   
 
- 
+  <h4>Visualizing the Weighted Mean of the data using K-Means Clustering and Vonoroi Diagram</h4> 
+  To enhance the current method by we are integrating K-Means Clustering to find the optimal locations for new departments and improve demand distribution, visualizing it on a Vonoroi Diagram. 
+
+## K-Means Clustering
+<p>Is a technique used in data analysis to group similar similar data points together. It's like sorting a collection of items into categories based on their characteristics, so that items in the same category (or group) are more similar to each other than to items in other categories. In K-Means, K represents the number of groups (or clusters) we want to create. The algorithm works by:</p>
+  - Choosing K initial cluster centers (called centroids) at random.
+  - Assigning each data point to the closest centroid.
+  - Recalculating the centroids based on the new groupings of data points.
+  - Repeating the process until the centroids no longer change significantly, meaning the data has been grouped in the best possible way.
+
+### K-Means Clustering: In the context of the problem
+ - In the context of our problem, we have patient locations (their coordinates) and we want to determine optimal locations for new A&E departments or services.
+ - Patients are spread out over a geographic area, and some areas may have more patients than others. By using K-Means Clustering, we can group patients based on their geographic proximity and demand.
+ - The centroids (center points) of these clusters can represent ideal locations for new departments, such as Minor Injury Units (MIUs), to help spread out the patient load and make care more accessible.
+
+### K-Means Clustering: Usage
+ - Step 1: Collecting Patient Data: We'll use patient coordinates (Pat_X, Pat_Y) to map out where patients are located.
+ - Step 2: Applying K-Means Clustering: We'll apply the K-Means algorithm to group patients into clusters. The K number of clusters will represent how many new departments we want to explore.
+ - Step 3: Identifying Optimal Sites: The centroids of these clusters will give us the optimal locations for new departments that are likely to serve the highest volume of patients.
+ - Step 4: Validation: We can assess whether these new locations help reduce travel times and balance patient distribution across the system.
+
+## Vonoroi Diagram
+<p>A Voronoi Diagram is a way to divide up a space into regions based on the proximity to a set of points. These points are called seeds (or centroids in our case). Imagine a map with several hospitals (seeds). A Voronoi diagram shows which parts of the map are closest to each hospital. Every point within a region belongs to the hospital closest to it. The edges of the regions represent the boundary where a patient is equidistant between two hospitals. In simple terms, a Voronoi diagram tells you which hospital serves which patients based on distance.</p>
+
+### Vonoroi Diagram: In the context of the problem
+ - After using K-Means Clustering to find the optimal department locations, we need a way to visualize how patients would be allocated to these new locations.
+ - A Voronoi diagram will help us visualize the catchment areas of each new department, showing exactly which patients would be directed to which department based on proximity.
+ - This visualization is important because it helps us understand whether the new department locations are serving the right areas and whether they can handle the patient load effectively.
+
+### Vonoroi Diagram: Usage
+ - Step 1: Collecting the Centroids: After applying K-Means Clustering, we will have centroids that represent the potential new department locations.
+ - Step 2: Creating the Voronoi Diagram: These centroids will be used as seeds in the Voronoi diagram, dividing the geographic area into regions based on patient proximity.
+ - Step 3: Visualizing Allocation: The diagram will show us the catchment areas for each department, helping us see how patients are distributed across different locations.
+ - Step 4: Identifying Gaps or Overlaps: If some regions have no clear department coverage, we can see that in the diagram and adjust the department locations as needed.
+
+### Integrating K-Means Clustering and Vonoroi Diagram
+ - K-Means Clustering groups patients by their geographic location and demand, helping us identify optimal department locations.
+ - Voronoi Diagrams then visualize how these locations will divide the area into catchment regions, showing how patients are distributed and allocated to departments.
+ - Combined, these tools ensure that we are:
+     - Placing new departments in the most needed areas, reducing travel times and balancing patient demand.
+     - Visualizing patient allocation, so we can tweak department locations to better serve the population.
+ - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
