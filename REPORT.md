@@ -253,6 +253,9 @@ How it would work:
      - Visualizing patient allocation, so we can tweak department locations to better serve the population.
  - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
+K-Means Clustering website https://www.naftaliharris.com/blog/visualizing-k-means-clustering/ 
+From youtuber https://www.youtube.com/watch?v=R2e3Ls9H_fc TheDataPost
+
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
 ### Comparison of the consequences and selection of the right alternative
