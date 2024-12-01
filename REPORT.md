@@ -266,6 +266,8 @@ The website below can be used as a tool to demostrate how we will implement it.
 K-Means Clustering website https://www.naftaliharris.com/blog/visualizing-k-means-clustering/ 
 From youtuber https://www.youtube.com/watch?v=R2e3Ls9H_fc TheDataPost
 
+![K-Means Clustering](kmeans_clusters.png)
+
 The Images below illustrate how the Vornoi Diagram is being used to visulize the location for the new sites/departemnts.
 The points on the map are the new sites/departemnts. The colored area show the region they cover along with the borders to clearly differentiate between sorrounding regions covered by other new departments/sites created. This diagram can be used for:
  - The systems backend: Use the Voronoi diagram to calculate and assign the nearest site for any given patient. When a patient’s location is provided (Pat_X, Pat_Y), the Voronoi diagram determines which site's catchment area the patient falls into. This ensures patients are sent to the most appropriate A&E site or MIU based on proximity.
@@ -278,6 +280,7 @@ The points on the map are the new sites/departemnts. The colored area show the r
     - Strategic Planning: Simulation and decision-making for new site placements and expansions.
 
 From youtuber https://www.youtube.com/watch?v=LOxlRQqHjs4 Revision Village
+![Voronoi Diagrams](VoronoiDiag.png)
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
