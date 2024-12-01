@@ -253,8 +253,31 @@ How it would work:
      - Visualizing patient allocation, so we can tweak department locations to better serve the population.
  - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
+The Images below illustrate how the K-Means Clustering works. The smaller circles are the Pat_X and Pat_Y. While the bigger circles are centroids. 
+The website below can be used as a tool to demostrate how we will implement it.
+ - It begins by taking all the spots, initially transparent.
+ - Next we randomly place the amount of new depratments/sites we are trying to create, 3 in this example.
+ - Now we start the algorithm and it takes the color of the centroids and assigns the same color to the points that are closest to the centroids.
+ - The mean of the points is calculated to update the position of the centroids to a more optimal location.
+ - Now we re-assign the color to the points based on the updated location of the centroids.
+ - This algorithm repeats itself until we see no change in position of the centroids.
+ - Once we see that the position of the centroids is no longer being updated, it means we have found the optimal location of the new site/department.
+   
 K-Means Clustering website https://www.naftaliharris.com/blog/visualizing-k-means-clustering/ 
 From youtuber https://www.youtube.com/watch?v=R2e3Ls9H_fc TheDataPost
+
+The Images below illustrate how the Vornoi Diagram is being used to visulize the location for the new sites/departemnts.
+The points on the map are the new sites/departemnts. The colored area show the region they cover along with the borders to clearly differentiate between sorrounding regions covered by other new departments/sites created. This diagram can be used for:
+ - The systems backend: Use the Voronoi diagram to calculate and assign the nearest site for any given patient. When a patient’s location is provided (Pat_X, Pat_Y), the Voronoi diagram determines which site's catchment area the patient falls into. This ensures patients are sent to the most appropriate A&E site or MIU based on proximity.
+ - Road Signage: Place large, simplified Voronoi-based signs at key-junctions or highways. These will help the patient see the nearby sites, their coverage areas, and directions, based on where they are currently and will make it much easier for them to reach the correct A&E or MIU.
+ - Identifying Gaps in Coverage: Voronoi diagrams make gaps in coverage easy to spot. Regions far from any centroid indicate underserved areas where a new MIU or A&E department could be strategically placed.
+ - The Voronoi diagram shines in dynamic, geography-based decision-making where real-time data and spatial relationships play a critical role. Key areas include:
+    - Dynamic Routing Systems: Backend logic to calculate and redirect patients efficiently.
+    - Resource Optimization: Visualizing patient coverage and site loads for better allocation.
+    - Patient Guidance: Road signs, kiosks, and apps to simplify navigation and reduce confusion.
+    - Strategic Planning: Simulation and decision-making for new site placements and expansions.
+
+From youtuber https://www.youtube.com/watch?v=LOxlRQqHjs4 Revision Village
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
