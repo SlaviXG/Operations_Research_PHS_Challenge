@@ -226,19 +226,19 @@ How it would work:
  - The centroids (center points) of these clusters can represent ideal locations for new departments, such as Minor Injury Units (MIUs), to help spread out the patient load and make care more accessible.
 
 ### K-Means Clustering: Usage
- - 1. Collecting Patient Data: Gather patient location data using coordinates (Pat_X, Pat_Y). These represent where patients are distributed geographically.
- - 2. Applying K-Means Clustering: Use the K-Means algorithm to group patients into clusters based on their locations. The number of clusters (K) corresponds to the number of new departments we aim to explore.
- - 3. Identifying Optimal Sites: The centroids of these clusters represent the best potential locations for new departments, positioned to serve the highest number of patients efficiently.
- - 4. Validation: Evaluate whether these locations improve patient access by reducing travel times and balancing patient loads across existing and proposed sites.
+ <b>1. Collecting Patient Data:</b> Gather patient location data using coordinates (Pat_X, Pat_Y). These represent where patients are distributed geographically.
+ <b>2. Applying K-Means Clustering:</b> Use the K-Means algorithm to group patients into clusters based on their locations. The number of clusters (K) corresponds to the number of new departments we aim to explore.
+ <b>3. Identifying Optimal Sites:</b> The centroids of these clusters represent the best potential locations for new departments, positioned to serve the highest number of patients efficiently.
+ <b>4. Validation:</b> Evaluate whether these locations improve patient access by reducing travel times and balancing patient loads across existing and proposed sites.
 
 <p>The Images below illustrate how the K-Means Clustering works. The smaller circles are the Pat_X and Pat_Y. While the bigger circles are centroids. 
 The website below can be used as a tool to demostrate how we will implement it. Illustration of K-Means Clustering Workflow: </p>
- - Initialization: Begin with all patient points (small circles) ungrouped. Randomly place a specified number of centroids (representing potential new departments). In this example, there are 3 centroids.
- - Assigning Points to Clusters: Each patient point is assigned to the closest centroid. The points take the same color as their nearest centroid, forming temporary clusters.
- - Updating Centroids: Calculate the mean of all points in each cluster. Move the centroid to this new, more optimal position.
- - Reassignment of Points: Points are reassigned to the updated centroids based on proximity. Colors are adjusted to reflect the new cluster assignments.
- - Iteration: Steps 3 and 4 are repeated until centroids stabilize, meaning their positions no longer change.
- - Result: Once stable, the final centroid positions represent the optimal locations for new sites or departments.
+ - <b>Initialization:</b> Begin with all patient points (small circles) ungrouped. Randomly place a specified number of centroids (representing potential new departments). In this example, there are 3 centroids.
+ - <b>Assigning Points to Clusters:</b> Each patient point is assigned to the closest centroid. The points take the same color as their nearest centroid, forming temporary clusters.
+ - <b>Updating Centroids:</b> Calculate the mean of all points in each cluster. Move the centroid to this new, more optimal position.
+ - <b>Reassignment of Points:</b> Points are reassigned to the updated centroids based on proximity. Colors are adjusted to reflect the new cluster assignments.
+ - <b>Iteration:</b> Steps 3 and 4 are repeated until centroids stabilize, meaning their positions no longer change.
+ - <b>Result:</b> Once stable, the final centroid positions represent the optimal locations for new sites or departments.
    
 <b>From youtube channel: TheDataPost | Link to Video: https://www.youtube.com/watch?v=R2e3Ls9H_fc </b>
 <b>K-Means Clustering website from youtube channel: TheDataPost https://www.naftaliharris.com/blog/visualizing-k-means-clustering</b> 
@@ -257,21 +257,38 @@ The website below can be used as a tool to demostrate how we will implement it. 
  - This visualization is important because it helps us understand whether the new department locations are serving the right areas and whether they can handle the patient load effectively.
 
 ### Vonoroi Diagram: Usage
- - Step 1: Collecting the Centroids: After applying K-Means Clustering, we will have centroids that represent the potential new department locations.
- - Step 2: Creating the Voronoi Diagram: These centroids will be used as seeds in the Voronoi diagram, dividing the geographic area into regions based on patient proximity.
- - Step 3: Visualizing Allocation: The diagram will show us the catchment areas for each department, helping us see how patients are distributed across different locations.
- - Step 4: Identifying Gaps or Overlaps: If some regions have no clear department coverage, we can see that in the diagram and adjust the department locations as needed.
+ <b>1. Collecting the Centroids:</b> After applying K-Means Clustering, we obtain centroids representing potential new department locations.
+ <b>2. Creating the Voronoi Diagram:</b> These centroids serve as seeds in the Voronoi diagram, dividing the geographic area into regions based on proximity to each centroid.
+ <b>3. Visualizing Allocation:</b> The diagram highlights the catchment areas for each department, showing how patients are distributed across locations.
+ <b>4. Identifying Gaps or Overlaps:</b> Regions with no coverage or excessive overlap between sites become visible, helping identify underserved areas or opportunities to adjust department locations.
 
-<p>The Images below illustrate how the Vornoi Diagram is being used to visulize the location for the new sites/departemnts.
-The points on the map are the new sites/departemnts. The colored area show the region they cover along with the borders to clearly differentiate between sorrounding regions covered by other new departments/sites created. This diagram can be used for:</p>
- - The systems backend: Use the Voronoi diagram to calculate and assign the nearest site for any given patient. When a patient’s location is provided (Pat_X, Pat_Y), the Voronoi diagram determines which site's catchment area the patient falls into. This ensures patients are sent to the most appropriate A&E site or MIU based on proximity.
- - Road Signage: Place large, simplified Voronoi-based signs at key-junctions or highways. These will help the patient see the nearby sites, their coverage areas, and directions, based on where they are currently and will make it much easier for them to reach the correct A&E or MIU.
- - Identifying Gaps in Coverage: Voronoi diagrams make gaps in coverage easy to spot. Regions far from any centroid indicate underserved areas where a new MIU or A&E department could be strategically placed.
- - The Voronoi diagram shines in dynamic, geography-based decision-making where real-time data and spatial relationships play a critical role. Key areas include:
-    - Dynamic Routing Systems: Backend logic to calculate and redirect patients efficiently.
-    - Resource Optimization: Visualizing patient coverage and site loads for better allocation.
-    - Patient Guidance: Road signs, kiosks, and apps to simplify navigation and reduce confusion.
-    - Strategic Planning: Simulation and decision-making for new site placements and expansions.
+<p>The Images below illustrate how the Vornoi Diagram is being used to visulize the location for the new sites/departemnts. Illustration of Voronoi Diagram Workflow: 
+ 1. Seeds (Centroids): The centroids (points on the map) represent the locations of new sites or departments.
+ 2. Regions (Catchment Areas): The colored regions depict the areas assigned to each site, divided by borders to clearly differentiate the coverage of neighboring sites.
+ 3. Coverage Visualization: The diagram helps visualize how well the new departments serve the surrounding areas.
+
+ <p>Applications of the Voronoi Diagram:</p>
+  1. Backend System Integration:
+   - Use the Voronoi diagram to dynamically assign patients to the nearest site.
+   - When a patient’s location is provided (Pat_X, Pat_Y), the Voronoi diagram determines which department serves them best, ensuring efficient redirection.
+  2. Road Signage and Patient Navigation:
+   - Place simplified Voronoi-based signs at key junctions or highways to guide patients.
+   - These signs show nearby sites, their coverage areas, and directions based on the patient’s current location.
+  3. Identifying Gaps in Coverage:
+   - Regions far from any centroid indicate underserved areas, helping identify where to place additional MIUs or A&E departments strategically.
+  4. Dynamic Resource Allocation:
+   - Update the Voronoi diagram in real-time to reflect changes in patient load, site capacity, or new department placements.
+   - Use it for backend logic in dynamic routing systems and resource distribution.
+
+<p>The Voronoi diagram is an essential tool for visualizing patient distribution, identifying underserved areas, and making informed, geography-based decisions for improving emergency care access. Key Benefits of Using Voronoi Diagrams:</p>
+ - Dynamic Routing Systems:
+  - Backend logic for efficient patient redirection based on real-time proximity.
+ - Resource Optimization:
+  - Visualize coverage and site loads for better allocation of resources.
+ - Patient Guidance:
+  - Use road signs, kiosks, and apps to reduce confusion and simplify navigation.
+ - Strategic Planning:
+  - Simulate and decide on new site placements or expansions to improve overall system coverage.
 
 <b>From youtube channel: Revision Village | Link to Video: https://www.youtube.com/watch?v=LOxlRQqHjs4 </b>
 <br>
