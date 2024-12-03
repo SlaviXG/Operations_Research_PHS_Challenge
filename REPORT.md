@@ -226,24 +226,24 @@ How it would work:
  - The centroids (center points) of these clusters can represent ideal locations for new departments, such as Minor Injury Units (MIUs), to help spread out the patient load and make care more accessible.
 
 ### K-Means Clustering: Usage
- - Step 1: Collecting Patient Data: We'll use patient coordinates (Pat_X, Pat_Y) to map out where patients are located.
- - Step 2: Applying K-Means Clustering: We'll apply the K-Means algorithm to group patients into clusters. The K number of clusters will represent how many new departments we want to explore.
- - Step 3: Identifying Optimal Sites: The centroids of these clusters will give us the optimal locations for new departments that are likely to serve the highest volume of patients.
- - Step 4: Validation: We can assess whether these new locations help reduce travel times and balance patient distribution across the system.
+ - 1. Collecting Patient Data: Gather patient location data using coordinates (Pat_X, Pat_Y). These represent where patients are distributed geographically.
+ - 2. Applying K-Means Clustering: Use the K-Means algorithm to group patients into clusters based on their locations. The number of clusters (K) corresponds to the number of new departments we aim to explore.
+ - 3. Identifying Optimal Sites: The centroids of these clusters represent the best potential locations for new departments, positioned to serve the highest number of patients efficiently.
+ - 4. Validation: Evaluate whether these locations improve patient access by reducing travel times and balancing patient loads across existing and proposed sites.
 
 <p>The Images below illustrate how the K-Means Clustering works. The smaller circles are the Pat_X and Pat_Y. While the bigger circles are centroids. 
-The website below can be used as a tool to demostrate how we will implement it.</p>
- - It begins by taking all the spots, initially transparent.
- - Next we randomly place the amount of new depratments/sites we are trying to create, 3 in this example.
- - Now we start the algorithm and it takes the color of the centroids and assigns the same color to the points that are closest to the centroids.
- - The mean of the points is calculated to update the position of the centroids to a more optimal location.
- - Now we re-assign the color to the points based on the updated location of the centroids.
- - This algorithm repeats itself until we see no change in position of the centroids.
- - Once we see that the position of the centroids is no longer being updated, it means we have found the optimal location of the new site/department.
+The website below can be used as a tool to demostrate how we will implement it. Illustration of K-Means Clustering Workflow: </p>
+ - Initialization: Begin with all patient points (small circles) ungrouped. Randomly place a specified number of centroids (representing potential new departments). In this example, there are 3 centroids.
+ - Assigning Points to Clusters: Each patient point is assigned to the closest centroid. The points take the same color as their nearest centroid, forming temporary clusters.
+ - Updating Centroids: Calculate the mean of all points in each cluster. Move the centroid to this new, more optimal position.
+ - Reassignment of Points: Points are reassigned to the updated centroids based on proximity. Colors are adjusted to reflect the new cluster assignments.
+ - Iteration: Steps 3 and 4 are repeated until centroids stabilize, meaning their positions no longer change.
+ - Result: Once stable, the final centroid positions represent the optimal locations for new sites or departments.
    
 <b>From youtube channel: TheDataPost | Link to Video: https://www.youtube.com/watch?v=R2e3Ls9H_fc </b>
 <b>K-Means Clustering website from youtube channel: TheDataPost https://www.naftaliharris.com/blog/visualizing-k-means-clustering</b> 
 <br>
+
 ![K-Means Clustering](kmeans_clusters.png)
 
 <hr>
