@@ -305,7 +305,14 @@ The website below can be used as a tool to demostrate how we will implement it. 
      - Visualizing patient allocation, so we can tweak department locations to better serve the population.
  - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
-## Rapid Response Force (RRF), Operation Iron Haven, Operation Guardian Phoenix, HERO: Health Emergency Response Operations
+## Expanding Capacity in Existing Departments
+When faced with the challenge of increasing capacity in healthcare facilities, our approach prioritizes feasibility and efficiency. Before considering the creation of new departments, we first evaluate whether expansion is possible within existing sites. This involves assessing available space and determining if additional capacity can be accommodated effectively.
+
+If expansion is viable, we focus on increasing staffing levels and patient beds to enhance the facility's ability to handle surges in patient demand. However, in scenarios where physical expansion is constrained—either due to space limitations or logistical challenges—we deploy re-purposed Mega Hauler Trucks and Shipping Containers. These mobile units serve as temporary extensions to existing facilities, providing crucial support during high-demand periods.
+
+This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
+
+### Rapid Response Force (RRF), Operation Iron Haven, Operation Guardian Phoenix, HERO: Health Emergency Response Operations
 
 Addressing the Expansion
 Space Readiness for Expansion:
