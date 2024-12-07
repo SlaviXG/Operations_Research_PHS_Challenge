@@ -174,6 +174,12 @@ Wait Times
     - Patients may not be at home, and dense population/traffic flow might be better indicators.
        <p>So instead of solely relying on Patients X and Y, integrate data about population density and traffic flow patterns for specific days and hours. Using the weighted-mean of high-traffic areas or population centres during peak demand times to better predict the optimal new department location. Leveraging data like: mobile phone density or traffic counters (if available) and Pat_Loc_GPs to identify regions with high patient registrations.</p>
 
+**<h4>We will create new sites and these will New Sites will associated with Main Sites essentially acting as satellite sites. The departments would include a hybrid that would offer Emergency Live Saving/MIU/GP services</h4>   
+  <p>Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and not acting as a separate entity. This ensures continuity and avoiding isolation of critical care. New departments are tagged as satellite or support units for a mian site. Eg. Main_Site_X -> Satellite_MIUs, telemedicine zones, or urgent care units. Devlop rules for transferring patients with esclating symptoms to the main site. E.g., “If symptoms are flagged critical at a satellite unit, immediate transport to Main_Site_X is initiated”.</p>**
+
+  <h4>Assumptions</h4>
+  <p>We will also make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. While assuming available space is practical for initial calculations, it is essential to analyze real-world constraints like land availability, building costs, and zoning laws. Using cost-weighted decision-making to prioritize feasible locations. we must also consider the Main Site transport feasbility. Ensure that transport infrastructure supports quick patient transfers between satellites and main sites. Factoring in the availability of an ambulance and average response times.</p>
+
        
 ### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
  
@@ -198,12 +204,6 @@ How it would work:
    - di : is the the distance for each patient to the closest department
    - X1 : is the X co-ordinate of the patient
    - Y1 : is the Y co-ordinate of the patient
-
-  <h4>Associating New Sites with Main Sites</h4>   
-  <p>Associate the eah new site created with the Site Code so that we can know which sub-department/new department created is associated with a bigger site and not acting as a separate entity. This ensures continuity and avoiding isolation of critical care. New departments are tagged as satellite or support units for a mian site. Eg. Main_Site_X -> Satellite_MIUs, telemedicine zones, or urgent care units. Devlop rules for transferring patients with esclating symptoms to the main site. E.g., “If symptoms are flagged critical at a satellite unit, immediate transport to Main_Site_X is initiated”.</p>
-
-  <h4>Assumptions</h4>
-  <p>We will also make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. While assuming available space is practical for initial calculations, it is essential to analyze real-world constraints like land availability, building costs, and zoning laws. Using cost-weighted decision-making to prioritize feasible locations. we must also consider the Main Site transport feasbility. Ensure that transport infrastructure supports quick patient transfers between satellites and main sites. Factoring in the availability of an ambulance and average response times.</p>
 
   <h4>An Alternative to Simplify the Calculation</h4> 
   To simplify calculations we can group patients by postcode or GP cluster. Reverse-Engineering the Pat_Loc_GPs we can group patients by postcode or GP area to simplify calculations for the weighted mean. Aggregate data by groups, then using Pat_Loc_GPs as a proxy for grouping patients into clusters. For Example:
