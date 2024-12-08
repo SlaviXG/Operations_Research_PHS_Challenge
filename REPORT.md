@@ -69,7 +69,7 @@ Wait Times
        - "Receive care faster at our MIU, specialized for cases like yours"
     - Real-time updates provide transparency, building trust in the system.
 
-### Event-Driven Process Chains (EPC) and State Tables
+ <b>Event-Driven Process Chains (EPC) and State Tables</b>
  - Document the flow of patients through the system using EPCs or state tables to:
     - Identify ineffeciencies and decision points.
     - Clearly define transitions, eg:
@@ -109,7 +109,8 @@ Wait Times
      - Wait times in different departments (A&E, MIU)
      - Staff-to-patient ratio
      - Resource availability (beds)
-     
+     REVIEW THIS LOADING FUNCTION IN COMPARISON TO THE ONE ABOVE AND SEE HOW BOTH CAN BE ADJUSTED SO THAT WE DON'T HAVE TO CREATE MULTIPLE OF THEM ALL DIFFERENT FROM ONE ANOTHER.
+     ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
 <h3>The goal here is to calculate <i>a Loading Score</i> for each A&E sites dynamicaly.</h3>
  - The Statistical/ML Approach
    The <i>Loading Function</i> can be applied to each A&E site to get Ditribution of Patient Load across all sites in the network. Sites with a lower load score will take on more patients. Hospitals with higher laod scores will take on fewer patients or will redirect patients. Then we minimize the standard deviation from this distribution. By minimizing the standard deviation of the load scores, we ensure that no single site is being overwhelmed while others remian underused. This aligns with the Airport Analogy of directing passengers to less bsuy counters or terminals to balance the service demands.
@@ -133,6 +134,7 @@ Wait Times
        
 ## Casino Psychology
 ### Casinos excel at altering people's perception of time to keep them engaged. Casinos also use specific colors, special lighting and even music to keep the people as relaxed as possible. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
+### Get people to host Board games and invite the other people waiting in queue or just waiting around to spend time with the people around them, time flies when you play games. But what would happen if someone is in too deep playing the game rather hearing their number being called out.   
  - Environmental Variables
      - Casinos use environmental stimuli (lighting, layout, background music) to distract patrons and create a seamless flow.
      - Applying it to the A&E sites:
@@ -306,54 +308,73 @@ The website below can be used as a tool to demostrate how we will implement it. 
  - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
 ## Expanding Capacity in Existing Departments
-When faced with the challenge of increasing capacity in healthcare facilities, our approach prioritizes feasibility and efficiency. Before considering the creation of new departments, we first evaluate whether expansion is possible within existing sites. This involves assessing available space and determining if additional capacity can be accommodated effectively.
+When faced with the challenge of increasing capacity in healthcare facilities, this approach prioritizes feasibility and efficiency. Before considering the creation of new departments, first evaluation— whether expansion is possible within existing sites. This involves assessing available space and determining if additional capacity can be accommodated effectively.
 
-If expansion is viable, we focus on increasing staffing levels and patient beds to enhance the facility's ability to handle surges in patient demand. However, in scenarios where physical expansion is constrained—either due to space limitations or logistical challenges—we deploy re-purposed Mega Hauler Trucks and Shipping Containers. These mobile units serve as temporary extensions to existing facilities, providing crucial support during high-demand periods.
+If expansion is viable, direct focus on increasing staffing levels and patient beds to enhance the facility's ability to handle surges in patient demand. However, in scenarios where physical expansion is constrained—either due to space limitations or logistical challenges— deploy re-purposed Mega Hauler Trucks and Shipping Containers housing the complete suite of technology and bedding that is able to provide full care to patients, serving as temporary extensions to existing facilities, providing crucial support during high-demand periods.
 
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
-### Rapid Response Force (RRF), Operation Iron Haven, Operation Guardian Phoenix, HERO: Health Emergency Response Operations
+### Rapid Response Force (RRF), HERO: Health Emergency Response Operations
 
-Addressing the Expansion
-Space Readiness for Expansion:
+### Addressing the Expansion
 
-We acknowledge the importance of ensuring that any available space is not already being utilized for other purposes. A thorough assessment will be conducted to identify areas that can be converted quickly and efficiently when needed. These spaces will be maintained in a ready-to-use condition, ensuring minimal downtime when expansion is required.
-Pre-Designed Trucks and Containers:
+1. Space Readiness for Expansion:
 
-Instead of committing significant funds to the construction of permanent expansions, which require substantial time, money, and planning, we propose allocating these resources to pre-designed and repurposed trucks and containers. These units will be fully equipped in advance and ready to deploy during times of extreme need, ensuring a cost-effective and scalable solution to temporary capacity challenges.
-Integration with Main Sites:
+Acknowledging the importance of ensuring that any available space is not already being utilized for other purposes, a thorough assessment will be conducted to identify areas that can be converted quickly and efficiently when needed. These spaces will be maintained in a ready-to-use condition, ensuring minimal downtime when expansion is required.
 
-Integration between the trucks, containers, and main sites will be streamlined using the same software system currently employed at the main sites. By simply labeling the mobile units as extensions (e.g., "Mobile Unit - Site Code: X"), the system will maintain seamless operations, including patient record management, staff allocation, and resource tracking. Advances in software and computing make this a straightforward process, minimizing the potential for disruptions or inefficiencies.
-Clear Communication and Signage:
+2. Pre-Designed Trucks and Containers:
+
+Instead of committing significant funds to the construction of permanent expansions, which require substantial time, money, and planning, allocating these resources to pre-designed and repurposed trucks and shipping containers. These units will be fully equippedw ith beds, equipment, computers and ready to deploy during times of extreme need, ensuring a cost-effective and scalable solution to temporary capacity challenges.
+
+3. Integration with Main Sites:
+
+Integration between the trucks, containers, and main sites will be streamlined using the same software system currently employed at the main sites. By simply labeling the mobile units as extensions (e.g., "Mobile Unit - Site Code: N"), the system will maintain seamless operations, including patient record management, staff allocation, and resource tracking. Using the existing software as a main sites make this a straightforward process, minimizing the potential for disruptions or inefficiencies.
+
+4. Clear Communication and Signage:
 
 To ensure clarity for both patients and staff, large, clearly visible signage will be placed on these mobile units. The signage will explain the purpose of the trucks and containers and direct individuals to their specific locations, eliminating confusion about why they are being directed to these temporary facilities.
 Purpose and Role of Trucks and Containers
+
 The primary purpose of these mobile units is not to replace the existing sites but to alleviate the load on these facilities during times of high demand. These trucks and containers will act as temporary extensions, providing care for minor issues and diseases and ensuring that no patient is left standing or unattended for hours during chaotic times.
 
-We acknowledge that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than overwhelmed.
+Taking into account that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than coming to a halt due to the overwhelming demand.
 
-Enhancements
-Staff Readiness Plan:
+5. Staff Readiness Plan:
 
 While the physical infrastructure (trucks and containers) is ready for deployment, it’s equally crucial to have a standby staffing plan. This could include:
-A roster of on-call staff trained to work in these temporary units.
-Partnerships with local healthcare providers or temporary staffing agencies to fill gaps quickly.
-Modular Flexibility for Containers:
+ - A roster of on-call staff trained to work in these temporary units.
+ - Partnerships with local healthcare providers or temporary staffing agencies to fill gaps quickly.
+
+6. Modular Flexibility for Containers:
 
 Equip containers with interchangeable interiors so they can serve multiple roles (e.g., triage, diagnostics, or even administrative functions) based on the needs of the site. For example, during one surge, a container might act as a vaccination center, while in another it serves as a diagnostic lab.
-Digital Queue Management:
 
-Introduce a digital queue management system accessible via a mobile app or kiosks at the site.
-Patients can check estimated wait times at both the main site and mobile units.
-This ensures transparency and helps patients understand why they are being redirected.
-Multi-Purpose Design for Trucks and Containers:
+7. Digital Queue Management:
 
-Beyond healthcare services, these units can also serve other purposes during quieter periods, such as:
-Community health education centers.
-Vaccination campaigns or outreach initiatives.
-Telemedicine hubs, providing remote consultations for underserved areas.
+ - Using the same digital queue management system accessible via a web applications or kiosks at the site.
+ - Patients can check estimated wait times for both the main site and mobile units.
+ - This ensures transparency and helps patients understand why they are being redirected.
 
+8. Multi-Purpose Design for Trucks and Containers:
 
+ - Beyond healthcare services, these units can also serve other purposes during quieter periods, such as:
+    - Community health education centers.
+    - Vaccination campaigns or outreach initiatives.
+    - Telemedicine hubs, providing remote consultations for underserved areas and over crowded areas.
+      
+### Note: Where will the people wait for the Mobile Units as you know Scotland can indeed get very cold and standing outside is just not very comfortable. What will be the waiting area for these Mobile Units?
+
+### Based on all of this how would the solution change:
+   <h4>Existing Solution includes: </h4>
+    - Queuing Theory: No Change required for this as it can be applied to the Mobile Units as well.
+    - Loading Function: The loading function will updated here and instead of using the large scale version where we would find the optimal Site Locationfor the patient, we will use the loading function on a smaller scale to direct patients to either the Main SIte or the Mobile Units based on the Patient_Wait_Time/Age_Group/Symptom_Severity. Load Score adjusted to: Patient_Wait_Time + Age_Group + Symptom_Severity.  
+    - Airport Style Management System:
+      - Self-Service Kiosk: Will also be updated
+      - Clear Signage: No Change, there will still be clear signage for directing the patients to in the Main Site Building or the Mobile Units.   
+      - Screens Displaying the real-time data: All the screens displaying the real-time data will show a split view of the data between the Main Site Building and the Mobile Unit at the Site.    
+      - Pre-Sorted Ticket: The Pre-Sorted ticket  
+    - Casino Pschology: No change here either, the same 
+  
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
 ### Comparison of the consequences and selection of the right alternative
