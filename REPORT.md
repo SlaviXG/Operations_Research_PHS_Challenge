@@ -117,7 +117,7 @@ The Statistical/ML Approach
      - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
         - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
  ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
-### Acheiving Pre-Sorting and Utilizing the Loading Function
+### Achieving Pre-Sorting and Utilizing the Loading Function
 Using a Web App: 
 
 <hr>
