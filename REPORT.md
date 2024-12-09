@@ -118,7 +118,26 @@ The Statistical/ML Approach
         - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
  ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
 ### Achieving Pre-Sorting and Utilizing the Loading Function
-Using a Web App: 
+<p>Using a Web App: Patients access a user-friendly web app where they enter essential details such as their name, age, symptoms, and the location they will be traveling from. The app processes this information to:</p>
+
+1. Determine the Type of Care Needed:
+ - Based on the symptoms provided, the system identifies whether the patient requires Emergency Department (ED), Minor Injuries Unit (MIU), GP services, or other care.
+   
+2. Identify the Optimal Site:
+ - Using the Loading Function, the system evaluates all nearby sites to identify the one with the most manageable load for the patient’s care needs.
+
+3. Generate a Patient Ticket:
+ - The app provides the patient with a ticket containing:
+  - Site Code: The identifier for the recommended site.
+  - Site Type: Specifies the type of site (e.g., ED, MIU).
+  - Site Location: Clear directions to the recommended site.
+  - Ticket Number: A unique identifier for the patient.
+  - Travel Time + Estimated Wait Time: Transparency on how long the journey and waiting might take.
+    
+4. Streamlined On-Site Process:
+ - Upon arrival at the site, the patient shows their ticket, which can be scanned or manually referred to by staff.
+ - The patient’s details, already entered through the app, are automatically loaded into the hospital’s system.
+ - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
 <hr>
 
