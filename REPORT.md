@@ -127,12 +127,13 @@ The Statistical/ML Approach
  - Using the Loading Function, the system evaluates all nearby sites to identify the one with the most manageable load for the patient’s care needs.
 
 3. Generate a Patient Ticket:
- - The app provides the patient with a ticket using patients details and contact information (like email address):
+ - The app provides the patient with a ticket using patients details:
+ - Patient Details: Patient Name, Patient DOB (Age), Patient Contact, Symptoms, Medications/Allergies, Patient Location.
   - Site Code: The identifier for the recommended site.
   - Site Type: Specifies the type of site (e.g., ED, MIU).
   - Site Location: Clear directions to the recommended site.
   - Ticket Number: A unique identifier for the patient.
-  - Travel Time + Estimated Wait Time: Transparency on how long the journey and waiting might take.
+  - Travel Time to the Nearest Site & Estimated Wait Time: Transparency on how long the journey and waiting might take.
     
 4. Streamlined On-Site Process:
  - Upon arrival at the site, the patient shows their ticket and a valid ID, which can be referred to by staff.
