@@ -27,7 +27,7 @@ To simplify the complexity, patient categories are grouped and modeled.
     - Simplified queue for predicting wait times and optimizing resource allocation (eg. triage nurses, rooms)
     - Goal: Minimize the wait times for minor injuries, avoiding bottlenecks
  - ED (Emergency Department):
-    - Modeled as Priority Queuing System for high-acuity cases.
+    - Modelled as Priority Queuing System for high-acuity cases.
     - Cases with priority:
        - High-priority cases bypass queues.
        - Low-priority cases wait until resources are free.
@@ -36,7 +36,7 @@ To simplify the complexity, patient categories are grouped and modeled.
 ### Loading function for System-Wide Balance
  - Incorporate real-time data  to compute site load scores:
     - Load Score = (Beds Occupied / Site Capacity) + Travel Time + Patient Wait Time
-       1. Current Patients: The number of patients currently being treated or waiting at the site.
+       1. Beds Occupied: The number of patients currently being treated at the site.
        2. Site Capacity: The maximum number of patients the site can handle effectively at a given time.(based on available staff, rooms, and resources)
        3. Travel Time: Time it takes for a patient to reach the site (based on location).
        4. Patient Wait Time: Current average wait time for patients at the site.
@@ -47,7 +47,7 @@ To simplify the complexity, patient categories are grouped and modeled.
 Wait Times
  - Use queuing metrics (eg. average wait time Wq) to measure performance:
     - MIU/Other: Evaluate average wait time for all patients.
-    - ED: Measure critical patient delay and overall system throughput
+    - ED: Measure critical patient delay and overall system throughput.
  - Effective re-allocation
     - Track patient distribution to avoid overburdening any single facility.
     - Optimize allocation dynamically by minimizing the standard deviation of load scores across sites:
@@ -384,6 +384,3 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 
 ## Implementation of Solution
 ### Implementation of the result and evaluation of the degree/percentage of success.
-
-
-
