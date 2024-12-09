@@ -145,7 +145,8 @@ The Statistical/ML Approach
 <b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
 
 <b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
-[Sample Ticket with QR Code goes here.] 
+<br>
+![Sample Ticket with QR Code](E_Ticket.png) 
 <hr>
 
 ### Casino Psychology for Behavioural Guidance
