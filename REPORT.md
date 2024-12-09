@@ -16,7 +16,8 @@
 
 ![Correlation Matrix](output.png)
 
-## Objective:
+## Objective: Focus on Worst Case Scenario
+### By using the worst-case scenario as the foundation for planning, the solution is designed to remain robust and efficient even during peak demand periods. 
 ### Optimize patient flow and resource allocation in A&E departments under the worst-case scenario: all patients are unplanned, requiring immediate attention.
 
 ## Mathematical Modelling - Hybrid Queuing + Loading Function for Dynamic Flow. 
@@ -63,10 +64,10 @@ Wait Times
      - Re-Routing:
         - Just as Airports manage over-crowding by re-directing passengers, patients are guided to nearby MIUs or GP to reduce A&E congestion.
 
-### casino Psychology for Behavioural Guidance
+### Casino Psychology for Behavioural Guidance
  - Use visual cues and choice framing to direct patient flow to optimal options:
     - Subtly encourage non-critical patients to select MIU/Other with prompts such as:
-       - "Receive care faster at our MIU, specialized for cases like yours"
+       - "Receive care faster at our MIU, specialized for cases like yours".
     - Real-time updates provide transparency, building trust in the system.
 
  <b>Event-Driven Process Chains (EPC) and State Tables</b>
@@ -77,8 +78,7 @@ Wait Times
  - Incorporate automation triggers, eg: re-routing based on load scores.
 <hr>
 
-## Focus on Worst Case Scenario
-### By using the worst-case scenario as the foundation for planning, the solution is designed to remain robust and efficient even during peak demand periods. 
+
 <hr>
 
 ## The Airport Analogy
