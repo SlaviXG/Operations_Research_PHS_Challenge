@@ -20,41 +20,41 @@
 ### By using the worst-case scenario as the foundation for planning, the solution is designed to remain robust and efficient even during peak demand periods. 
 ### Optimize patient flow and resource allocation in A&E departments under the worst-case scenario: all patients are unplanned, requiring immediate attention.
 
-## Mathematical Modelling - Hybrid Queuing + Loading Function for Dynamic Flow. 
+## Mathematical Modelling - Queuing Theory & Loading Function for Managing Patient Flow
+
 ### Queuing Theory for Grouped Patients
-To simplify the complexity, patient categories are grouped and modeled.
+To simplify the complexity of patient management, categories are grouped and modeled to address their specific needs:
  - MIU/Other:
     - Treated as First Come First Serve (FCFS) for low-acuity cases.
     - Simplified queue for predicting wait times and optimizing resource allocation (eg. triage nurses, rooms)
     - Goal: Minimize the wait times for minor injuries, avoiding bottlenecks
  - ED (Emergency Department):
-    - Modelled as Priority Queuing System for high-acuity cases.
+    - Modeled as Priority Queuing System for high-acuity cases.
     - Cases with priority:
-       - High-priority cases bypass queues.
+       - High-priority cases bypass queues for immediate attention.
        - Low-priority cases wait until resources are free.
-    - Goal: Minimize delays for critical patients while balancing fairness.
+    - Objective: Minimize delays for critical patients while balancing fairness for all.
       
 ### Loading function for System-Wide Balance
- - Incorporate real-time data  to compute site load scores:
+ - To optimize resource distribution and patient flow across multiple sites, a loading function is used, incorporating real-time data:
     - Load Score = (Beds Occupied / Site Capacity) + Travel Time + Patient Wait Time
-       1. Beds Occupied: The number of patients currently being treated at the site.
+       1. Beds Occupied: Number of patients currently receiving treatment at the site.
        2. Site Capacity: The maximum number of patients the site can handle effectively at a given time.(based on available staff, rooms, and resources)
        3. Travel Time: Time it takes for a patient to reach the site (based on location).
        4. Patient Wait Time: Current average wait time for patients at the site.
-    - Adjust routing to ditribute patients evenly across sites.
-    - Goal: Prevent site oberload by re-routing non-urgent cases to less crowded sites.  
+    - Objective: Prevent site overload by dynamically re-routing non-urgent cases to less crowded facilities, ensuring balanced patient distribution. 
       
 ### Performance Measures - Efficiency and Fairness
-Wait Times
- - Use queuing metrics (eg. average wait time Wq) to measure performance:
-    - MIU/Other: Evaluate average wait time for all patients.
-    - ED: Measure critical patient delay and overall system throughput.
- - Effective re-allocation
+1. Wait Time Analysis
+ - Metrics: Evaluate system performance using queuing metrics such as average wait time (Wq):
+    - MIU/Other: Measure average wait times for all patients.
+    - ED: Focus on delays for critical cases and overall system throughput.
+ 2. Effective re-allocation
     - Track patient distribution to avoid overburdening any single facility.
-    - Optimize allocation dynamically by minimizing the standard deviation of load scores across sites:
-       - Metric = Minimize Load Variability.
+    - Dynamically minimize the standard deviation of load scores across all sites to ensure an even distribution of patients.
+       - Objective: Achieve balanced utilization of resources while maintaining high-quality care.
          
-## Alternative Courses of Action: Airport Flow Management + Casino Psychology hybrid approach to streamline patient flow
+## Courses of Action: Airport Flow Management + Casino Psychology hybrid approach to streamline patient flow
 ### An Airport-Inspired Attendance Managemnet System
  - Segementation and Pre-Sorting
      - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
