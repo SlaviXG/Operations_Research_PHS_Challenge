@@ -139,6 +139,12 @@ The Statistical/ML Approach
  - The patient’s details, already entered through the app, are automatically loaded into the hospital’s system.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
+<b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival at the site. Once scanned, the patient’s details—such as age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly.</b></p>
+
+<b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
+
+<b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
+[Sample Ticket with QR Code goes here.] 
 <hr>
 
 ### Casino Psychology for Behavioural Guidance
