@@ -189,8 +189,8 @@ The Statistical/ML Approach
   - Increases social interaction and emotional well-being.<br>
   - Reduces the perceived length of the wait.<br>
   - Gives patients a safe, uplifting space to smile and relax during stressful situations.<br>
-  
-  <b><u>Addressing the Problem of Missing Calls</u></b><br>
+  <br>
+  <b><u>Addressing the Problem of Missing Calls</u></b>
    <p>- A valid concern with board games is that participants might become so engrossed in the activity that they miss their turn for treatment. To mitigate this:</p>
     1. Digital Alerts:<br>
      - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.<br>
