@@ -54,7 +54,7 @@ Wait Times
     - Optimize allocation dynamically by minimizing the standard deviation of load scores across sites:
        - Metric = Minimize Load Variability.
          
-## Alternative Courses of Action: Leverage an Airport + Casino Hybrid to streamline patient flow
+## Alternative Courses of Action: Airport Flow Management + Casino Psychology hybrid approach to streamline patient flow
 ### An Airport-Inspired Attendance Managemnet System
  - Segementation and Pre-Sorting
      - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
@@ -63,24 +63,7 @@ Wait Times
         - Location and travel distance
      - Re-Routing:
         - Just as Airports manage over-crowding by re-directing passengers, patients are guided to nearby MIUs or GP to reduce A&E congestion.
-
-### Casino Psychology for Behavioural Guidance
- - Use visual cues and choice framing to direct patient flow to optimal options:
-    - Subtly encourage non-critical patients to select MIU/Other with prompts such as:
-       - "Receive care faster at our MIU, specialized for cases like yours".
-    - Real-time updates provide transparency, building trust in the system.
-
- <b>Event-Driven Process Chains (EPC) and State Tables</b>
- - Document the flow of patients through the system using EPCs or state tables to:
-    - Identify ineffeciencies and decision points.
-    - Clearly define transitions, eg:
-       - Patient Arrival -> Triage -> Department Assignment -> Treatment -> Exit.
- - Incorporate automation triggers, eg: re-routing based on load scores.
-<hr>
-
-
-<hr>
-
+          
 ## The Airport Analogy
 ### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
  - Segmentation and Pre-Sorting
@@ -130,7 +113,14 @@ Wait Times
         - "Site B: 50% capacity. Est. Wait Time: 30 minutes."    
  - Anticipatory Resource Allocation
      - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
-        - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."
+        - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
+
+### Casino Psychology for Behavioural Guidance
+ - Use visual cues and choice framing to direct patient flow to optimal options:
+    - Subtly encourage non-critical patients to select MIU/Other with prompts such as:
+       - "Receive care faster at our MIU, specialized for cases like yours".
+    - Real-time updates provide transparency, building trust in the system.
+<hr>
        
 ## Casino Psychology
 ### Casinos excel at altering people's perception of time to keep them engaged. Casinos also use specific colors, special lighting and even music to keep the people as relaxed as possible. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
@@ -155,6 +145,13 @@ Wait Times
             - "We’ve reserved a spot for you at the MIU Site B. Follow the path provided for quick care.
 
 ## Event Driven Process Chain to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
+
+ <b>Event-Driven Process Chains (EPC) and State Tables</b>
+ - Document the flow of patients through the system using EPCs or state tables to:
+    - Identify ineffeciencies and decision points.
+    - Clearly define transitions, eg:
+       - Patient Arrival -> Triage -> Department Assignment -> Treatment -> Exit.
+ - Incorporate automation triggers, eg: re-routing based on load scores.
 
 ### 1. Patient is at the site already.
 
