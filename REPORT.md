@@ -59,16 +59,6 @@ To simplify the complexity of patient management, categories are grouped and mod
            - Critical Wait Time: 240 minutes
            - Load Score { (95 / 100) * 100 } + { (300 / 240) * 100 }  = 95 + 125 = 220%
            - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
-      
-### Performance Measures - Efficiency and Fairness
-1. Wait Time Analysis
- - Metrics: Evaluate system performance using queuing metrics such as average wait time (Wq):
-    - MIU/Other: Measure average wait times for all patients.
-    - ED: Focus on delays for critical cases and overall system throughput.
- 2. Effective re-allocation
-    - Track patient distribution to avoid overburdening any single facility.
-    - Dynamically minimize the standard deviation of load scores across all sites to ensure an even distribution of patients.
-       - Objective: Achieve balanced utilization of resources while maintaining high-quality care.
          
 ## Courses of Action: Airport Flow Management + Casino Psychology hybrid approach to streamline patient flow
 ### An Airport-Inspired Attendance Managemnet System
