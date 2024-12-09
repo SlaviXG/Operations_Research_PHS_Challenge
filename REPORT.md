@@ -37,12 +37,28 @@ To simplify the complexity of patient management, categories are grouped and mod
       
 ### Loading function for System-Wide Balance
  - To optimize resource distribution and patient flow across multiple sites, a loading function is used, incorporating real-time data:
-    - Load Score = (Beds Occupied / Site Capacity) + Travel Time + Patient Wait Time
-       1. Beds Occupied: Number of patients currently receiving treatment at the site.
-       2. Site Capacity: The maximum number of patients the site can handle effectively at a given time.(based on available staff, rooms, and resources)
-       3. Travel Time: Time it takes for a patient to reach the site (based on location).
-       4. Patient Wait Time: Current average wait time for patients at the site.
-    - Objective: Prevent site overload by dynamically re-routing non-urgent cases to less crowded facilities, ensuring balanced patient distribution. 
+    - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
+       1. (Beds Occupied / Site Capacity) : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
+       2. (Wait Time / Critical Wait Time) :
+          - Wait Time - The patient wait time needs to be incorporated in a way that reflects its severity.
+          - Critical Wait Time - Normalizes wait time by dividing the actual wait time by a critical threshold (e.g., 240 minutes = 4 hours).
+    - Interpretation: If the Load Score is 100% or more, the site is overloaded. Scores under 80% indicate a manageable load, suggesting the site can still handle additional patients.
+    - Sample Scenraio:
+        - Scenario 1: Manageable Load
+           - Beds Occupied: 60
+           - Site Capacity: 100
+           - Wait Time: 30 mins
+           - Critical Wait Time: 240 minutes
+           - Load Score -> { (60 / 100) * 100 } + { (30 / 240) * 100 } = 60 + 12.5 = 72.5%
+           - Interpretation: The site is operating well within the Load Score.
+             
+        - Scenario 2: Critical Overload
+           - Beds Occupied: 95
+           - Site Capacity: 100
+           - Patient Wait Time: 300 mins (5 hours)
+           - Critical Wait Time: 240 minutes
+           - Load Score { (95 / 100) * 100 } + { (300 / 240) * 100 }  = 95 + 125 = 220%
+           - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
       
 ### Performance Measures - Efficiency and Fairness
 1. Wait Time Analysis
