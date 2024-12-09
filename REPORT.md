@@ -177,31 +177,32 @@ The Statistical/ML Approach
               
 ### Adding Visual Indicators: Colored E-Tickets
 <p>The color of the e-ticket issued to patients will reflect site status, helping manage expectations and guide behavior. Instead of showing raw numbers (e.g., patients at the site or site capacity), color-coded tickets provide a simple, visual indicator of site load:</p>
- - Red: Site is highly crowded (above 90% capacity).
- - Yellow: Site is moderately busy (65%–89% capacity).
- - Green: Site has manageable load (30%–64% capacity).
- - Purple: Site is very free (below 30% capacity).
+ - Red: Site is highly crowded (above 90% capacity).<br>
+ - Yellow: Site is moderately busy (65%–89% capacity).<br>
+ - Green: Site has manageable load (30%–64% capacity).<br>
+ - Purple: Site is very free (below 30% capacity).<br>
  <p>The colors, determined by the formula (Beds Occupied / Site Capacity) * 100</p>
 
  ### Hosting Board Games to Enrich the Waiting Experience
  <p>To make long waits more enjoyable, A&E sites can host board games in waiting areas. Patients can join games to pass the time, fostering human interaction and creating a positive, engaging environment.</p>
- Why do this:
-  - Increases social interaction and emotional well-being.
-  - Reduces the perceived length of the wait.
-  - Gives patients a safe, uplifting space to smile and relax during stressful situations.
-  <b><u>Addressing the Problem of Missing Calls</u></b>
-   - A valid concern with board games is that participants might become so engrossed in the activity that they miss their turn for treatment. To mitigate this:
-    1. Digital Alerts:
-     - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.
-    2. Visual and Audio Cues:
-     - Use large digital displays and frequent announcements to call out patient numbers.
-     - Announcements like, “Patient 45, please proceed to Triage Room 2,” ensure players are aware of their turn.
-    3. Dedicated Staff:
-     - Assign staff members to monitor the games and remind patients when their turn is near.
-    4. Game Design:
-     - Introduce shorter, time-limited games (e.g., 10–15 minutes) to minimize the risk of prolonged distractions.
+ Why do this:<br>
+  - Increases social interaction and emotional well-being.<br>
+  - Reduces the perceived length of the wait.<br>
+  - Gives patients a safe, uplifting space to smile and relax during stressful situations.<br>
+  
+  <b><u>Addressing the Problem of Missing Calls</u></b><br>
+   <p>- A valid concern with board games is that participants might become so engrossed in the activity that they miss their turn for treatment. To mitigate this:</p>
+    1. Digital Alerts:<br>
+     - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.<br>
+    2. Visual and Audio Cues:<br>
+     - Use large digital displays and frequent announcements to call out patient numbers.<br>
+     - Announcements like, “Patient 45, please proceed to Triage Room 2,” ensure players are aware of their turn.<br>
+    3. Dedicated Staff:<br>
+     - Assign staff members to monitor the games and remind patients when their turn is near.<br>
+    4. Game Design:<br>
+     - Introduce shorter, time-limited games (e.g., 10–15 minutes) to minimize the risk of prolonged distractions.<br>
      - Games can have pause-friendly mechanics, allowing participants to rejoin after their treatment.<br>
-<hr>
+     <br>
  <p><b>Incorporating casino-inspired strategies, such as visual indicators, engaging activities, and perception management, transforms the waiting experience. The combination of colored e-tickets and board games not only enhances patient satisfaction but also aligns with the overarching goal of improving patient flow while maintaining an emotionally positive environment. Clear, tech-driven solutions address potential issues, ensuring that no one misses their turn while enjoying these innovative features.</b></p>
 <hr>
 ## Event Driven Process Chain to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
