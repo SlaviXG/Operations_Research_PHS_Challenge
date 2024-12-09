@@ -36,6 +36,7 @@ To simplify the complexity of patient management, categories are grouped and mod
     - Objective: Minimize delays for critical patients while balancing fairness for all.
       
 ### Loading function for System-Wide Balance
+The Statistical/ML Approach
  - To optimize resource distribution and patient flow across multiple sites, a loading function is used, incorporating real-time data:
     - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
        1. (Beds Occupied / Site Capacity) : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
@@ -90,20 +91,15 @@ To simplify the complexity of patient management, categories are grouped and mod
     - At airports the number of service counters are open are adjusted dynamically based on the passenger inflow.
     - Applying to the A&E: Using real-time monitoring similar to boarding queues to shft staff between departments or adjust priorities. We can also use the historical data to find out patterns and predict the patient inflow to adjust staff and resources.
 
-### Defining a <i>"Loading Function"</i> for the A&E sites and then applying it to distribute patients while minimizing the standard deviation is a way we can use statistics to see how the Airport Style Management approach will help in improving the overall flow of patients. Combing this with the Segmentation, and anticipatory resource allocation startegies helps further strengthen the system's ability to optimize the patient flow dynamically. 
+### Reason for using the <i>Loading Function</i> here?
+ - The Loading Function quantifies how "loaded" an A&E site is in terms of its capacity and resources. It uses real-time data to dynamically assess site utilization, enabling informed decision-making to balance patient flow and optimize resource allocation.
+ - Defining a Loading Function for A&E sites allows us to calculate how "loaded" each site is in real time. By using these scores to guide patient distribution and reduce imbalances across sites, we can optimize the flow of patients and ensure resources are used efficiently. This aligns with the principles of the Airport Style Management approach, which focuses on dynamic, data-driven decision-making to improve patient care.
+   
 <h3>Here is how we can integrate the loading function into the Airport Analogy</h3>
- - What is the <i>Loading Function</i>?
-   A loading function will mathematically describe how <i>"loaded"</i> an A&E site is in terms of its capacity and resources. It can consider factors like:
-     - Number of patients currently being treated
-     - Wait times in different departments (A&E, MIU)
-     - Staff-to-patient ratio
-     - Resource availability (beds)
-     REVIEW THIS LOADING FUNCTION IN COMPARISON TO THE ONE ABOVE AND SEE HOW BOTH CAN BE ADJUSTED SO THAT WE DON'T HAVE TO CREATE MULTIPLE OF THEM ALL DIFFERENT FROM ONE ANOTHER.
-     ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
-<h3>The goal here is to calculate <i>a Loading Score</i> for each A&E sites dynamicaly.</h3>
- - The Statistical/ML Approach
-   The <i>Loading Function</i> can be applied to each A&E site to get Ditribution of Patient Load across all sites in the network. Sites with a lower load score will take on more patients. Hospitals with higher laod scores will take on fewer patients or will redirect patients. Then we minimize the standard deviation from this distribution. By minimizing the standard deviation of the load scores, we ensure that no single site is being overwhelmed while others remian underused. This aligns with the Airport Analogy of directing passengers to less bsuy counters or terminals to balance the service demands.
-
+ - Real Time Monitoring: Calculate the Load Score for each site periodically (e.g., every 15 minutes). Using software to visualize site scores across a dashboard, highlighting overloaded sites for immediate action.<br>
+ - Patient Reallocation: Redirect non-urgent cases to sites with lower Load Scores to reduce pressure. Include Load Score calculations in backend algorithms to recommend the most appropriate site for incoming patients.<br>
+ - Strategic Planning: Analyze historical Load Scores to identify persistent bottlenecks and inform long-term capacity planning. Use insights from the function to determine where and when should resorces be deployed during crises.<br>
+        
 ### Enhanced Airport-Style Management along with the Loading Function
   - Segementation and Pre-Sorting
       - Improvement with the Loading Function: In addition to patient severity and syptoms, the Load Score becomes a key-factor in the pre-arrival triage:
@@ -120,6 +116,9 @@ To simplify the complexity of patient management, categories are grouped and mod
  - Anticipatory Resource Allocation
      - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
         - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
+ ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
+### Acheiving Pre-Sorting and Utilizing the Loading Function
+Using a Web App: 
 
 <hr>
 
@@ -318,7 +317,7 @@ If expansion is viable, direct focus on increasing staffing levels and patient b
 
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
-### Rapid Response Force (RRF), HERO: Health Emergency Response Operations
+### HERO: Health Emergency Response Operations
 
 ### Addressing the Expansion
 
