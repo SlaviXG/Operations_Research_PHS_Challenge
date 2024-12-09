@@ -205,6 +205,7 @@ The Statistical/ML Approach
      <br>
  <p><b>Incorporating casino-inspired strategies, such as visual indicators, engaging activities, and perception management, transforms the waiting experience. The combination of colored e-tickets and board games not only enhances patient satisfaction but also aligns with the overarching goal of improving patient flow while maintaining an emotionally positive environment. Clear, tech-driven solutions address potential issues, ensuring that no one misses their turn while enjoying these innovative features.</b></p>
 <hr>
+
 ## Event Driven Process Chain to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
 
  <b>Event-Driven Process Chains (EPC) and State Tables</b>
