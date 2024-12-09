@@ -135,7 +135,7 @@ The Statistical/ML Approach
   - Travel Time + Estimated Wait Time: Transparency on how long the journey and waiting might take.
     
 4. Streamlined On-Site Process:
- - Upon arrival at the site, the patient shows their ticket, which can be referred to by staff.
+ - Upon arrival at the site, the patient shows their ticket and a valid ID, which can be referred to by staff.
  - The patient’s details, already entered through the web app, are automatically loaded into the hospital’s system by simply scanning the QR code on the ticket.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
