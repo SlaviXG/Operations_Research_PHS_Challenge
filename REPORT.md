@@ -115,12 +115,13 @@ Wait Times
      - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
         - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
 
+<hr>
+
 ### Casino Psychology for Behavioural Guidance
  - Use visual cues and choice framing to direct patient flow to optimal options:
     - Subtly encourage non-critical patients to select MIU/Other with prompts such as:
        - "Receive care faster at our MIU, specialized for cases like yours".
     - Real-time updates provide transparency, building trust in the system.
-<hr>
        
 ## Casino Psychology
 ### Casinos excel at altering people's perception of time to keep them engaged. Casinos also use specific colors, special lighting and even music to keep the people as relaxed as possible. Applying this concept for managing the patients' experience while they wait for their treatment will help reduce the mental stress and affect it has.  
