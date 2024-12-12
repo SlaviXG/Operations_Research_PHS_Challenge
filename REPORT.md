@@ -90,7 +90,9 @@ The Statistical/ML Approach
    
 - Applying to the A&E
 <p>We can adopt a similar approach to guide patients efficiently, ensuring they are directed to the appropriate facility or service with minimal confusion. Clear signage and real-time updates would provide patients with the necessary details at key decision points, such as entrances, waiting areas, or mobile apps.</p>
+
 <p>Examples of Minimalistic Messages</p>
+
  1. For Redirection to Minor Injury Units (MIUs):
     - “Minor Injuries: Faster Care Available at MIU. Distance: 5 Miles | Travel Time: 10 Minutes”
  2. For Severe Cases in A&E:
@@ -107,9 +109,8 @@ The Statistical/ML Approach
  - Clarity: By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
  - Efficiency: Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
  - Trust: Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
-
      
- -  Anticipatory Resource Allocation
+Anticipatory Resource Allocation
 <p>At airports, the number of open service counters is dynamically adjusted based on passenger inflow, ensuring efficiency and minimizing wait times. A&E departments can similarly optimize resource allocation by predicting patient inflow patterns and adjusting staffing and resources accordingly.</p>
 <p>Using Historical Data for Demand Prediction</p>
 
