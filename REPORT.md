@@ -106,11 +106,13 @@ The Statistical/ML Approach
        - A&E: Critical Conditions (Immediate Care for Emergencies)
 
 <h3>Reasons for this approach: </h3>
+
  - Clarity: By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
  - Efficiency: Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
  - Trust: Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
      
-Anticipatory Resource Allocation
+<h3>Anticipatory Resource Allocation</h3>
+
 <p>At airports, the number of open service counters is dynamically adjusted based on passenger inflow, ensuring efficiency and minimizing wait times. A&E departments can similarly optimize resource allocation by predicting patient inflow patterns and adjusting staffing and resources accordingly.</p>
 <p>Using Historical Data for Demand Prediction</p>
 
