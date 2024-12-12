@@ -66,8 +66,8 @@ The Statistical/ML Approach
  - Segementation and Pre-Sorting
      - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
         - Symptom severity
-        - Wait times and Site capacity
-        - Location and travel distance
+        - Age
+        - Using the Loading Function defined.
      - Re-Routing:
         - Just as Airports manage over-crowding by re-directing passengers, patients are guided to nearby MIUs or GP to reduce A&E congestion.
           
@@ -75,49 +75,100 @@ The Statistical/ML Approach
 ### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
  - Segmentation and Pre-Sorting
     - At airports: Pssangers are sorted into different terminals, gates, or check-in lines based on their destination, ticket class, or security needs, minimizing bottlenecks and confusion. The new self-service kiosk system that passengers use to check-in, select seats and print boarding passes.
-    - Applying it to the A&E: We can use a pre-arrival triage which can based on severity, age and attendance type. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details and give a ticket and path to direct patients to:
-       - Full A&E - The Emergency Department (for high-acuity cases)
-       - Minor Injuries Units (for low-acuity cases)
-       - GPs (for non-urgent cases)
-    - Patients can self-report symptoms via apps before arriving. The app can also dynamically re-route them to the correct site on real-time factors like distance, wait time and availability.
+    - Applying it to the A&E: We can use a pre-arrival triage which can based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
+       - A&E - The Emergency Department (for high-severity cases, eg. emergency operation)
+       - Minor Injuries Units (for low-severity cases, eg. cuts and wounds)
+       - GPs (for non-urgent cases, eg. cold and cough)
          
 - Visual Cues and Navigation
-   - We can see that airports have clear signage and real-time updates that help guide the passengers to the where they need to be. Passengers receive immediate and location-specific messages about gates, amenities and services in their devices. Displaying real-time information on way finding at central points. 
-   - Applying to the A&E: Implementing a clear signage and location-specific messaging system. This can be used to indicate priority lanes for elderly and new patients all while redirecting the other patients to the right service:
-      - "For minor injuries, you will be seen faster at this MIU"
-      - "Severe cases will be treated here; please proceed to A&E"
-        
- -  Anticipatory Resource Allocation
-    - At airports the number of service counters are open are adjusted dynamically based on the passenger inflow.
-    - Applying to the A&E: Using real-time monitoring similar to boarding queues to shft staff between departments or adjust priorities. We can also use the historical data to find out patterns and predict the patient inflow to adjust staff and resources.
+<p>At airports, passengers benefit from clear signage and real-time updates that guide them seamlessly to their respective gates or terminals, even if they’ve never been to the airport before. Key features include:</p>
 
-### Reason for using the <i>Loading Function</i> here?
- - The Loading Function quantifies how "loaded" an A&E site is in terms of its capacity and resources. It uses real-time data to dynamically assess site utilization, enabling informed decision-making to balance patient flow and optimize resource allocation.
- - Defining a Loading Function for A&E sites allows us to calculate how "loaded" each site is in real time. By using these scores to guide patient distribution and reduce imbalances across sites, we can optimize the flow of patients and ensure resources are used efficiently. This aligns with the principles of the Airport Style Management approach, which focuses on dynamic, data-driven decision-making to improve patient care.
+ - Location-Specific Information: Announcements and digital screens provide real-time details on flight schedules, boarding times, delays, and directions to amenities or services.
+ - Minimalistic Presentation: Only the essential information is displayed to avoid overwhelming passengers, with messages like:
+    - “Now Boarding: Gate 12”
+    - “Flight Delayed: Check Back at 2:00 PM”
    
-<h3>Here is how we can integrate the loading function into the Airport Analogy</h3>
- - Real Time Monitoring: Calculate the Load Score for each site periodically (e.g., every 15 minutes). Using software to visualize site scores across a dashboard, highlighting overloaded sites for immediate action.<br>
- - Patient Reallocation: Redirect non-urgent cases to sites with lower Load Scores to reduce pressure. Include Load Score calculations in backend algorithms to recommend the most appropriate site for incoming patients.<br>
- - Strategic Planning: Analyze historical Load Scores to identify persistent bottlenecks and inform long-term capacity planning. Use insights from the function to determine where and when should resorces be deployed during crises.<br>
-        
-### Enhanced Airport-Style Management along with the Loading Function
-  - Segementation and Pre-Sorting
-      - Improvement with the Loading Function: In addition to patient severity and syptoms, the Load Score becomes a key-factor in the pre-arrival triage:
-      - If Site A has a high load score and Site B has a low load score, non-urgent cases are rerouted to the Site B automatically.
-  - Real-Time updates adjust these scores, ensuring dynamic re-allocation
-  - Patients receive messages like:
-     - <i>"Site A is currently full. Please proceed to MIU Site B for faster care"</i>
-     - <i>"Estimated Wait Time at Site B: 2 hours. Estimated Wait Time at Site C: 30 mins"</i><br>
-  <b>Example: Apps or Kiosks can Compute the best A&E site option the following way: <br>Best A&E Site = min(Load Score + Travel Time)</b><br>
- - Visual Cues and Navigation
-     - Improvement with the loading function: Real-time load distribution is reflected in central signage or web apps, displaying current load and expected wait-times across A&E sites. The digital wayfinding signboards and directions will direct patients away from overburdened facilities towards less busy ones, reducing localised congestion. Example:
-        - "Site A: 90% capacity. Est. Wait Time: 2 hours."
-        - "Site B: 50% capacity. Est. Wait Time: 30 minutes."    
- - Anticipatory Resource Allocation
-     - Improvement with the loading function: The loading function can also predict resource needs and aid in staff alocation. Additional staff are allocated pre-emtively, or lower-priority cases are rerouted to reduce incoming demand load. Site A's load score predicts a spike in demand on specific days or during specific months using historic data combined with real-time monitoring to anticipate patterns. Example:
-        - "Site B witnesses a Monday morning surge, staff are scheduled accordingly."      
- ADD HOW THE PATIENT WILL GET THE E-TICKET FROM THE WEB - APP
-### Achieving Pre-Sorting and Utilizing the Loading Function
+- Applying to the A&E
+<p>We can adopt a similar approach to guide patients efficiently, ensuring they are directed to the appropriate facility or service with minimal confusion. Clear signage and real-time updates would provide patients with the necessary details at key decision points, such as entrances, waiting areas, or mobile apps.</p>
+<p>Examples of Minimalistic Messages</p>
+ 1. For Redirection to Minor Injury Units (MIUs):
+    - “Minor Injuries: Faster Care Available at MIU. Distance: 5 Miles | Travel Time: 10 Minutes”
+ 2. For Severe Cases in A&E:
+    - “Critical Cases: Emergency Care Available at A&E Level 2. Proceed to the Red Zone for Immediate Assistance.”
+ 3. General Guidance for Patients:
+    - “Wait Time Update: MIU: 15 Minutes | A&E: 2 Hours.”
+    - “Priority Lane for Elderly and First-Time Visitors: Follow the Blue Signs.”
+ 4. Entrance Signage Example:
+    - “Where to Go?”
+       - MIU: Non-Critical Injuries (Shorter Wait Time)
+       - A&E: Critical Conditions (Immediate Care for Emergencies)
+
+<h3>Reasons for this approach: </h3>
+ - Clarity: By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
+ - Efficiency: Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
+ - Trust: Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
+
+     
+ -  Anticipatory Resource Allocation
+<p>At airports, the number of open service counters is dynamically adjusted based on passenger inflow, ensuring efficiency and minimizing wait times. A&E departments can similarly optimize resource allocation by predicting patient inflow patterns and adjusting staffing and resources accordingly.</p>
+<p>Using Historical Data for Demand Prediction</p>
+
+ - By analyzing historical data, we can identify trends and seasonal patterns in patient demand.
+    - Example Patterns:
+       - Winter: Increased cases of colds, flu, and respiratory illnesses.
+       - Summer: Higher incidents of heat strokes, dehydration, and injuries from outdoor activities.
+       - Weekends or Holidays: Surge in emergencies related to accidents or recreational injuries.
+ - Based on this data, a predictive model can be developed to anticipate periods of high demand and guide resource allocation.
+
+<p>How It Works</p>
+
+ - Forecasting Demand: The predictive model uses historical trends, patient demographics, and other data (e.g., weather forecasts or public event schedules) to estimate patient inflow.
+ - Adjusting Staffing and Resources:
+    - Preemptive Scheduling: Ensure additional staff, such as nurses and physicians, are scheduled during high-demand periods identified by the model.
+    - Stockpile Management: Maintain adequate supplies of critical resources (e.g., IV fluids, medications) for expected seasonal conditions like flu surges or heatwaves.
+ - Scenario Planning: Use the model to simulate "what-if" scenarios, such as unexpected surges or prolonged high-demand periods, and plan contingency measures.
+
+<p>Why This Approach Works</p>
+
+ - Efficiency: Allocating resources based on predicted demand ensures optimal use of staff and facilities without overburdening any department.
+ - Proactivity: Rather than reacting to real-time conditions, this approach allows hospitals to prepare in advance, avoiding potential bottlenecks.
+ - Cost-Effectiveness: Focuses on using existing data and infrastructure for planning rather than investing in expensive real-time monitoring systems.
+
+### Using The Loading Function here:
+<p>The Loading Function provides a quantifiable measure of how "loaded" an A&E site is in terms of bed occupancy and patient wait times. By calculating a Load Score for each site, it enables real-time assessment of resource utilization, ensuring better management of patient flow and optimal allocation of resources.</p>
+
+<p>This aligns seamlessly with the Airport Management Analogy, where real-time data guides operational decisions to balance demand and improve the overall experience for both staff and patients.</p>
+
+### Integration of the Loading Function in the Airport Management Framework
+
+ 1. Backend System for Efficient Site Management: The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
+     - Real-Time Monitoring -- The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
+        - Green (Load Score < 50%): Manageable load.
+        - Yellow (Load Score 50%–80%): Approaching capacity.
+        - Red (Load Score >= 100%): Overloaded and requires immediate attention.
+     - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources, such as pre-positioning mobile units (e.g., Mega Hauler Trucks and Shipping Containers) to handle surges.
+     - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure.
+ 2. Web/App and Kiosk Interfaces for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
+    - Pre-Sorting Patients: When patients input their symptoms into the web app, kiosk, or mobile interface, the system determines the appropriate care type (e.g., ED, MIU, or GP).
+    - Directing Patients to the Optimal Site:
+       - The Loading Function identifies the best site based on the calculated Load Score, balancing proximity, resource availability, and wait times.
+       - Example Messages:
+          - “MIU at Site B has shorter wait times. Distance: 5 miles | Travel Time: 10 minutes.”
+          - “Emergency care available at A&E, Site A. Estimated Wait Time: 1 hour.”
+       - Real-Time Updates for Patients: Patients are informed of current site statuses using intuitive visuals, such as:
+          - “Site is free.”
+          - “Site is moderately busy.”
+          - “Site is at capacity.”
+ - Example Use Case -- A patient logs into the app to report symptoms of mild chest pain. The system:
+    1. Identifies the patient’s location and care type (Emergency Department required).
+    2. Calculates the Load Scores for nearby A&E sites and recommends the least burdened site.
+    3. Displays a recommendation:
+       - “Site A: Emergency care available. Distance: 7 miles | Travel Time: 12 minutes | Wait Time: 45 minutes.”
+    4. Generates an e-ticket with the site information, which the patient uses upon arrival for seamless check-in. 
+
+<p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
+
+### Achieving Pre-Sorting through the Web App, Utilizing the Loading Function
 <p>Using a Web App: Patients access a user-friendly web app where they enter essential details such as their name, age, symptoms, and the location they will be traveling from. The app processes this information to:</p>
 
 1. Determine the Type of Care Needed:
@@ -140,6 +191,51 @@ The Statistical/ML Approach
  - The patient’s details, already entered through the web app, are automatically loaded into the hospital’s system by simply scanning the QR code on the ticket.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
+### Achieving Pre-Sorting through Kiosks on Site
+<p>Using Kiosks at the Site: Patients who arrive directly at the A&E site can use user-friendly kiosks to streamline the registration and sorting process. Unlike the web app, kiosks do not need to calculate the Loading Function as the patient is already at the site. The kiosk generates a ticket based on the department the patient needs to visit.</p>
+
+<p>Process for Kiosk Usage</p>
+
+ 1. Inputting Patient Information:
+  - Patients use the kiosk to enter essential details such as:
+    - Name
+    - Date of Birth (DOB)
+    - Symptoms
+    - Allergies or Current Medications
+    - Contact Information (e.g., email)
+      
+ 2. Determining the Required Department:
+  - Based on the symptoms provided, the kiosk directs the patient to the appropriate department:
+    - Emergency Department (ED)
+    - Minor Injuries Unit (MIU)
+    - GP or other relevant services available at the site
+      
+ 3. Generating a Patient Ticket:
+  - The kiosk provides the patient with a printed or digital ticket containing:
+    - Patient Details: Name, DOB
+    - Department Name: Indicates where the patient needs to go (e.g., ED, MIU)
+    - Level/Location: The floor or area where the department is located (e.g., "Level 2, Red Zone")
+    - Ticket Number: A unique number to maintain queue order
+      
+  4. E-Ticket Delivery via Email:
+   - If the patient provides an email address, the kiosk can automatically send an e-ticket to their email.
+   - The e-ticket includes the same details as the printed ticket, ensuring patients have a backup and can easily retrieve their information if needed.
+
+<p>Streamlined On-Site Process</p>
+
+ - Patients proceed directly to the indicated department and present their ticket.
+ - Staff use the ticket information to quickly access the patient’s details, ensuring a smooth check-in and registration process.
+ - Patients with e-tickets can display them on their smartphones for scanning, further reducing paper usage and improving efficiency.
+
+<p>Why Kiosks are Effective</p>
+
+ - Reduced Queues at Reception: Kiosks automate the initial registration process, minimizing the need for staff intervention and reducing bottlenecks at the reception desk.
+ - Enhanced Patient Experience: Clear and concise ticketing eliminates confusion, helping patients navigate the site and reach the correct department efficiently.
+ - Seamless Integration: Tickets generated at the kiosk integrate with the hospital's system, ensuring staff have access to the patient’s information without delays.
+ - Digital Accessibility: Sending e-tickets via email provides an additional layer of convenience, ensuring patients have access to their ticket details even if they lose the printed version.
+   
+<p>This system complements the web app by providing similar functionality for walk-in patients, ensuring that pre-sorting and registration remain efficient regardless of how patients arrive at the site.</p>
+   
 <b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival at the site. Once scanned, the patient’s details—such as age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly.</b></p>
 
 <b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
