@@ -60,7 +60,7 @@ To simplify the complexity of patient management, categories are grouped and mod
       
 ### Loading function for System-Wide Balance
 The Statistical/ML Approach
- - To optimize resource distribution and patient flow across multiple sites, a loading function is used, incorporating real-time data:
+ - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload.:
     - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
        1. (Beds Occupied / Site Capacity) : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
        2. (Wait Time / Critical Wait Time) :
