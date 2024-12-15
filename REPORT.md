@@ -11,14 +11,37 @@
  - How can we improve patient understanding of the best facility to visit based on their condition?
 
 
-## Data Collection
-### Since all the data has already been provided already, here is a heatmap created to show the correlation between each data definition. The Correlation is being shown using the Spearman's rank Correlation. [From google - In statistics, Spearman's rank correlation coefficient or Spearman's ρ, named after Charles Spearman and often denoted by the Greek letter or as, is a nonparametric measure of rank correlation. It assesses how well the relationship between two variables can be described using a monotonic function.]
+## The Correlation Matrix
+### What is a Correlation Matrix -- A correlation matrix is a table that shows the correlation coefficients between variables. These coefficients measure the strength and direction of relationships: 
+
+ - Values range between -1 (perfect negative correlation) and 1 (perfect positive correlation).
+ - Positive correlation: As one variable increases, so does the other.
+ - Negative correlation: As one variable increases, the other decreases.
+ - Values near 0: Little to no linear relationship between the variables.
+
+<h3>Purpose and Usage of the Correlation Matrix</h3>
+
+<p>At the outset of this study, a correlation matrix was utilized to statistically analyze how the various variables provided in the dataset interact and influence one another. The correlation matrix highlights the relationships between key attributes such as Site Code, Patient Coordinates (Pat_X, Pat_Y), Number of Attendances, and Resource Availability (e.g., Site_Loc_GPs). By doing so, it serves as a foundational tool to identify patterns, dependencies, and areas of focus for decision-making. The matrix was crucial in understanding which variables are strongly intertwined and could provide actionable insights. Examples of its application include:</p>
+
+ 1. <b>Determining Key Relationships:</b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact. Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
+ 2. <b>Identifying Variables with Weak or No Correlation:</b> Site_Pop_20miles and Pat_Y (Correlation: -0.06): A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
+ 3. <b>Validating Assumptions for Resource Allocation:</b> Number_Of_Attendances and Site_Loc_GPs (Correlation: 0.12): A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
+
+<h3>Why the Correlation Matrix Matters</h3>
+<p>The correlation matrix is not just a statistical tool but a decision-making guide that was instrumental in:</p>
+
+ - Prioritizing Variables for Analysis: Understanding which factors (e.g., patient location, site capacity, GP coverage) are most influential in patient flow and resource utilization.
+ - Shaping Strategies: Using the identified relationships to design interventions like patient redistribution, optimal site selection and dynamic resource allocation.
+ - Validating Methodology: Ensuring that the chosen methods align with the statistical realities of the dataset.
 
 ![Correlation Matrix](output.png)
 
-## Objective: Focus on Worst Case Scenario
-### By using the worst-case scenario as the foundation for planning, the solution is designed to remain robust and efficient even during peak demand periods. 
-### Optimize patient flow and resource allocation in A&E departments under the worst-case scenario: all patients are unplanned, requiring immediate attention.
+<p>By incorporating the correlation matrix at the start of the analysis, we ensured that all subsequent decisions and models (e.g., the Loading Function, patient redirection strategies, and capacity planning) were grounded in data-driven insights, making the solutions more targeted, efficient, and impactful.</p>
+
+<hr>
+
+## Solving the Problem for the Worst-Case Scenario
+### By using the worst-case scenario as the foundation for planning, this solution is designed to remain robust and efficient even during periods of peak demand. It optimizes patient flow and resource allocation in A&E departments under the assumption that all patients are unplanned and require immediate attention.
 
 ## Mathematical Modelling - Queuing Theory & Loading Function for Managing Patient Flow
 
