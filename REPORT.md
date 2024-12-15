@@ -60,7 +60,7 @@ To simplify the complexity of patient management, categories are grouped and mod
       
 ### Loading function for System-Wide Balance
 The Statistical/ML Approach
- - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload.:
+ - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload:
     - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
        1. (Beds Occupied / Site Capacity) : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
        2. (Wait Time / Critical Wait Time) :
@@ -217,7 +217,7 @@ The Statistical/ML Approach
  - The patient’s details, already entered through the web app, are automatically loaded into the hospital’s system by simply scanning the QR code on the ticket.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
-### Achieving Pre-Sorting through Kiosks on Site
+### Achieving Pre-Sorting through Kiosks on Site: Health Check-In Kiosk 
 <p>Using Kiosks at the Site: Patients who arrive directly at the A&E site can use user-friendly kiosks to streamline the registration and sorting process. Unlike the web app, kiosks do not need to calculate the Loading Function as the patient is already at the site. The kiosk generates a ticket based on the department the patient needs to visit.</p>
 
 <p>Process for Kiosk Usage</p>
@@ -253,7 +253,7 @@ The Statistical/ML Approach
  - Staff use the ticket information to quickly access the patient’s details, ensuring a smooth check-in and registration process.
  - Patients with e-tickets can display them on their smartphones for scanning, further reducing paper usage and improving efficiency.
 
-<p>Why Kiosks are Effective</p>
+<p>Why the Health Check-In Kiosks are Effective</p>
 
  - Reduced Queues at Reception: Kiosks automate the initial registration process, minimizing the need for staff intervention and reducing bottlenecks at the reception desk.
  - Enhanced Patient Experience: Clear and concise ticketing eliminates confusion, helping patients navigate the site and reach the correct department efficiently.
@@ -315,18 +315,31 @@ The Statistical/ML Approach
   - Gives patients a safe, uplifting space to smile and relax during stressful situations.<br>
   <br>
   <b><u>Addressing the Problem of Missing Calls</u></b>
-   <p>- A valid concern with board games is that participants might become so engrossed in the activity that they miss their turn for treatment. To mitigate this:</p>
-    1. Digital Alerts:<br>
-     - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.<br>
-    2. Visual and Audio Cues:<br>
-     - Use large digital displays and frequent announcements to call out patient numbers.<br>
-     - Announcements like, “Patient 45, please proceed to Triage Room 2,” ensure players are aware of their turn.<br>
-    3. Dedicated Staff:<br>
-     - Assign staff members to monitor the games and remind patients when their turn is near.<br>
-    4. Game Design:<br>
-     - Introduce shorter, time-limited games (e.g., 10–15 minutes) to minimize the risk of prolonged distractions.<br>
-     - Games can have pause-friendly mechanics, allowing participants to rejoin after their treatment.<br>
-     <br>
+   <p>One concern with hosting board games in A&E waiting areas is that patients might become so engrossed in the activity that they miss their turn for treatment. To mitigate this, we propose the following strategies:</p>
+  1. Digital Alerts:
+    
+   - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.
+
+
+  2. Visual and Audio Cues:
+     
+   - Use large digital displays and frequent announcements to call out patient numbers.
+   - Large digital displays and regular announcements (e.g., “Patient 45, please proceed to Triage Room 2”) help ensure that players remain aware of their position in the queue.
+     
+  3. Dedicated Staff:
+    
+   - Assign a staff member to oversee game sessions, ensuring players are reminded when their turn is near and can leave promptly without confusion.
+     
+  4. Game Selection:
+
+   - Introduce shorter, time-limited games (e.g., 10–15 minutes) to minimize the risk of prolonged distractions.<br>
+   - Host only short-form games or games that allow players to step away without disrupting others. Examples:
+     - Carrom: A quick, interactive game that lets players leave mid-round without halting the game.
+     - Uno or Card Games: Simple, fast-paced games where players can step out and others can continue seamlessly.
+     - Puzzle Tables: Collaborative jigsaw puzzles that don’t require a fixed number of participants and can be completed over time.
+       
+<p>Selecting activities that encourage participation while accommodating the dynamic nature of waiting times, these measures ensure patients can enjoy a positive, engaging experience without risking missed calls or delays in treatment.</p>
+
  <p><b>Incorporating casino-inspired strategies, such as visual indicators, engaging activities, and perception management, transforms the waiting experience. The combination of colored e-tickets and board games not only enhances patient satisfaction but also aligns with the overarching goal of improving patient flow while maintaining an emotionally positive environment. Clear, tech-driven solutions address potential issues, ensuring that no one misses their turn while enjoying these innovative features.</b></p>
 <hr>
 
@@ -355,16 +368,33 @@ The Statistical/ML Approach
 
 ### Data Collection: To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient.
 
- - Things to consider:
-    - Patients may not be at home, and dense population/traffic flow might be better indicators.
-       <p>So instead of solely relying on Patients X and Y, integrate data about population density and traffic flow patterns for specific days and hours. Using the weighted-mean of high-traffic areas or population centres during peak demand times to better predict the optimal new department location. Leveraging data like: mobile phone density or traffic counters (if available) and Pat_Loc_GPs to identify regions with high patient registrations.</p>
+<h4>We will make the following Assumptions</h4>
+<p>For the purposes of this analysis and planning, we make the following assumptions:</p>
+
+ 1. Available Space for Expansion:
+    - We assume that the optimal site identified for new satellite locations is either empty or has sufficient space available to accommodate the new department.
+ 2. Regulatory Approvals:
+    - It is assumed that the necessary regulatory approvals, such as zoning permissions and adherence to building codes, have been secured to allow for the construction of these new satellite sites.
+ 3. Infrastructure and Transport Feasibility:
+    - The satellite sites will be situated in locations with adequate transport infrastructure to support quick and reliable patient transfers between the satellite and associated main sites. This includes the availability of ambulances, well-maintained road networks, and manageable response times.
+ 4. Financial Feasibility:
+    - We assume that sufficient funding is available to establish and operate these new satellite sites, including the costs for construction, staffing, and equipment procurement.
+ 5. Population and Traffic Flow Considerations:
+     - Patients may not always be at home when they require care; hence, high-traffic areas or densely populated zones are assumed to be better indicators for site placement.
+
+ - **Something to consider: Patients may not be at home they might be at office or in the supermarket, hence, dense population/traffic flow might be better indicators.**
+ 
+<p>To further enhance placement decisions, data such as population density, traffic flow patterns, and patient registration statistics (e.g., Pat_Loc_GPs) will be integrated into the site selection process. These insights, combined with tools like weighted-mean calculations, help predict demand in real time, particularly during peak hours or seasons.</p>
 
 <h4>New Satellite Sites Integrated with Emergency, Minor Injuries Unit, and GP Services</h4>
-<p>Create new, smaller-scale sites integrated with **Emergency Life-Saving Services**, **Minor Injuries Unit (MIU)**, and **GP services**. These satellite sites will be associated with **Main Sites**, ensuring a seamless connection to higher-level care when necessary. The satellite sites will act as a first point of care, providing life-saving support and essential services until a patient can be transferred to the main site if their condition escalates.</p> <p>Each satellite site will be tagged with a **Site Code**, associating it with its corresponding Main Site to ensure continuity of care. This avoids isolating critical care services and enables efficient escalation protocols. For example, a satellite site associated with Site_Code: 2 could also handle **telemedicine consultations** or **urgent care services**. Clear rules will be in place for transferring patients with escalating conditions from satellite sites to their associated Main Site. For instance, if a patient’s condition is flagged as critical at a satellite unit, immediate transport to Main_Site will be initiated. In the meantime, the satellite site will provide essential life-saving care, acting as a critical support system until the patient reaches the main A&E facility.</p>
+<p>We propose the creation of new, smaller-scale **satellite sites** that integrate **Emergency Life-Saving Services**, **Minor Injuries Units (MIU)**, and **GP services**. These sites will be strategically associated with **Main Sites** to ensure continuity of care, efficient patient transfers, and access to advanced facilities when required.</p>
 
-  <h4>Assumptions</h4>
-  <p>We will also make the assumption that the optimal site that we have found is either empty or has an available space to incorporate the new department. While assuming available space is practical for initial calculations, it is essential to analyze real-world constraints like land availability, building costs, and zoning laws. Using cost-weighted decision-making to prioritize feasible locations. we must also consider the Main Site transport feasbility. Ensure that transport infrastructure supports quick patient transfers between satellites and main sites. Factoring in the availability of an ambulance and average response times.</p>
+ - Key Assumptions:
+    - It is assumed that space for these sites is available and suitable for construction without significant delays or obstacles.
+    - Regulatory and legal barriers, such as zoning laws and site approvals, are assumed to be addressed before implementation.
+    - Financial resources for building, equipping, and staffing these satellite sites are assumed to be available, ensuring operational readiness.
 
+<p>Satellite sites will act as the first point of care, providing essential services such as life-saving treatment and telemedicine consultations until patients can be transferred to the main site for escalated care. Each satellite site will be tagged with a **Site Code**, ensuring seamless integration with the main A&E system. For example, a satellite site associated with **Site_Code: 2** could also support telemedicine, urgent care, or diagnostic services. Clear escalation protocols will be in place to guide patient transfers when necessary. For instance, a critical patient flagged at a satellite site will receive life-saving care on-site while arrangements for immediate transport to the associated Main Site are made. This ensures no interruption in the continuity of care.</p>
        
 ### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
  
