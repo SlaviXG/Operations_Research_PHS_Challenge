@@ -206,6 +206,7 @@ The Statistical/ML Approach
 3. Generate a Patient Ticket:
  - The app provides the patient with a ticket using patients details:
  - Patient Details: Patient Name, Patient DOB (Age), Patient Contact, Symptoms, Medications/Allergies, Patient Location.
+  - QR Code: This can be scanned to directly load all the patient details previously entered into the system.
   - Site Code: The identifier for the recommended site.
   - Site Type: Specifies the type of site (e.g., ED, MIU).
   - Site Location: Address of the Site.
@@ -248,10 +249,10 @@ The Statistical/ML Approach
       
  3. Generating a Patient Ticket:
   - The kiosk provides the patient with a printed or digital ticket containing:
-    - Patient Details: Name, DOB
-    - Department Name: Indicates where the patient needs to go (e.g., ED, MIU)
-    - Level/Location: The floor or area where the department is located (e.g., "Level 2, Red Zone")
-    - Ticket Number: A unique number to maintain queue order
+    - QR Code: This can be scanned to directly load all the patient details previously entered into the system.
+    - Priority Level: Displays the acuity level based on the patient’s symptoms, indicating whether the case is high acuity (urgent) or low acuity (non-urgent). 
+    - Waiting Room Number: The number assigned to the waiting room where the patient must wait.
+    - Ticket Number: A unique number to maintain queue order.
       
   4. E-Ticket Delivery via Email:
    - If the patient provides an email address, the kiosk can automatically send an e-ticket to their email.
@@ -271,7 +272,11 @@ The Statistical/ML Approach
  - Digital Accessibility: Sending e-tickets via email provides an additional layer of convenience, ensuring patients have access to their ticket details even if they lose the printed version.
    
 <p>This system complements the web app by providing similar functionality for walk-in patients, ensuring that pre-sorting and registration remain efficient regardless of how patients arrive at the site.</p>
+<br>
 
+![Sample Ticket with QR Code](kiosk.png) 
+
+<br>
 <hr>
 
 ### Casino Psychology for Behavioural Guidance
