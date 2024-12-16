@@ -208,14 +208,24 @@ The Statistical/ML Approach
  - Patient Details: Patient Name, Patient DOB (Age), Patient Contact, Symptoms, Medications/Allergies, Patient Location.
   - Site Code: The identifier for the recommended site.
   - Site Type: Specifies the type of site (e.g., ED, MIU).
-  - Site Location: Clear directions to the recommended site.
+  - Site Location: Address of the Site.
   - Ticket Number: A unique identifier for the patient.
-  - Travel Time to the Nearest Site & Estimated Wait Time: Transparency on how long the journey and waiting might take.
+  - Status of the Site: The current level of congestion or occupancy at the site.
     
 4. Streamlined On-Site Process:
  - Upon arrival at the site, the patient shows their ticket and a valid ID, which can be referred to by staff.
  - The patient’s details, already entered through the web app, are automatically loaded into the hospital’s system by simply scanning the QR code on the ticket.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
+   
+<b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival at the site. Once scanned, the patient’s details—such as age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly.</b></p>
+
+<b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
+
+<b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
+<br>
+![Sample Ticket with QR Code](E_Ticket.png) 
+
+<br>
 
 ### Achieving Pre-Sorting through Kiosks on Site: Health Check-In Kiosk 
 <p>Using Kiosks at the Site: Patients who arrive directly at the A&E site can use user-friendly kiosks to streamline the registration and sorting process. Unlike the web app, kiosks do not need to calculate the Loading Function as the patient is already at the site. The kiosk generates a ticket based on the department the patient needs to visit.</p>
@@ -261,14 +271,7 @@ The Statistical/ML Approach
  - Digital Accessibility: Sending e-tickets via email provides an additional layer of convenience, ensuring patients have access to their ticket details even if they lose the printed version.
    
 <p>This system complements the web app by providing similar functionality for walk-in patients, ensuring that pre-sorting and registration remain efficient regardless of how patients arrive at the site.</p>
-   
-<b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival at the site. Once scanned, the patient’s details—such as age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly.</b></p>
 
-<b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
-
-<b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
-<br>
-![Sample Ticket with QR Code](E_Ticket.png) 
 <hr>
 
 ### Casino Psychology for Behavioural Guidance
