@@ -1,5 +1,8 @@
 # Operational Research Challenge
 
+### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
+(This is to get the reader interested from the start)
+
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services within a defined geographic area. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
@@ -564,6 +567,8 @@ If expansion is viable, direct focus on increasing staffing levels and patient b
 
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
+### Creating New Department: A very Fast Service Department. But How?
+
 ### HERO: Health Emergency Response Operations
 
 ### Addressing the Expansion
@@ -611,10 +616,17 @@ Equip containers with interchangeable interiors so they can serve multiple roles
     - Community health education centers.
     - Vaccination campaigns or outreach initiatives.
     - Telemedicine hubs, providing remote consultations for underserved areas and over crowded areas.
-      
-### Note: Where will the people wait for the Mobile Units as you know Scotland can indeed get very cold and standing outside is just not very comfortable. What will be the waiting area for these Mobile Units?
 
-### Creating New Department: A very Fast Service Department. But How?
+   <h4>Thinsg to Address:</h4>
+   <p>The following are the potential questions that come up - </p>
+    - How quickly can the mobile units be deployed and reach the site in ready to use condition?
+    - What are the limitations in handling severe cases or only low-acuity conditions will be handled here?
+    - Could staffing the mobile units be a bottleneck in extreme surge conditions?
+
+   <h4>Strategies to mitigate these hurdles</h4>
+   <p>TO DO</p>   
+
+### Note: Where will the people wait for the Mobile Units as you know Scotland can indeed get very cold and standing outside is just not very comfortable. What will be the waiting area for these Mobile Units?
 
 ### Based on all of this how would the solution change:
    <h4>Existing Solution includes: </h4>
