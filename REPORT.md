@@ -34,7 +34,7 @@
  - Shaping Strategies: Using the identified relationships to design interventions like patient redistribution, optimal site selection and dynamic resource allocation.
  - Validating Methodology: Ensuring that the chosen methods align with the statistical realities of the dataset.
 
-![Correlation Matrix](../data_vis_assets/output.png)
+<img alt="Correlation Matrix" src="/data_vis_assets/output.png">
 
 <p>By incorporating the correlation matrix at the start of the analysis, we ensured that all subsequent decisions and models (e.g., the Loading Function, patient redirection strategies, and capacity planning) were grounded in data-driven insights, making the solutions more targeted, efficient, and impactful.</p>
 
