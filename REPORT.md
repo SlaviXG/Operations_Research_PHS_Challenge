@@ -424,7 +424,7 @@ The Statistical/ML Approach
 <p>To further enhance placement decisions, data such as population density, traffic flow patterns, and patient registration statistics (e.g., Pat_Loc_GPs) will be integrated into the site selection process. These insights, combined with tools like weighted-mean calculations, help predict demand in real time, particularly during peak hours or seasons.</p>
 
 <h4>New Satellite Sites Integrated with Emergency, Minor Injuries Unit, and GP Services</h4>
-<p>We propose the creation of new, smaller-scale **satellite sites** that integrate **Emergency Life-Saving Services**, **Minor Injuries Units (MIU)**, and **GP services**. These sites will be strategically associated with **Main Sites** to ensure continuity of care, efficient patient transfers, and access to advanced facilities when required.</p>
+<p>We propose the creation of new, smaller-scale <b>Satellite Sites</b> that integrate <b>Emergency Life-Saving Services</b>, <b>Minor Injuries Units (MIU)</b>, and <b>GP services</b>. These sites will be strategically associated with Main Sites to ensure continuity of care, efficient patient transfers, and access to advanced facilities when required.</p>
 
  - Key Assumptions:
     - It is assumed that space for these sites is available and suitable for construction without significant delays or obstacles.
@@ -613,6 +613,8 @@ Equip containers with interchangeable interiors so they can serve multiple roles
     - Telemedicine hubs, providing remote consultations for underserved areas and over crowded areas.
       
 ### Note: Where will the people wait for the Mobile Units as you know Scotland can indeed get very cold and standing outside is just not very comfortable. What will be the waiting area for these Mobile Units?
+
+### Creating New Department: A very Fast Service Department. But How?
 
 ### Based on all of this how would the solution change:
    <h4>Existing Solution includes: </h4>
