@@ -46,7 +46,7 @@ plt.xlabel('Pat_X (Patient X Coordinate)')
 plt.ylabel('Pat_Y (Patient Y Coordinate)')
 plt.legend(loc='upper left', bbox_to_anchor=(0, 1.05), borderaxespad=0.)
 plt.grid()
-plt.savefig("kmeans_clusters.png", dpi=300)
+plt.savefig("./data_vis_assets/kmeans_clusters.png", dpi=300)
 plt.show()
 
 print("Cluster Centroids (Patient Locations):")
