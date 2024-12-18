@@ -357,17 +357,45 @@ The Statistical/ML Approach
  <b>Event-Driven Process Chains (EPC) and State Tables</b>
  - Document the flow of patients through the system using EPCs or state tables to:
     - Identify ineffeciencies and decision points.
-    - Clearly define transitions, eg:
-       - Patient Arrival -> Triage -> Department Assignment -> Treatment -> Exit.
+    - Clearly define transitions.
  - Incorporate automation triggers, eg: re-routing based on load scores.
 
-### 1. Patient is at the site already.
+### 1. Patient is at the site already. (On-Site Flow)
+
+<p>This diagram outlines the patient’s flow when they are physically present at the healthcare site:</p>
+
+ 1. Patient Arrival at Site: Upon arrival, the patient begins the process at a self-service kiosk.
+ 2. Triage and Ticket Generation: The kiosk collects the patient’s name, date of birth (age), symptoms, allergies, or current medications, and generates a ticket with a unique identifier.
+ 3. Symptom-Based Decision: The system analyzes the symptoms and assigns the patient to the appropriate department or waiting room.
+ 4. Patient Directed to Department: The patient is directed to their designated department based on symptom severity and department availability.
+ 5. Arrival at Assigned Department: The patient arrives at the assigned department where further assessment begins.
+ 6. Department-Specific Process:
+      - For Minor Injuries Unit (MIU) or other non-urgent care: Patients are treated on a first-come, first-served basis.
+      - For Emergency Department (ED): Patients are prioritized based on acuity levels determined by their symptoms.
+ 7. Treatment and Completion: Once treatment is completed, the patient either exits the care flow or is admitted for further care based on their condition.
+
+<p>This structured flow ensures that patients already on-site are efficiently triaged, directed to the correct department, and treated based on urgency.</p>
 
 ![Patient at Site](./dat_vis_assets/arrived.jpg)
 
 <hr>
 
-### 2. Patient is not at the site(patient at home/office/etc.) - Care Routing System (CRS)
+### 2. Patient is not at the site (patient at home/office/etc.) - Care Routing System (CRS)
+
+<p>This diagram explains the process for patients accessing care remotely using a web application:</p>
+
+ 1. Patient Seeks Care: The patient initiates the care process from home, office, or another location.
+ 2. Access Web App: The patient logs into the web application and enters relevant medical details such as symptoms, allergies, and current medications.
+ 3. System Analysis and Ticket Generation: The system analyzes the input to determine the optimal A&E site, calculates the best time to visit, and generates a digital ticket with a QR Code and unique identifier.
+ 4. Symptom-Based Decision: The system determines the appropriate department based on symptom severity and site availability.
+ 5. Patient Arrival at Site: Upon arrival, the patient’s ticket is scanned at the site, and all pre-entered medical details are automatically retrieved into the system.
+ 6. Patient Directed to Department: Based on the retrieved details, the patient is directed to the appropriate department for care.
+ 7. Department-Specific Process:
+      - For Minor Injuries Unit (MIU) or other non-urgent care: Patients are treated on a first-come, first-served basis.
+      - For Emergency Department (ED): Patients are prioritized based on acuity levels determined by their symptoms.
+ 8. Treatment and Completion: Treatment begins promptly, and once completed, the patient either exits the care process or is admitted for further care as needed.
+
+<p>This remote care process enables patients to pre-register for care, reducing delays upon arrival and ensuring they are efficiently directed and treated based on symptom urgency.</p>
 
 ![Patient Not at Site](./dat_vis_assets/home.jpg)
 
