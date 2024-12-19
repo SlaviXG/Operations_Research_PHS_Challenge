@@ -635,14 +635,32 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 
    <h4>Thinsg to Address:</h4>
    <p>The following are the potential questions that come up - </p>
-    - How quickly can the mobile units be deployed and reach the site in ready to use condition?
+    - How quickly can the mobile units be prepared and deployed to the site in ready to use condition?
     - What are the limitations in handling severe cases or only low-acuity conditions will be handled here?
     - Could staffing the mobile units be a bottleneck in extreme surge conditions?
 
    <h4>Strategies to mitigate these hurdles</h4>
-   <p>TO DO</p>   
+   1. <b>Deployment Speed:</b>
+      - Mobile units will be deployed within 2-4 hours from their designated hangars to the target site.
+      - Deployment decisions will be based on pre-emptive analysis of site overloads, identified using the [Loading Function](#loading-function-for-system-wide-balance)
+      - For extreme conditions, such as when the [Load Score](#loading-function-for-system-wide-balance) exceeds 150%, the mobile units will be mobilized immediately to alleviate pressure on overwhelmed sites.
+   2. Case Handling Capacity:
+      - The mobile units will primarily handle low-acuity and medium-acuity cases, such as minor injuries, mild respiratory issues, fractures, or dehydration.
+      - Each mobile unit will include a fully equipped life support module (similar to those found in ambulances) to stabilize patients with severe conditions until they can be transferred to the main A&E site if necessary.
+   3. Staffing Preparedness:
+      - A specialized team will be pre-assigned and on standby to staff the mobile units during surge conditions.
+      - Staff allocation will be planned in advance, ensuring there is no delay in deployment. This includes creating a roster of healthcare professionals trained specifically for mobile unit operations.
 
-### Note: Where will the people wait for the Mobile Units as you know Scotland can indeed get very cold and standing outside is just not very comfortable. What will be the waiting area for these Mobile Units?
+   <h4>Question: Where will patients wait for the Mobile Units, especially in cold or harsh weather conditions</h4>
+
+   <h4>Answer: </h4>
+   <p>To ensure patient comfort while waiting for Mobile Units, Inflatable Heated Tents will be deployed alongside the units. These tents will serve as temporary waiting areas and will be equipped with:</p>
+   1. Heating Systems: To keep the interior warm and comfortable during cold weather.
+   2. Seating Arrangements: Foldable chairs or benches to provide adequate seating for patients and accompanying family members.
+   3. Lighting and Visibility: Proper lighting to ensure the space is functional during night hours.
+   4. Durable and Weather-Resistant Materials: The tents will be made from robust, weather-resistant materials to withstand adverse conditions like wind, rain, or snow.
+
+   <p>These tents can be rapidly inflated and set up within minutes, ensuring minimal delays and providing a safe, sheltered environment for patients while they wait for their turn to receive care. This solution is cost-effective, portable, and highly efficient, catering to the unpredictable weather conditions.</p>
 
 ### Based on all of this how would the solution change:
    <h4>Existing Solution includes: </h4>
