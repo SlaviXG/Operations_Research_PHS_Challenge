@@ -668,16 +668,17 @@ Equip containers with interchangeable interiors so they can serve multiple roles
    <p>These tents can be rapidly inflated and set up within minutes, ensuring minimal delays and providing a safe, sheltered environment for patients while they wait for their turn to receive care. This solution is cost-effective, portable, and highly efficient, catering to the unpredictable weather conditions.</p>
 
 ### Based on all of this how would the solution change:
+
    <h4>Existing Solution includes: </h4>
 
-    - Queuing Theory: No Change required for this as it can be applied to the Mobile Units as well.
-    - Loading Function: The loading function will updated here and instead of using the large scale version where we would find the optimal Site Locationfor the patient, we will use the loading function on a smaller scale to direct patients to either the Main SIte or the Mobile Units based on the Patient_Wait_Time/Age_Group/Symptom_Severity. Load Score adjusted to: Patient_Wait_Time + Age_Group + Symptom_Severity.  
-    - Airport Style Management System:
+   - Queuing Theory: No Change required for this as it can be applied to the Mobile Units as well.
+   - Loading Function: The loading function will updated here and instead of using the large scale version where we would find the optimal Site Locationfor the patient, we will use the loading function on a smaller scale to direct patients to either the Main SIte or the Mobile Units based on the Patient_Wait_Time/Age_Group/Symptom_Severity. Load Score adjusted to: Patient_Wait_Time + Age_Group + Symptom_Severity.  
+   - Airport Style Management System:
       - Self-Service Kiosk: Will also be updated
       - Clear Signage: No Change, there will still be clear signage for directing the patients to in the Main Site Building or the Mobile Units.   
       - Screens Displaying the real-time data: All the screens displaying the real-time data will show a split view of the data between the Main Site Building and the Mobile Unit at the Site.    
       - Pre-Sorted Ticket: The Pre-Sorted ticket  
-    - Casino Pschology: No change here either, the same 
+   - Casino Pschology: No change here either, the same 
   
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
