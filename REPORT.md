@@ -26,9 +26,9 @@
 
 <p>At the outset of this study, a correlation matrix was utilized to statistically analyze how the various variables provided in the dataset interact and influence one another. The correlation matrix highlights the relationships between key attributes such as Site Code, Patient Coordinates (Pat_X, Pat_Y), Number of Attendances, and Resource Availability (e.g., Site_Loc_GPs). By doing so, it serves as a foundational tool to identify patterns, dependencies, and areas of focus for decision-making. The matrix was crucial in understanding which variables are strongly intertwined and could provide actionable insights. Examples of its application include:</p>
 
- 1. <b>Determining Key Relationships:</b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact.<br> Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
- 2. <b>Identifying Variables with Weak or No Correlation:</b> Site_Pop_20miles and Pat_Y (Correlation: -0.06): A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
- 3. <b>Validating Assumptions for Resource Allocation:</b> Number_Of_Attendances and Site_Loc_GPs (Correlation: 0.12): A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
+ 1. <b>Determining Key Relationships:<br></b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact.<br> Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
+ 2. <b>Identifying Variables with Weak or No Correlation:<br></b> Site_Pop_20miles and Pat_Y (Correlation: -0.06): A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
+ 3. <b>Validating Assumptions for Resource Allocation:<br></b> Number_Of_Attendances and Site_Loc_GPs (Correlation: 0.12): A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
 
 <h3>Why the Correlation Matrix Matters</h3>
 <p>The correlation matrix is not just a statistical tool but a decision-making guide that was instrumental in:</p>
@@ -47,8 +47,8 @@
 ### By using the worst-case scenario as the foundation for planning, this solution is designed to remain robust and efficient even during periods of peak demand. It optimizes patient flow and resource allocation in A&E departments under the assumption that all patients are unplanned and require immediate attention.
 
 ## Mathematical Modelling for Managing Patient Flow Using: 
-##  - Queuing Theory 
-##  - Loading Function 
+###  - Queuing Theory 
+###  - Loading Function 
 
 ### Queuing Theory for Grouped Patients
 
@@ -97,12 +97,12 @@ To simplify the complexity of patient management, categories are grouped and mod
            - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
          
 ## Course of Action: Hybrid approach between the following to acheive efficient patient flow
-## - Airport Flow Management
-## - Casino Psychology 
+### - Airport Flow Management
+### - Casino Psychology 
 
-### An Airport-Inspired Attendance Managemnet System
+### An Airport-Inspired Managemnet System
  - Segementation and Pre-Sorting
-     - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
+     - Similar to how passengers are assigned to terminals and gates at an airport, patients can be sorted pre-arrival at the A&E sites based on:
         - Symptom severity
         - Age
         - Using the Loading Function defined.
@@ -112,47 +112,51 @@ To simplify the complexity of patient management, categories are grouped and mod
 ## The Airport Analogy
 ### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
  - Segmentation and Pre-Sorting
-    - At airports: Pssangers are sorted into different terminals, gates, or check-in lines based on their destination, ticket class, or security needs, minimizing bottlenecks and confusion. The new self-service kiosk system that passengers use to check-in, select seats and print boarding passes.
-    - Applying it to the A&E: We can use a pre-arrival triage which can based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
+    - At airports passangers are sorted into different terminals, gates, or check-in lines based on their destination, ticket class, or security needs, minimizing bottlenecks and confusion. Ever since the introduction of the self-service kiosk system, passengers can now check-in, select seats, and print boarding passes independently, streamlining the check-in process and reducing wait times."
+    - Applying it to the A&E: We can create a similar system based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
        - A&E - The Emergency Department (for high-severity cases, eg. emergency operation)
        - Minor Injuries Units (for low-severity cases, eg. cuts and wounds)
        - GPs (for non-urgent cases, eg. cold and cough)
+       - The specific department/waiting room of the A&E site (eg. Waiting Room Number: 2).
          
-- Visual Cues and Navigation
+<h4>Visual Cues and Navigation</h4>
 <p>At airports, passengers benefit from clear signage and real-time updates that guide them seamlessly to their respective gates or terminals, even if they’ve never been to the airport before. Key features include:</p>
 
- - Location-Specific Information: Announcements and digital screens provide real-time details on flight schedules, boarding times, delays, and directions to amenities or services.
+ - Location-Specific & Real Time Information: Announcements and digital screens provide real-time details on flight schedules, boarding times, delays, and directions to amenities or services.
  - Minimalistic Presentation: Only the essential information is displayed to avoid overwhelming passengers, with messages like:
     - “Now Boarding: Gate 12”
     - “Flight Delayed: Check Back at 2:00 PM”
    
-- Applying to the A&E
-<p>We can adopt a similar approach to guide patients efficiently, ensuring they are directed to the appropriate facility or service with minimal confusion. Clear signage and real-time updates would provide patients with the necessary details at key decision points, such as entrances, waiting areas, or mobile apps.</p>
+<h4>Applying to the A&E</h4>
+<p>We can adopt a similar approach to guide patients efficiently, ensuring they are directed to the appropriate site or department with minimal confusion. Clear signage and real-time updates would provide patients with the necessary details at key decision points, such as entrances, waiting areas, near cafes.</p>
 
-<p>Examples of Minimalistic Messages</p>
+### NOTE: Create sample screen Display for the Site including Current Time
+
+<p>Examples of Minimalistic Messages: </p>
 
  1. For Redirection to Minor Injury Units (MIUs):
     - “Minor Injuries: Faster Care Available at MIU. Distance: 5 Miles | Travel Time: 10 Minutes”
  2. For Severe Cases in A&E:
     - “Critical Cases: Emergency Care Available at A&E Level 2. Proceed to the Red Zone for Immediate Assistance.”
  3. General Guidance for Patients:
-    - “Wait Time Update: MIU: 15 Minutes | A&E: 2 Hours.”
+    - “Departments: MIU: 15 mins Wait Time | ED: 120 mins Wait Time.”
     - “Priority Lane for Elderly and First-Time Visitors: Follow the Blue Signs.”
  4. Entrance Signage Example:
-    - “Where to Go?”
-       - MIU: Non-Critical Injuries (Shorter Wait Time)
-       - A&E: Critical Conditions (Immediate Care for Emergencies)
+    - “Where to Go - ”
+       - MIU: "Non-Critical Injuries (30 mins Wait Time)"
+       - A&E: "Critical Conditions (5 mins Wait Time)"
 
 <h3>Reasons for this approach: </h3>
 
- - Clarity: By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
- - Efficiency: Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
- - Trust: Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
+ - <b>Clarity:</b> By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
+ - <b>Efficiency:</b> Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
+ - <b>Trust:</b> Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
      
 <h3>Anticipatory Resource Allocation</h3>
 
 <p>At airports, the number of open service counters is dynamically adjusted based on passenger inflow, ensuring efficiency and minimizing wait times. A&E departments can similarly optimize resource allocation by predicting patient inflow patterns and adjusting staffing and resources accordingly.</p>
-<p>Using Historical Data for Demand Prediction</p>
+
+<h4>Using Historical Data for Demand Prediction</h4>
 
  - By analyzing historical data, we can identify trends and seasonal patterns in patient demand.
     - Example Patterns:
@@ -161,19 +165,19 @@ To simplify the complexity of patient management, categories are grouped and mod
        - Weekends or Holidays: Surge in emergencies related to accidents or recreational injuries.
  - Based on this data, a predictive model can be developed to anticipate periods of high demand and guide resource allocation.
 
-<p>How It Works</p>
+<h4>How It Works</h4>
 
- - Forecasting Demand: The predictive model uses historical trends, patient demographics, and other data (e.g., weather forecasts or public event schedules) to estimate patient inflow.
- - Adjusting Staffing and Resources:
-    - Preemptive Scheduling: Ensure additional staff, such as nurses and physicians, are scheduled during high-demand periods identified by the model.
-    - Stockpile Management: Maintain adequate supplies of critical resources (e.g., IV fluids, medications) for expected seasonal conditions like flu surges or heatwaves.
- - Scenario Planning: Use the model to simulate "what-if" scenarios, such as unexpected surges or prolonged high-demand periods, and plan contingency measures.
+ - <b>Forecasting Demand:</b> The predictive model uses historical trends, patient demographics, and other data (e.g., weather forecasts or public event schedules) to estimate patient inflow.
+ - <b>Adjusting Staffing and Resources:</b>
+    - <i>Preemptive Scheduling: Ensure additional staff, such as nurses and physicians, are scheduled during high-demand periods identified by the model.</i>
+    - <i>Stockpile Management: Maintain adequate supplies of critical resources (e.g., IV fluids, medications) for expected seasonal conditions like flu surges or heatwaves.</i>
+ - <b>Scenario Planning:</b> Use the model to simulate "what-if" scenarios, such as unexpected surges or prolonged high-demand periods, and plan contingency measures.
 
-<p>Why This Approach Works</p>
+<h4>Why This Approach Works</h4>
 
- - Efficiency: Allocating resources based on predicted demand ensures optimal use of staff and facilities without overburdening any department.
- - Proactivity: Rather than reacting to real-time conditions, this approach allows hospitals to prepare in advance, avoiding potential bottlenecks.
- - Cost-Effectiveness: Focuses on using existing data and infrastructure for planning rather than investing in expensive real-time monitoring systems.
+ - <b>Efficiency:</b> Allocating resources based on predicted demand ensures optimal use of staff and facilities without overburdening any department.
+ - <b>Proactivity:</b> Rather than reacting to real-time conditions, this approach allows hospitals to prepare in advance, avoiding potential bottlenecks.
+ - <b>Cost-Effectiveness:</b> Focuses on using existing data and infrastructure for planning rather than investing in expensive real-time monitoring systems.
 
 ### Using The Loading Function here:
 <p>The Loading Function provides a quantifiable measure of how "loaded" an A&E site is in terms of bed occupancy and patient wait times. By calculating a Load Score for each site, it enables real-time assessment of resource utilization, ensuring better management of patient flow and optimal allocation of resources.</p>
