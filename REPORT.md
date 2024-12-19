@@ -3,6 +3,8 @@
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
 (This is to get the reader interested from the start)
 
+Line 135, 588 & 670
+
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
@@ -667,6 +669,7 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 
 ### Based on all of this how would the solution change:
    <h4>Existing Solution includes: </h4>
+
     - Queuing Theory: No Change required for this as it can be applied to the Mobile Units as well.
     - Loading Function: The loading function will updated here and instead of using the large scale version where we would find the optimal Site Locationfor the patient, we will use the loading function on a smaller scale to direct patients to either the Main SIte or the Mobile Units based on the Patient_Wait_Time/Age_Group/Symptom_Severity. Load Score adjusted to: Patient_Wait_Time + Age_Group + Symptom_Severity.  
     - Airport Style Management System:
