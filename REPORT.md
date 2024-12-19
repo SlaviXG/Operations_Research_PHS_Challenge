@@ -4,7 +4,7 @@
 (This is to get the reader interested from the start)
 
 ## Problem Formulation 
-### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services within a defined geographic area. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
+### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
 # Key Questions to Address
  - How can we reduce unnecessary A&E attendances through reallocation and pre-arrival guidance?
@@ -26,7 +26,7 @@
 
 <p>At the outset of this study, a correlation matrix was utilized to statistically analyze how the various variables provided in the dataset interact and influence one another. The correlation matrix highlights the relationships between key attributes such as Site Code, Patient Coordinates (Pat_X, Pat_Y), Number of Attendances, and Resource Availability (e.g., Site_Loc_GPs). By doing so, it serves as a foundational tool to identify patterns, dependencies, and areas of focus for decision-making. The matrix was crucial in understanding which variables are strongly intertwined and could provide actionable insights. Examples of its application include:</p>
 
- 1. <b>Determining Key Relationships:</b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact. Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
+ 1. <b>Determining Key Relationships:</b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact.<br> Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
  2. <b>Identifying Variables with Weak or No Correlation:</b> Site_Pop_20miles and Pat_Y (Correlation: -0.06): A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
  3. <b>Validating Assumptions for Resource Allocation:</b> Number_Of_Attendances and Site_Loc_GPs (Correlation: 0.12): A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
 
@@ -39,16 +39,21 @@
 
 ![Correlation Matrix](./dat_vis_assets/output.png)
 
-<p>By incorporating the correlation matrix at the start of the analysis, we ensured that all subsequent decisions and models (e.g., the Loading Function, patient redirection strategies, and capacity planning) were grounded in data-driven insights, making the solutions more targeted, efficient, and impactful.</p>
+<p>By incorporating the correlation matrix at the start of the analysis, we ensured that all subsequent decisions and models were grounded in data-driven insights, making the solutions more targeted, efficient, and impactful.</p>
 
 <hr>
 
 ## Solving the Problem for the Worst-Case Scenario
 ### By using the worst-case scenario as the foundation for planning, this solution is designed to remain robust and efficient even during periods of peak demand. It optimizes patient flow and resource allocation in A&E departments under the assumption that all patients are unplanned and require immediate attention.
 
-## Mathematical Modelling - Queuing Theory & Loading Function for Managing Patient Flow
+## Mathematical Modelling for Managing Patient Flow Using: 
+##  - Queuing Theory 
+##  - Loading Function 
 
 ### Queuing Theory for Grouped Patients
+
+<h4>Objective: Minimize delays for critical patients while balancing fairness for all.</h4>
+
 To simplify the complexity of patient management, categories are grouped and modeled to address their specific needs:
  - MIU/Other:
     - Treated as First Come First Serve (FCFS) for low-acuity cases.
@@ -59,17 +64,21 @@ To simplify the complexity of patient management, categories are grouped and mod
     - Cases with priority:
        - High-priority cases bypass queues for immediate attention.
        - Low-priority cases wait until resources are free.
-    - Objective: Minimize delays for critical patients while balancing fairness for all.
       
 ### Loading function for System-Wide Balance
-The Statistical/ML Approach
+
+<h4>The Statistical/ML Approach</h4>
+
  - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload:
     - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
-       1. (Beds Occupied / Site Capacity) : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
-       2. (Wait Time / Critical Wait Time) :
-          - Wait Time - The patient wait time needs to be incorporated in a way that reflects its severity.
+       1. [ Beds Occupied / Site Capacity ] : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
+       2. [ Wait Time / Critical Wait Time ] :
+          - Wait Time - The patient wait time needs to be incorporated in a way that reflects its severity, and we will consider the upper bound of the wait time range to account for the worst-case scenario.
           - Critical Wait Time - Normalizes wait time by dividing the actual wait time by a critical threshold (e.g., 240 minutes = 4 hours).
-    - Interpretation: If the Load Score is 100% or more, the site is overloaded. Scores under 80% indicate a manageable load, suggesting the site can still handle additional patients.
+    - Interpretation: 
+      - If the Load Score is ->
+        - 100% or more then site is overloaded.
+        - Scores under 80% indicate a manageable load suggesting the site can still handle additional patients.
     - Sample Scenraio:
         - Scenario 1: Manageable Load
            - Beds Occupied: 60
@@ -87,7 +96,10 @@ The Statistical/ML Approach
            - Load Score { (95 / 100) * 100 } + { (300 / 240) * 100 }  = 95 + 125 = 220%
            - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
          
-## Courses of Action: Airport Flow Management + Casino Psychology hybrid approach to streamline patient flow
+## Course of Action: Hybrid approach between the following to acheive efficient patient flow
+## - Airport Flow Management
+## - Casino Psychology 
+
 ### An Airport-Inspired Attendance Managemnet System
  - Segementation and Pre-Sorting
      - Similar to how passengers are assigned to terminals and gates, patients are sorted pre-arrival based on:
