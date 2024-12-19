@@ -26,9 +26,9 @@
 
 <p>At the outset of this study, a correlation matrix was utilized to statistically analyze how the various variables provided in the dataset interact and influence one another. The correlation matrix highlights the relationships between key attributes such as Site Code, Patient Coordinates (Pat_X, Pat_Y), Number of Attendances, and Resource Availability (e.g., Site_Loc_GPs). By doing so, it serves as a foundational tool to identify patterns, dependencies, and areas of focus for decision-making. The matrix was crucial in understanding which variables are strongly intertwined and could provide actionable insights. Examples of its application include:</p>
 
- 1. <b>Determining Key Relationships:<br></b> Site_Loc_GPs and Site_Loc_GP_List (Correlation: 0.93): Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact.<br> Pat_X and Site_X (Correlation: 0.72): Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
- 2. <b>Identifying Variables with Weak or No Correlation:<br></b> Site_Pop_20miles and Pat_Y (Correlation: -0.06): A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
- 3. <b>Validating Assumptions for Resource Allocation:<br></b> Number_Of_Attendances and Site_Loc_GPs (Correlation: 0.12): A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
+ 1. <b>Determining Key Relationships:<br></b> <u>Site_Loc_GPs and Site_Loc_GP_List (Correlation -> 0.93):</u> Indicates that areas with more GPs tend to have a higher number of patients registered with those GPs. This insight was used to assess how site resources and surrounding population densities interact.<br> <u>Pat_X and Site_X (Correlatio -> 0.72):</u> Shows a strong relationship between patient and site locations on the X-coordinate, which reinforces geographic proximity as a significant factor in patient distribution.
+ 2. <b>Identifying Variables with Weak or No Correlation:<br></b> <u>Site_Pop_20miles and Pat_Y (Correlation -> -0.06):</u> A negligible relationship suggests that the total population within 20 miles of a site does not directly correlate with patient Y-coordinates, indicating other factors (e.g., specific site types or referral pathways) may play a larger role in patient inflow.
+ 3. <b>Validating Assumptions for Resource Allocation:<br></b> <u>Number_Of_Attendances and Site_Loc_GPs (Correlation -> 0.12):</u> A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
 
 <h3>Why the Correlation Matrix Matters</h3>
 <p>The correlation matrix is not just a statistical tool but a decision-making guide that was instrumental in:</p>
@@ -186,15 +186,15 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 ### Integration of the Loading Function in the Airport Management Framework
 
- 1. Backend System for Efficient Site Management: The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
+ 1. <b>Backend System for Efficient Site Management:</b> The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
      - Real-Time Monitoring -- The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
         - Green (Load Score < 50%): Manageable load.
         - Yellow (Load Score 50%–80%): Approaching capacity.
         - Red (Load Score >= 100%): Overloaded and requires immediate attention.
-     - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources, such as pre-positioning mobile units (e.g., Mega Hauler Trucks and Shipping Containers) to handle surges.
-     - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure.
- 2. Web/App and Kiosk Interfaces for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
-    - Pre-Sorting Patients: When patients input their symptoms into the web app, kiosk, or mobile interface, the system determines the appropriate care type (e.g., ED, MIU, or GP).
+     - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources to handle surges.
+     - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure off of sites with a high Load Score.
+ 2. [Web Application](#the-web-app-utilizing-the-loading-function) for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
+    - Pre-Sorting Patients: When patients input their symptoms into the web application (mentioned below) the system determines the appropriate care type (e.g., ED, MIU, or GP).
     - Directing Patients to the Optimal Site:
        - The Loading Function identifies the best site based on the calculated Load Score, balancing proximity, resource availability, and wait times.
        - Example Messages:
@@ -204,16 +204,16 @@ To simplify the complexity of patient management, categories are grouped and mod
           - “Site is free.”
           - “Site is moderately busy.”
           - “Site is at capacity.”
- - Example Use Case -- A patient logs into the app to report symptoms of mild chest pain. The system:
+ - Example Use Case -- A patient opens the [web application](#the-web-app-utilizing-the-loading-function) to report symptoms of mild chest pain. The system:
     1. Identifies the patient’s location and care type (Emergency Department required).
     2. Calculates the Load Scores for nearby A&E sites and recommends the least burdened site.
     3. Displays a recommendation:
-       - “Site A: Emergency care available. Distance: 7 miles | Travel Time: 12 minutes | Wait Time: 45 minutes.”
+       - “Site A: Emergency care available. Distance: 7 miles | Travel Time: 22 minutes | Wait Time: 45 minutes.”
     4. Generates an e-ticket with the site information, which the patient uses upon arrival for seamless check-in. 
 
 <p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
 
-### Achieving Pre-Sorting through the Web App, Utilizing the Loading Function
+### The Web App: Utilizing the Loading Function
 <p>Using a Web App: Patients access a user-friendly web app where they enter essential details such as their name, age, symptoms, and the location they will be traveling from. The app processes this information to:</p>
 
 1. Determine the Type of Care Needed:
