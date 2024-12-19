@@ -3,7 +3,7 @@
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
 (This is to get the reader interested from the start)
 
-Line 135, 588 & 670
+Line 135, 588 & 670 | In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming, also how to make it faster so that patient gets a quick ticket just like at tesco scan items, pay, receipt?   
 
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
