@@ -329,7 +329,7 @@ To simplify the complexity of patient management, categories are grouped and mod
             - "Would you like to skip the wait? Specialists at Site B are available immediately."
             - "We’ve reserved a spot for you at the MIU Site B. Follow the path provided for quick care.
               
-### Adding Visual Indicators: Colored E-Tickets
+### Adding Visual Indicators: Color Coded E-Tickets
 <p>The color of the e-ticket issued to patients will reflect site status, helping manage expectations and guide behavior. Instead of showing raw numbers (e.g., patients at the site or site capacity), color-coded tickets provide a simple, visual indicator of site load:</p>
  - Red: Site is highly crowded (above 90% capacity).<br>
  - Yellow: Site is moderately busy (65%–89% capacity).<br>
@@ -691,3 +691,13 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 
 ## Implementation of Solution
 ### Implementation of the result and evaluation of the degree/percentage of success.
+
+
+Add Visuals For The Mobile Units Layout, Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything,
+an or multiple examples signage that will be placed around the hospital, an example area where people are playing board games, an example layout or image
+of the satellite site, example of tent as waiting area for the mobile units, an example of how the Mobile Units will be signaled during extreme
+loads at a or multiple site, a visual aid of how the very fast department will look like, description and visual of how a beacon system will work. 
+Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
+Connect/Login to your account on the kiosk using Community Health Index (CHI) number, if patient does not have an account a temporary ticket will
+be generated and the users details will be have entered manually. Manually fill out a paper based form if they do not have an account.
+
