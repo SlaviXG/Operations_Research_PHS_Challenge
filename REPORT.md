@@ -98,62 +98,11 @@ To simplify the complexity of patient management, categories are grouped and mod
            - Load Score { (95 / 100) * 100 } + { (300 / 240) * 100 }  = 95 + 125 = 220%
            - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
          
-## Course of Action: Hybrid approach between the following to acheive efficient patient flow
-### - Airport Flow Management
-### - Casino Psychology 
+## Course of Action:
+### - Casino Psychology
+### - E-Ticket System 
 
-### An Airport-Inspired Managemnet System
- - Segementation and Pre-Sorting
-     - Similar to how passengers are assigned to terminals and gates at an airport, patients can be sorted pre-arrival at the A&E sites based on:
-        - Symptom severity
-        - Age
-        - Using the Loading Function defined.
-     - Re-Routing:
-        - Just as Airports manage over-crowding by re-directing passengers, patients are guided to other nearby sites or GPs to reduce congestion on the current site.
-          
-## The Airport Analogy
-### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
- - Segmentation and Pre-Sorting
-    - At airports passangers are sorted into different terminals, gates, or check-in lines based on their destination, ticket class, or security needs, minimizing bottlenecks and confusion. Ever since the introduction of the self-service kiosk system, passengers can now check-in, select seats, and print boarding passes independently, streamlining the check-in process and reducing wait times."
-    - Applying it to the A&E Sites: We can create a similar system based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
-       - ED - The Emergency Department (for high-severity cases, eg. emergency operation)
-       - Minor Injuries Units (for low-severity cases, eg. cuts and wounds)
-       - GPs (for non-urgent cases, eg. cold and cough)
-       - The specific department/waiting room of the A&E site (eg. Waiting Room Number: 2)
-     
-<h3>Anticipatory Resource Allocation</h3>
-
-<p>At airports, the number of open service counters is dynamically adjusted based on passenger inflow, ensuring efficiency and minimizing wait times. A&E departments can similarly optimize resource allocation by predicting patient inflow patterns and adjusting staffing and resources accordingly.</p>
-
-<h4>Using Historical Data for Demand Prediction</h4>
-
- - By analyzing historical data, we can identify trends and seasonal patterns in patient demand.
-    - Example Patterns:
-       - Winter: Increased cases of colds, flu, and respiratory illnesses.
-       - Summer: Higher incidents of heat strokes, dehydration, and injuries from outdoor activities.
-       - Weekends or Holidays: Surge in emergencies related to accidents or recreational injuries.
- - Based on this data, a predictive model can be developed to anticipate periods of high demand and guide resource allocation.
-
-<h4>How It Works</h4>
-
- - <b>Forecasting Demand:</b> The predictive model uses historical trends, patient demographics, and other data (e.g., weather forecasts or public event schedules) to estimate patient inflow.
- - <b>Adjusting Staffing and Resources:</b>
-    - <i>Preemptive Scheduling: Ensure additional staff, such as nurses and physicians, are scheduled during high-demand periods identified by the model.</i>
-    - <i>Stockpile Management: Maintain adequate supplies of critical resources (e.g., IV fluids, medications) for expected seasonal conditions like flu surges or heatwaves.</i>
- - <b>Scenario Planning:</b> Use the model to simulate "what-if" scenarios, such as unexpected surges or prolonged high-demand periods, and plan contingency measures.
-
-<h4>Why This Approach Works</h4>
-
- - <b>Efficiency:</b> Allocating resources based on predicted demand ensures optimal use of staff and facilities without overburdening any department.
- - <b>Proactivity:</b> Rather than reacting to real-time conditions, this approach allows hospitals to prepare in advance, avoiding potential bottlenecks.
- - <b>Cost-Effectiveness:</b> Focuses on using existing data and infrastructure for planning rather than investing in expensive real-time monitoring systems.
-
-### Using The Loading Function here:
-<p>The Loading Function provides a quantifiable measure of how "loaded" an A&E site is in terms of bed occupancy and patient wait times. By calculating a Load Score for each site, it enables real-time assessment of resource utilization, ensuring better management of patient flow and optimal allocation of resources.</p>
-
-<p>This aligns seamlessly with the Airport Management Analogy, where real-time data guides operational decisions to balance demand and improve the overall experience for both staff and patients.</p>
-
-### Integration of the Loading Function in the Airport Management Framework
+### Integration of the Loading Function in the Framework
 
  1. <b>Backend System for Efficient Site Management:</b> The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
      - Real-Time Monitoring -- The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
@@ -553,6 +502,8 @@ If expansion is viable, direct focus on increasing staffing levels and patient b
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
 ### Creating New Department: A very Fast Service Department. But How? Start small and then scale it.
+
+<p></p>
 
 <p>Department should be really fast in providing care without compromising quality</p>
 
