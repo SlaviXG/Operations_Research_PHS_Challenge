@@ -3,7 +3,7 @@
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
 (This is to get the reader interested from the start)
 
-Line 555 & 670 | In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming, also how to make it faster so that patient gets a quick ticket just like at tesco scan items, pay, receipt? Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?   
+Creating Visuals for everything   
 
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
@@ -99,8 +99,8 @@ To simplify the complexity of patient management, categories are grouped and mod
            - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
          
 ## Course of Action:
-### - Casino Psychology
 ### - E-Ticket System 
+### - Casino Psychology
 
 ### Integration of the Loading Function in the Framework
 
@@ -161,6 +161,7 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
 <br>
+
 ![Sample Ticket with QR Code from web app](./dat_vis_assets/E_Ticket.png) 
 
 <br>
@@ -502,10 +503,62 @@ If expansion is viable, direct focus on increasing staffing levels and patient b
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
 ### Creating New Department: A very Fast Service Department. But How? Start small and then scale it.
+### Very Fast Minor Injuries Unit (VFM) - Concept Overview (ELABORATE ON ALL THE POINTS BELOW)
 
-<p></p>
+<p>
+The Very Fast Minor Injuries Unit (VFM) is a specialized department designed to deliver swift, high-quality care to patients with minor injuries.
+This initiative focuses on optimizing processes, eliminating bottlenecks, and leveraging innovative tools to ensure a seamless patient experience.
+Initially launched on a small scale, the VFM will serve as an experimental model to refine and evaluate its efficacy before potential scaling.
+</p>
 
-<p>Department should be really fast in providing care without compromising quality</p>
+<h3>Key Features of the VFM</h3>
+
+1. Target Operating Hours:
+   - 8:00 AM to 6:00 PM, covering peak demand times aligned with office hours, school schedules, and other daily activities.
+
+2. Efficient Staffing:
+   - Four 2.5-hour shifts ensure staff remain alert and energized, minimizing burnout.
+   - Staff currently treating patients during a shift change must complete their duties before transitioning out, ensuring uninterrupted care.
+
+3. Streamlined Patient Flow:
+   - Patients are directed to the VFM through web app or on-site kiosks, using a leaky bucket model.
+   - The waiting room acts as the bucket, and patients are "leaked" into the department based on their e-ticket priority and token numbers.
+
+4. Simplified Discharge Process:
+   - Patients receive a discharge stamp on their prescription or an update on their e-ticket upon completion of treatment.
+   - For follow-up care, automated notifications or referral notes are sent directly via the e-ticket system.
+
+<h3>Bottlenecks Addressed</h3>
+
+1. Staff Shortages:
+   - Split shifts ensure a steady rotation of staff, preventing exhaustion and maintaining efficiency.
+
+2. Ambiguous Triage Criteria:
+   - Resolved through pre-sorting using the web app and kiosk systems. Patients are routed directly to the appropriate department.
+
+3. High Patient Volumes:
+   - Controlled using the leaky bucket model, which ensures smooth patient flow based on e-tickets.
+
+4. Communication Gaps:
+   - The e-ticket system provides patients with clear instructions, including the department and waiting area they need to proceed to.
+
+5. Discharge Delays:
+   - A dedicated staff member oversees discharges, ensuring patients leave promptly.
+   - The discharge stamp or e-ticket update minimizes confusion and formalizes the process.
+
+<h3>Approach</h3>
+
+<p>The VFM will be implemented on a small scale initially to assess its viability. This controlled rollout will:</p>
+
+   - Allow for iterative improvements based on real-world performance.
+   - Provide data-driven insights to refine processes and identify potential scaling opportunities.
+   - Minimize risks associated with large-scale implementation.
+
+<p>If the pilot proves successful, the model will be expanded to other sites. If challenges arise that cannot be mitigated, scaling will be reconsidered.</p>
+
+<p>The Very Fast Minor Injuries Unit (VFM) represents a proactive step toward enhancing patient care for minor injuries. By focusing on efficiency,
+clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
+periods. Starting small allows for experimentation and ensures that the model is robust before scaling to broader implementation.</p>
 
 ### HERO: Health Emergency Response Operations
 
@@ -618,4 +671,32 @@ loads at a or multiple site, a visual aid of how the very fast department will l
 Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
 Connect/Login to your account on the kiosk using Community Health Index (CHI) number, if patient does not have an account a temporary ticket will
 be generated and the users details will be have entered manually. Manually fill out a paper based form if they do not have an account.
+
+ID tags/keychains that can be carried easily could be issued for elderly and kids so that in emergency situations they can treated quickly and
+registered as well.
+
+Question to answer: What about the ED in all of this?
+This is where the Backend of the Loading function comes in use for the Hospital and the ambulances where they can be re-driected to the the most
+optimal site before they arrive at one. If in a situation where the patient is being brought in through other modes (not through an ambulance essentially)
+they will allowed to pass through for their treatment first.   
+
+To actually create a timeless solution what can be done: get people to create a complete profile using their existing 
+Scottish Community Health Index (CHI) number and fill in details such as medical history, prescription, allergies. 
+This way people will be able to track their treatment progress as well. The kiosk can just scan the QR code of the profile and then give the patient the ticket accordingly.
+This part will cover how we are getting the data of the patients in structured formatt.
+Now using this data to our advantage and help in re-allocation of patients. Since we will be using the loading function to assign the site to the
+patient this will effectively solve the major bottleneck of patients being re-allocated themselves.
+Covering the part where the patient is at the hospital as well and now the patient also knows where to go.
+
+Now some things to consider here: 
+In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming: 
+Solved through the profile scan or if account does not exist for user they can just quickly generate a ticket through the quick select options.  
+Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?
+If patient misses the appointment time:
+1. At the moment of calling the patients token number if patient does not show up, we will just move to next token number in line.
+2. In-case the patient comes back after this has happened they can go next, before the token scheduled so that it does not remain pending.
+3. Same scenario if patient arrives within 15 mins of the appoitment time.
+4. If the patient arrives 15 mins or later than their appointment time, their ticket will be invalidated and they will have to book another
+appointment and generate another e-ticket.
+5. Under extreme circumstances such as an emergency situation, the patient arriving later than 15 mins shall be given a pardon.     
 
