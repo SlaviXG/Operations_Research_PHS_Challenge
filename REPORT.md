@@ -3,7 +3,7 @@
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
 (This is to get the reader interested from the start)
 
-Line 135, 588 & 670 | In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming, also how to make it faster so that patient gets a quick ticket just like at tesco scan items, pay, receipt? Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?   
+Line 555 & 670 | In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming, also how to make it faster so that patient gets a quick ticket just like at tesco scan items, pay, receipt? Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?   
 
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
@@ -109,50 +109,17 @@ To simplify the complexity of patient management, categories are grouped and mod
         - Age
         - Using the Loading Function defined.
      - Re-Routing:
-        - Just as Airports manage over-crowding by re-directing passengers, patients are guided to nearby MIUs or GP to reduce A&E congestion.
+        - Just as Airports manage over-crowding by re-directing passengers, patients are guided to other nearby sites or GPs to reduce congestion on the current site.
           
 ## The Airport Analogy
 ### Airports are able to manage high volumes of people and effeciently direct to their gates while minimizing confusion and maximizing compliance with the system demands. We can take inspiration from this in the following ways: 
  - Segmentation and Pre-Sorting
     - At airports passangers are sorted into different terminals, gates, or check-in lines based on their destination, ticket class, or security needs, minimizing bottlenecks and confusion. Ever since the introduction of the self-service kiosk system, passengers can now check-in, select seats, and print boarding passes independently, streamlining the check-in process and reducing wait times."
-    - Applying it to the A&E: We can create a similar system based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
-       - A&E - The Emergency Department (for high-severity cases, eg. emergency operation)
+    - Applying it to the A&E Sites: We can create a similar system based on symptom severity, age and the Loading Function. This can be acheived with mobile/web apps or kiosks present at the hospital sites that take the patients details as input and give a ticket, along with a path to direct patients to:
+       - ED - The Emergency Department (for high-severity cases, eg. emergency operation)
        - Minor Injuries Units (for low-severity cases, eg. cuts and wounds)
        - GPs (for non-urgent cases, eg. cold and cough)
-       - The specific department/waiting room of the A&E site (eg. Waiting Room Number: 2).
-         
-<h4>Visual Cues and Navigation</h4>
-<p>At airports, passengers benefit from clear signage and real-time updates that guide them seamlessly to their respective gates or terminals, even if they’ve never been to the airport before. Key features include:</p>
-
- - Location-Specific & Real Time Information: Announcements and digital screens provide real-time details on flight schedules, boarding times, delays, and directions to amenities or services.
- - Minimalistic Presentation: Only the essential information is displayed to avoid overwhelming passengers, with messages like:
-    - “Now Boarding: Gate 12”
-    - “Flight Delayed: Check Back at 2:00 PM”
-   
-<h4>Applying to the A&E</h4>
-<p>We can adopt a similar approach to guide patients efficiently, ensuring they are directed to the appropriate site or department with minimal confusion. Clear signage and real-time updates would provide patients with the necessary details at key decision points, such as entrances, waiting areas, near cafes.</p>
-
-### NOTE: Create sample screen Display for the Site including Current Time
-
-<p>Examples of Minimalistic Messages: </p>
-
- 1. For Redirection to Minor Injury Units (MIUs):
-    - “Minor Injuries: Faster Care Available at MIU. Distance: 5 Miles | Travel Time: 10 Minutes”
- 2. For Severe Cases in A&E:
-    - “Critical Cases: Emergency Care Available at A&E Level 2. Proceed to the Red Zone for Immediate Assistance.”
- 3. General Guidance for Patients:
-    - “Departments: MIU: 15 mins Wait Time | ED: 120 mins Wait Time.”
-    - “Priority Lane for Elderly and First-Time Visitors: Follow the Blue Signs.”
- 4. Entrance Signage Example:
-    - “Where to Go - ”
-       - MIU: "Non-Critical Injuries (30 mins Wait Time)"
-       - A&E: "Critical Conditions (5 mins Wait Time)"
-
-<h3>Reasons for this approach: </h3>
-
- - <b>Clarity:</b> By keeping the messages concise and relevant, patients can easily decide where to go, much like passengers at an airport following signs to their gates.
- - <b>Efficiency:</b> Location-specific and real-time updates ensure patients are redirected dynamically, reducing congestion and wait times.
- - <b>Trust:</b> Providing transparent updates on wait times and distances builds confidence in the system, encouraging patients to make informed decisions.
+       - The specific department/waiting room of the A&E site (eg. Waiting Room Number: 2)
      
 <h3>Anticipatory Resource Allocation</h3>
 
@@ -608,8 +575,8 @@ Integration between the trucks, containers, and main sites will be streamlined u
 4. Clear Communication and Signage:
 
 To ensure clarity for both patients and staff, large, clearly visible signage will be placed on these mobile units. The signage will explain the purpose of the trucks and containers and direct individuals to their specific locations, eliminating confusion about why they are being directed to these temporary facilities.
-Purpose and Role of Trucks and Containers
 
+Purpose and Role of Trucks and Containers: 
 The primary purpose of these mobile units is not to replace the existing sites but to alleviate the load on these facilities during times of high demand. These trucks and containers will act as temporary extensions, providing care for minor issues and diseases and ensuring that no patient is left standing or unattended for hours during chaotic times.
 
 Taking into account that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than coming to a halt due to the overwhelming demand.
@@ -693,10 +660,10 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
 
-Add Visuals For The Mobile Units Layout, Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything,
-an or multiple examples signage that will be placed around the hospital, an example area where people are playing board games, an example layout or image
+Add Visuals For The Mobile Units Layout, Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything, an example area where people are playing board games, an example layout or image
 of the satellite site, example of tent as waiting area for the mobile units, an example of how the Mobile Units will be signaled during extreme
-loads at a or multiple site, a visual aid of how the very fast department will look like, description and visual of how a beacon system will work. 
+loads at a or multiple site, a visual aid of how the very fast department will look like, description and visual of how a beacon system will work.
+
 Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
 Connect/Login to your account on the kiosk using Community Health Index (CHI) number, if patient does not have an account a temporary ticket will
 be generated and the users details will be have entered manually. Manually fill out a paper based form if they do not have an account.
