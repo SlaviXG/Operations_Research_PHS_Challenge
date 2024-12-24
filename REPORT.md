@@ -502,27 +502,43 @@ If expansion is viable, direct focus on increasing staffing levels and patient b
 
 This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
 
-### Creating New Department: A very Fast Service Department. But How? Start small and then scale it.
-### Very Fast Minor Injuries Unit (VFM) - Concept Overview (ELABORATE ON ALL THE POINTS BELOW)
+### Creating New Department: Only For Minor Injuries Unit 
+### Express Treatment Centre | ETC - Concept Overview (ELABORATE ON ALL THE POINTS BELOW)
 
 <p>
-The Very Fast Minor Injuries Unit (VFM) is a specialized department designed to deliver swift, high-quality care to patients with minor injuries.
+The Express Treatment Centre | ETC is a specialized department designed to deliver swift, high-quality care to patients with minor injuries.
 This initiative focuses on optimizing processes, eliminating bottlenecks, and leveraging innovative tools to ensure a seamless patient experience.
-Initially launched on a small scale, the VFM will serve as an experimental model to refine and evaluate its efficacy before potential scaling.
+Initially launched on a small scale, the ETC will serve as a pilot model to refine and evaluate its efficacy before potential scaling.
 </p>
 
-<h3>Key Features of the VFM</h3>
+<h3>Key Features of the Express Treatment Centre</h3>
 
 1. Target Operating Hours:
    - 8:00 AM to 6:00 PM, covering peak demand times aligned with office hours, school schedules, and other daily activities.
 
 2. Efficient Staffing:
-   - Four 2.5-hour shifts ensure staff remain alert and energized, minimizing burnout.
+   - Two teams will work 2.5-hour shifts ensuring staff remain alert and energized, minimizing burnout.
+      - Team A: 8 AM - 10:30 AM
+      - Team B: 10:30 AM - 1 PM (Team A on break)
+      - Team A: 1 PM - 3:30 PM (Team B on break)
+      - Team B: 3:30 PM - 6 PM (Team A's shift ends)
+      - Team B: Shift ends at 6:00 PM
    - Staff currently treating patients during a shift change must complete their duties before transitioning out, ensuring uninterrupted care.
+      - If a patient's treatment is ongoing or the patient has not been discharged yet, the staff must continue providing care until the treatment is complete, ensuring the patient is not abandoned mid-treatment or near its conclusion.    
 
-3. Streamlined Patient Flow:
-   - Patients are directed to the VFM through web app or on-site kiosks, using a leaky bucket model.
-   - The waiting room acts as the bucket, and patients are "leaked" into the department based on their e-ticket priority and token numbers.
+3. Streamlined Patient Flow: Using the Leaky Token Bucket Algorithm
+   - Patients are assigned an Express Treatment Centre (ETC) through a web application or on-site kiosks.
+   - Upon arrival at the site, patients are allocated an e-ticket, which includes their ETC assignment (if the patient is not already at the A&E site).
+   - After being assigned the ETC, patients are directed to the waiting room near the ETC.
+   - The waiting room acts as the "bucket" in the Leaky Bucket Algorithm, with patients waiting for their turn. Patients are called into the department based on their e-ticket token number, which will be displayed on information screens in the waiting room.
+   - As their e-ticket number is displayed, patients proceed to the ETC for treatment.
+   - Treatment in the ETC is based on the information entered by the patient on the web app or kiosks, which can be accessed via a QR code on their e-ticket.
+   - Finally, after receiving treatment, patients will either be discharged or re-directed for further care, based on the analysis of their data and treatment needs.
+
+<p>
+The Leaky Token Bucket Algorithm is a method used to manage the flow of data or people. Imagine a bucket with a small hole at the bottom, and each
+token represents an item (like a patient or data). As tokens enter the bucket, they leak out at a steady, controlled pace. This ensures a smooth, 
+manageable flow without overwhelming the system or causing congestion.</p>
 
 4. Simplified Discharge Process:
    - Patients receive a discharge stamp on their prescription or an update on their e-ticket upon completion of treatment.
@@ -548,7 +564,7 @@ Initially launched on a small scale, the VFM will serve as an experimental model
 
 <h3>Approach</h3>
 
-<p>The VFM will be implemented on a small scale initially to assess its viability. This controlled rollout will:</p>
+<p>The ETC will be implemented on a small scale initially to assess its viability. This controlled rollout will:</p>
 
    - Allow for iterative improvements based on real-world performance.
    - Provide data-driven insights to refine processes and identify potential scaling opportunities.
@@ -556,9 +572,9 @@ Initially launched on a small scale, the VFM will serve as an experimental model
 
 <p>If the pilot proves successful, the model will be expanded to other sites. If challenges arise that cannot be mitigated, scaling will be reconsidered.</p>
 
-<p>The Very Fast Minor Injuries Unit (VFM) represents a proactive step toward enhancing patient care for minor injuries. By focusing on efficiency,
+<p>The Express Treatment Centre represents a proactive step toward enhancing patient care for minor injuries. By focusing on efficiency,
 clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
-periods. Starting small allows for experimentation and ensures that the model is robust before scaling to broader implementation.</p>
+periods. Starting small allows for evaluation and development of the approach, ensuring that the model is robust before scaling to broader implementation.</p>
 
 ### HERO: Health Emergency Response Operations
 
@@ -664,9 +680,13 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
 
-Add Visuals For The Mobile Units Layout, Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything, an example area where people are playing board games, an example layout or image
-of the satellite site, example of tent as waiting area for the mobile units, an example of how the Mobile Units will be signaled during extreme
-loads at a or multiple site, a visual aid of how the very fast department will look like, description and visual of how a beacon system will work.
+Add Visuals For The Mobile Units Layout: articulated vehicles
+Example of tent as waiting area for the mobile units: Negative Pressure Inflatable Medical Tents.
+Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything: Screen for the Management (an example of how the Mobile Units will be signaled during extreme loads at a or multiple site)
+an example area where people are playing board games: Games Room
+an example layout or image of the satellite site: pre-fabricated homes style design
+A visual aid of how the very fast department will look like
+Visual of how a beacon system will work.
 
 Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
 Connect/Login to your account on the kiosk using Community Health Index (CHI) number, if patient does not have an account a temporary ticket will
@@ -700,3 +720,7 @@ If patient misses the appointment time:
 appointment and generate another e-ticket.
 5. Under extreme circumstances such as an emergency situation, the patient arriving later than 15 mins shall be given a pardon.     
 
+The Beacon system for public usage. 
+Purpose: To be able to find satellite sites in public.
+Signal sent through mobile devices through the web app. To be used only during emergency such as collapsing in the public.
+What happens if the person collapsed is alone and no one is doing anything to help????
