@@ -144,7 +144,7 @@ including:</p>
 
  - Patient Name, Date Of Birth (age), Address.
  - Contact Information: For emergency updates and communication.
- - Medical History: Records of past illnesses, surgeries, and treatments.
+ - Medical History & Blood Group: Records of past illnesses, surgeries, treatments and their blood type.
  - Allergies: Allergies that the patient has and any medication they might be taking for it.
  - Current Prescriptions: Active medications that the patient is taking.
  - Viewing upcoming appointments, scheduling new ones, and canceling existing appointments.
@@ -272,8 +272,9 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 ![Sample Ticket with QR Code from Kiosk](./dat_vis_assets/kiosk.png) 
 
-ID tags/keychains with QR codes of the patients entire profile that can be carried easily could be issued for elderly and kids so that in emergency situations they can treated quickly and
-registered as well.
+<h3>ID Tags/Keychains with QR Codes:</h3>
+<p>ID tags or keychains with QR codes, containing the patient's complete profile, can be issued to elderly individuals and children for easy carrying in emergency situations. These tags can be ordered for anyone, and they will feature the patient's unique token number and a QR code linked to their profile on the PHS web app. The QR code can be scanned at on-site kiosks to quickly generate the patient's e-ticket. In emergency cases, ambulances can scan the QR code to instantly load the patient's data, ensuring that they are treated swiftly and accurately without delay.
+</p>
 
 <hr>
 
@@ -372,6 +373,8 @@ registered as well.
  7. Treatment and Completion: Once treatment is completed, the patient either exits the care flow or is admitted for further care based on their condition.
 
 <p>This structured flow ensures that patients already on-site are efficiently triaged, directed to the correct department, and treated based on urgency.</p>
+
+### UPDATE CHANGE FCFS TO TOKEN NUMBER BASED
 
 ![Patient at Site](./dat_vis_assets/arrived.jpg)
 
