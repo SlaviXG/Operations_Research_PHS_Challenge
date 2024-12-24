@@ -131,18 +131,56 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
 
-### The Web App: Utilizing the Loading Function
+Question to answer: What about the ED in all of this?
+This is where the Backend of the Loading function comes in use for the Hospital and the ambulances where they can be re-driected to the the most
+optimal site before they arrive at one. If in a situation where the patient is being brought in through other modes (not through an ambulance essentially)
+they will allowed to pass through for their treatment first.   
+
+### Data Collection & Structuring   
+### PHS Web App: Streamlined Patient Registration and Appointment Management 
+
+<h3>Data Collection</h3>
+
+<p>To streamline patient care and optimize resource allocation, we propose collecting comprehensive patient profiles through their existing
+<b>Scottish Community Health Index (CHI) numbers</b>. This system allows individuals to register and update critical medical information,
+including:</p>
+
+ - Patient Name & age.
+ - Contact Information: For emergency updates and communication.
+ - Medical History: Records of past illnesses, surgeries, and treatments.
+ - Allergies: Allergies that the patient has and any medication they might be taking for it.
+ - Current Prescriptions: Active medications that the patient is taking.
+
+<p>Integrating these profiles into the healthcare system ensures that patient details are readily available during emergencies or regular visits, 
+allowing for faster and more efficient treatment. Patients will be able to access their treatment history and updates through a 
+<b>Public Health Scotland (PHS)</b> web application, enabling a seamless flow of information between patients and healthcare providers.</p>
+
+<p>
+Now utilizing this data to our advantage, we can streamline the reallocation of patients. By employing the loading function to assign the most 
+suitable site to each patient, we address a major bottleneck: the inefficiency of patients needing to reallocate themselves. This approach also 
+ensures that patients arriving at the hospital are informed about exactly where they need to go, improving overall efficiency and reducing confusion.
+</p>
+
+<hr>
+
+### Data Utilization
+
+<h3>The Web App: Registration and E-Ticket Generation</h3>
+
 <p>Using a Web App: Patients access a user-friendly web app where they enter essential details such as their name, age, symptoms, and the location they will be traveling from. The app processes this information to:</p>
 
 1. Determine the Type of Care Needed:
- - Based on the symptoms provided, the system identifies whether the patient requires Emergency Department (ED), Minor Injuries Unit (MIU), GP services, or other care.
+ - Patients input symptoms via the app.
+ - The system analyzes the data to decide if they require:
+   - Emergency Department (ED) for high-acuity cases.
+   - Minor Injuries Unit (MIU) for non-critical injuries.
+   - General Practitioner (GP) for consultations or non-urgent care.
    
 2. Identify the Optimal Site:
- - Using the Loading Function, the system evaluates all nearby sites to identify the one with the most manageable load for the patient’s care needs.
+ - Using the Loading Function, the system evaluates nearby healthcare sites to determine the one with the most manageable load, balancing efficiency and reducing patient wait times.
 
 3. Generate a Patient Ticket:
- - The app provides the patient with a ticket using patients details:
- - Patient Details: Patient Name, Patient DOB (Age), Patient Contact, Symptoms, Medications/Allergies, Patient Location.
+ - After processing the patient’s details and care requirements, the app generates an e-ticket containing:
   - QR Code: This can be scanned to directly load all the patient details previously entered into the system.
   - Site Code: The identifier for the recommended site.
   - Site Type: Specifies the type of site (e.g., ED, MIU).
@@ -167,6 +205,20 @@ To simplify the complexity of patient management, categories are grouped and mod
 <br>
 
 ### Achieving Pre-Sorting through Kiosks on Site: Health Check-In Kiosk 
+
+The kiosk can just scan the QR code of the profile and then give the patient the ticket accordingly.
+Now some things to consider here: 
+In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming: 
+Solved through the profile scan or if account does not exist for user they can just quickly generate a ticket through the quick select options.  
+Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?
+If patient misses the appointment time:
+1. At the moment of calling the patients token number if patient does not show up, we will just move to next token number in line.
+2. In-case the patient comes back after this has happened they can go next, before the token scheduled so that it does not remain pending.
+3. Same scenario if patient arrives within 15 mins of the appoitment time.
+4. If the patient arrives 15 mins or later than their appointment time, their ticket will be invalidated and they will have to book another
+appointment and generate another e-ticket.
+5. Under extreme circumstances such as an emergency situation, the patient arriving later than 15 mins shall be given a pardon. 
+
 <p>Using Kiosks at the Site: Patients who arrive directly at the A&E site can use user-friendly kiosks to streamline the registration and sorting process. Unlike the web app, kiosks do not need to calculate the Loading Function as the patient is already at the site. The kiosk generates a ticket based on the department the patient needs to visit.</p>
 
 <p>Process for Kiosk Usage</p>
@@ -215,6 +267,11 @@ To simplify the complexity of patient management, categories are grouped and mod
 <b><i>This system ensures a seamless and efficient patient registration process, reducing waiting times and allowing quicker access to care.</i></b>
 
 ![Sample Ticket with QR Code from Kiosk](./dat_vis_assets/kiosk.png) 
+
+ID tags/keychains with QR codes of the patients entire profile that can be carried easily could be issued for elderly and kids so that in emergency situations they can treated quickly and
+registered as well.
+
+Manually fill out a paper based form if they do not have an account.
 
 <hr>
 
@@ -341,7 +398,7 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 ### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
 
-### Data Collection: To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient.
+### To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient.
 
 <h4>We will make the following Assumptions</h4>
 <p>For the purposes of this analysis and planning, we make the following assumptions:</p>
@@ -370,7 +427,12 @@ To simplify the complexity of patient management, categories are grouped and mod
     - Financial resources for building, equipping, and staffing these satellite sites are assumed to be available, ensuring operational readiness.
 
 <p>Satellite sites will act as the first point of care, providing essential services such as life-saving treatment and telemedicine consultations until patients can be transferred to the main site for escalated care. Each satellite site will be tagged with a **Site Code**, ensuring seamless integration with the main A&E system. For example, a satellite site associated with **Site_Code: 2** could also support telemedicine, urgent care, or diagnostic services. Clear escalation protocols will be in place to guide patient transfers when necessary. For instance, a critical patient flagged at a satellite site will receive life-saving care on-site while arrangements for immediate transport to the associated Main Site are made. This ensures no interruption in the continuity of care.</p>
-       
+
+The Beacon system for public usage. 
+Purpose: To be able to find satellite sites in public.
+Signal sent through mobile devices through the web app. To be used only during emergency such as collapsing in the public.
+What happens if the person collapsed is alone and no one is doing anything to help????
+
 ### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
  
 How it would work: 
@@ -547,13 +609,13 @@ manageable flow without overwhelming the system or causing congestion.</p>
 <h3>Bottlenecks Addressed</h3>
 
 1. Staff Shortages:
-   - Split shifts ensure a steady rotation of staff, preventing exhaustion and maintaining efficiency.
+   - Spliting shifts ensure a steady rotation of staff, preventing exhaustion and maintaining efficiency.
 
 2. Ambiguous Triage Criteria:
    - Resolved through pre-sorting using the web app and kiosk systems. Patients are routed directly to the appropriate department.
 
 3. High Patient Volumes:
-   - Controlled using the leaky bucket model, which ensures smooth patient flow based on e-tickets.
+   - Controlled using the leaky token bucket model, which ensures smooth patient flow based on e-tickets token number.
 
 4. Communication Gaps:
    - The e-ticket system provides patients with clear instructions, including the department and waiting area they need to proceed to.
@@ -644,6 +706,8 @@ Equip containers with interchangeable interiors so they can serve multiple roles
       - A specialized team will be pre-assigned and on standby to staff the mobile units during surge conditions.
       - Staff allocation will be planned in advance, ensuring there is no delay in deployment. This includes creating a roster of healthcare professionals trained specifically for mobile unit operations.
 
+Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
+
    <h3>Question: Where will patients wait for the Mobile Units, especially in cold or harsh weather conditions</h3>
 
    <h3>Answer: </h3>
@@ -687,40 +751,3 @@ an example area where people are playing board games: Games Room
 an example layout or image of the satellite site: pre-fabricated homes style design
 A visual aid of how the very fast department will look like
 Visual of how a beacon system will work.
-
-Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
-Connect/Login to your account on the kiosk using Community Health Index (CHI) number, if patient does not have an account a temporary ticket will
-be generated and the users details will be have entered manually. Manually fill out a paper based form if they do not have an account.
-
-ID tags/keychains that can be carried easily could be issued for elderly and kids so that in emergency situations they can treated quickly and
-registered as well.
-
-Question to answer: What about the ED in all of this?
-This is where the Backend of the Loading function comes in use for the Hospital and the ambulances where they can be re-driected to the the most
-optimal site before they arrive at one. If in a situation where the patient is being brought in through other modes (not through an ambulance essentially)
-they will allowed to pass through for their treatment first.   
-
-To actually create a timeless solution what can be done: get people to create a complete profile using their existing 
-Scottish Community Health Index (CHI) number and fill in details such as medical history, prescription, allergies. 
-This way people will be able to track their treatment progress as well. The kiosk can just scan the QR code of the profile and then give the patient the ticket accordingly.
-This part will cover how we are getting the data of the patients in structured formatt.
-Now using this data to our advantage and help in re-allocation of patients. Since we will be using the loading function to assign the site to the
-patient this will effectively solve the major bottleneck of patients being re-allocated themselves.
-Covering the part where the patient is at the hospital as well and now the patient also knows where to go.
-
-Now some things to consider here: 
-In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming: 
-Solved through the profile scan or if account does not exist for user they can just quickly generate a ticket through the quick select options.  
-Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?
-If patient misses the appointment time:
-1. At the moment of calling the patients token number if patient does not show up, we will just move to next token number in line.
-2. In-case the patient comes back after this has happened they can go next, before the token scheduled so that it does not remain pending.
-3. Same scenario if patient arrives within 15 mins of the appoitment time.
-4. If the patient arrives 15 mins or later than their appointment time, their ticket will be invalidated and they will have to book another
-appointment and generate another e-ticket.
-5. Under extreme circumstances such as an emergency situation, the patient arriving later than 15 mins shall be given a pardon.     
-
-The Beacon system for public usage. 
-Purpose: To be able to find satellite sites in public.
-Signal sent through mobile devices through the web app. To be used only during emergency such as collapsing in the public.
-What happens if the person collapsed is alone and no one is doing anything to help????
