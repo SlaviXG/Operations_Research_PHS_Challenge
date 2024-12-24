@@ -3,8 +3,6 @@
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
 (This is to get the reader interested from the start)
 
-Creating Visuals for everything   
-
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
@@ -14,7 +12,6 @@ Creating Visuals for everything
  - Where should additional resources (e.g., MIUs, GP capacity) be allocated geographically to ease pressure on A&E?
  - How do different attendance types (e.g., planned, unplanned, frequent re-attenders) impact A&E demand and resource needs?
  - How can we improve patient understanding of the best facility to visit based on their condition?
-
 
 ## The Correlation Matrix
 ### What is a Correlation Matrix -- A correlation matrix is a table that shows the correlation coefficients between variables. These coefficients measure the strength and direction of relationships: 
@@ -69,7 +66,7 @@ To simplify the complexity of patient management, categories are grouped and mod
       
 ### Loading function for System-Wide Balance
 
-<h4>The Statistical/ML Approach</h4>
+<h4>The Statistical Approach</h4>
 
  - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload:
     - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
@@ -111,7 +108,7 @@ To simplify the complexity of patient management, categories are grouped and mod
         - Red (Load Score >= 100%): Overloaded and requires immediate attention.
      - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources to handle surges.
      - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure off of sites with a high Load Score.
- 2. [Web Application](#the-web-app-utilizing-the-loading-function) for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
+ 2. [Web Application](#data-utilization) for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
     - Pre-Sorting Patients: When patients input their symptoms into the web application (mentioned below) the system determines the appropriate care type (e.g., ED, MIU, or GP).
     - Directing Patients to the Optimal Site:
        - The Loading Function identifies the best site based on the calculated Load Score, balancing proximity, resource availability, and wait times.
@@ -122,7 +119,7 @@ To simplify the complexity of patient management, categories are grouped and mod
           - “Site is free.”
           - “Site is moderately busy.”
           - “Site is at capacity.”
- - Example Use Case -- A patient opens the [web application](#the-web-app-utilizing-the-loading-function) to report symptoms of mild chest pain. The system:
+ - Example Use Case -- A patient opens the [web application](#data-utilization) to report symptoms of mild chest pain. The system:
     1. Identifies the patient’s location and care type (Emergency Department required).
     2. Calculates the Load Scores for nearby A&E sites and recommends the least burdened site.
     3. Displays a recommendation:
@@ -141,23 +138,24 @@ they will allowed to pass through for their treatment first.
 
 <h3>Data Collection</h3>
 
-<p>To streamline patient care and optimize resource allocation, we propose collecting comprehensive patient profiles through their existing
-<b>Scottish Community Health Index (CHI) numbers</b>. This system allows individuals to register and update critical medical information,
+<p>To streamline patient care and optimize resource allocation, we can register patient profiles through their existing
+<b>Scottish Community Health Index (CHI) numbers</b>. This system allows individuals to register, add and update critical medical information,
 including:</p>
 
- - Patient Name & age.
+ - Patient Name, Date Of Birth (age), Address.
  - Contact Information: For emergency updates and communication.
  - Medical History: Records of past illnesses, surgeries, and treatments.
  - Allergies: Allergies that the patient has and any medication they might be taking for it.
  - Current Prescriptions: Active medications that the patient is taking.
+ - Viewing upcoming appointments, scheduling new ones, and canceling existing appointments.
 
 <p>Integrating these profiles into the healthcare system ensures that patient details are readily available during emergencies or regular visits, 
-allowing for faster and more efficient treatment. Patients will be able to access their treatment history and updates through a 
+allowing for faster and more efficient treatment. Patients profile is created with a QR code that can be scanned to view their details and access their treatment history and updates through a 
 <b>Public Health Scotland (PHS)</b> web application, enabling a seamless flow of information between patients and healthcare providers.</p>
 
 <p>
-Now utilizing this data to our advantage, we can streamline the reallocation of patients. By employing the loading function to assign the most 
-suitable site to each patient, we address a major bottleneck: the inefficiency of patients needing to reallocate themselves. This approach also 
+Utilizing this data to our advantage: we can streamline the reallocation of patients. By employing the loading function to assign the most 
+suitable A&E site to each patient, we address a major bottleneck: the inefficiency of patients needing to reallocate themselves. This approach also 
 ensures that patients arriving at the hospital are informed about exactly where they need to go, improving overall efficiency and reducing confusion.
 </p>
 
@@ -167,10 +165,10 @@ ensures that patients arriving at the hospital are informed about exactly where 
 
 <h3>The Web App: Registration and E-Ticket Generation</h3>
 
-<p>Using a Web App: Patients access a user-friendly web app where they enter essential details such as their name, age, symptoms, and the location they will be traveling from. The app processes this information to:</p>
+<p>Using a Web App: Patients access the PHS web app where they register themselves using the Scotland CHI number and book an appointment. The web app processes this information to:</p>
 
 1. Determine the Type of Care Needed:
- - Patients input symptoms via the app.
+ - Patients input symptoms they are facing at the moment via the app.
  - The system analyzes the data to decide if they require:
    - Emergency Department (ED) for high-acuity cases.
    - Minor Injuries Unit (MIU) for non-critical injuries.
@@ -183,19 +181,25 @@ ensures that patients arriving at the hospital are informed about exactly where 
  - After processing the patient’s details and care requirements, the app generates an e-ticket containing:
   - QR Code: This can be scanned to directly load all the patient details previously entered into the system.
   - Site Code: The identifier for the recommended site.
-  - Site Type: Specifies the type of site (e.g., ED, MIU).
+  - Department Type: Specifies the type of department (e.g., ED, MIU).
   - Site Location: Address of the Site.
   - Ticket Number: A unique identifier for the patient.
   - Status of the Site: The current level of congestion or occupancy at the site.
     
 4. Streamlined On-Site Process:
- - Upon arrival at the site, the patient shows their ticket and a valid ID, which can be referred to by staff.
+ - Upon arrival at the A&E site, the patient shows their ticket and a valid ID, which can be referred to by staff before going for the treatment.
  - The patient’s details, already entered through the web app, are automatically loaded into the hospital’s system by simply scanning the QR code on the ticket.
  - This allows for seamless registration and ensures the patient receives timely and appropriate care.       
 
-<b><p> We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects. </b></p>
+<b><p>We use a QR Code for its simplicity and reliability. QR codes are easy to generate and scan, making them a practical solution for 
+streamlining patient check-ins. A key feature of QR codes is their error correction capability, which allows them to remain scannable even if they 
+are partially damaged by scratches, smudges, or other external factors. Additionally, this feature enhances readability, ensuring that QR codes 
+can still be scanned accurately even if partially obscured, such as by stickers or minor physical defects.</b></p>
 
-<b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival at the site. Once scanned, the patient’s details—such as patient name, age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly. The patient’s identity can be verified by asking them to present a valid ID, which can then be matched with their name and date of birth.</b></p>
+<b><p>This is a sample ticket that will be generated on the website for the patient. The ticket includes a QR Code that can be scanned upon arrival 
+at the site. Once scanned, the patient’s details—such as patient name, age, medical history, allergies, and current symptoms—are automatically 
+loaded into the system, allowing staff to provide appropriate treatment promptly. The patient’s identity can be verified by asking them to present 
+a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 <b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b>
 <br>
@@ -206,30 +210,22 @@ ensures that patients arriving at the hospital are informed about exactly where 
 
 ### Achieving Pre-Sorting through Kiosks on Site: Health Check-In Kiosk 
 
-The kiosk can just scan the QR code of the profile and then give the patient the ticket accordingly.
-Now some things to consider here: 
-In kiosk System update for faster entry of data as at home you can enter these details but when at the site it can very time consuming: 
-Solved through the profile scan or if account does not exist for user they can just quickly generate a ticket through the quick select options.  
-Also add what happens if patient misses the appointment or the appointment is re-scheduled due to the doctor not being there?
-If patient misses the appointment time:
-1. At the moment of calling the patients token number if patient does not show up, we will just move to next token number in line.
-2. In-case the patient comes back after this has happened they can go next, before the token scheduled so that it does not remain pending.
-3. Same scenario if patient arrives within 15 mins of the appoitment time.
-4. If the patient arrives 15 mins or later than their appointment time, their ticket will be invalidated and they will have to book another
-appointment and generate another e-ticket.
-5. Under extreme circumstances such as an emergency situation, the patient arriving later than 15 mins shall be given a pardon. 
+<p>The kiosk system is designed to streamline the entry of patient data, addressing the potential time constraints of entering details on-site.</p>
+
+   - For patients with a pre-existing profile, the process is expedited through a profile scan.
+   - For those without an account, the kiosk offers quick-select options to generate a ticket efficiently.
+   - For patients unable to use the digital system, a paper-based form is available to ensure inclusivity and accessibility.
+      - The paper form will collect essential details such as the patient’s name, age, symptoms, allergies, and medical history.
+      - To integrate the paper form with the digital system, it will be submitted to the reception desk.
+      - At the reception, the form will be processed through a stamping machine, which assigns the next available token number and determines the appropriate department for the patient, mirroring the functionality of the web app in the digital system.
+      - The form, now stamped with a token number, will be returned to the patient, enabling them to proceed seamlessly to the assigned department.    
 
 <p>Using Kiosks at the Site: Patients who arrive directly at the A&E site can use user-friendly kiosks to streamline the registration and sorting process. Unlike the web app, kiosks do not need to calculate the Loading Function as the patient is already at the site. The kiosk generates a ticket based on the department the patient needs to visit.</p>
 
 <p>Process for Kiosk Usage</p>
 
  1. Inputting Patient Information:
-  - Patients use the kiosk to enter essential details such as:
-    - Name
-    - Date of Birth (DOB)
-    - Symptoms
-    - Allergies or Current Medications
-    - Contact Information (e.g., email)
+  - The kiosk can just scan the QR code of the profile and then the patient can proceed and enter Symptoms they are facing
       
  2. Determining the Required Department:
   - Based on the symptoms provided, the kiosk directs the patient to the appropriate department:
@@ -247,6 +243,14 @@ appointment and generate another e-ticket.
   4. E-Ticket Delivery via Email:
    - If the patient provides an email address, the kiosk can automatically send an e-ticket to their email.
    - The e-ticket includes the same details as the printed ticket, ensuring patients have a backup and can easily retrieve their information if needed.
+
+<p>If a patient misses the appointment time:</p>
+
+1. When the patient's token number is called, if the patient does not show up, we will move on to the next token number in line.
+2. If the patient returns after missing their initial appointment time, they can proceed immediately, before the next scheduled token, to avoid having their ticket remain pending.
+3. The same applies if the patient arrives within 15 minutes of their appointment time.
+4. If the patient arrives 15 minutes or more after their appointment time, their ticket will be invalidated, and they will need to book another appointment and generate a new e-ticket.
+5. In extreme cases, such as an emergency, a patient arriving later than 15 minutes may be given a pardon and allowed to proceed.
 
 <p>Streamlined On-Site Process</p>
 
@@ -270,8 +274,6 @@ appointment and generate another e-ticket.
 
 ID tags/keychains with QR codes of the patients entire profile that can be carried easily could be issued for elderly and kids so that in emergency situations they can treated quickly and
 registered as well.
-
-Manually fill out a paper based form if they do not have an account.
 
 <hr>
 
