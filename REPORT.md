@@ -328,9 +328,15 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
   - Increases social interaction and emotional well-being.<br>
   - Reduces the perceived length of the wait.<br>
   - Gives patients a safe, uplifting space to smile and relax during stressful situations.<br>
+
+![Board Games Room](dat_vis_assets/boardgames.jpeg)
+
+<b>Image Source: Wikipedia</b>
+
   <br>
   <b><u>Addressing the Problem of Missing Calls</u></b>
    <p>One concern with hosting board games in A&E waiting areas is that patients might become so engrossed in the activity that they miss their turn for treatment. To mitigate this, we propose the following strategies:</p>
+  
   1. Digital Alerts:
     
    - Send the patient notification/alerts on their device to let them know that their turn is coming up soon or is up next.
@@ -766,6 +772,12 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 
    <p>These tents can be rapidly inflated and set up within minutes, ensuring minimal delays and providing a safe, sheltered environment for patients while they wait for their turn to receive care. This solution is cost-effective, portable, and highly efficient, catering to the unpredictable weather conditions.</p>
 
+<h3>Tent Mentioned/Referred to: Negative Pressure Inflatable Medical Tents</h3>
+
+![Medical Waiting Tent](dat_vis_assets/tents.jpg)
+
+<b>Image Source: stretchstructures.com</b>
+
 ### Based on all of this how would the solution change:
 
    <h4>Existing Solution includes: </h4>
@@ -790,9 +802,9 @@ Equip containers with interchangeable interiors so they can serve multiple roles
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
 
-Example of tent as waiting area for the mobile units: Negative Pressure Inflatable Medical Tents.
-Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything: Screen for the Management (an example of how the Mobile Units will be signaled during extreme loads at a or multiple site)
-an example area where people are playing board games: Games Room
+Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything: Screen for the Management 
+(an example of how the Mobile Units will be signaled during extreme loads at a or multiple site)
+
 an example layout or image of the satellite site: pre-fabricated homes style design
 A visual aid of how the very fast department will look like
 Visual of how a beacon system will work.
