@@ -411,7 +411,89 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 ### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
 
-### To calculate where we must place the department we need to Collect the following data: Patient X, Patient Y, Distance to the closest department from each patient.
+### Creating New Department: Type - Minor Injuries Unit 
+
+<h3>Space Readiness for Expansion:</h3>
+
+<p>Acknowledging the importance of ensuring that any available space is not already being utilized for other purposes, a thorough assessment will 
+be conducted to identify areas that can be converted quickly and efficiently. These spaces will be maintained in a ready-to-use condition, 
+ensuring minimal downtime when creating the new department.</p>
+
+### Express Treatment Centre | ETC - Concept Overview
+
+<p>
+The Express Treatment Centre | ETC is a specialized department designed to deliver swift, high-quality care to patients with minor injuries.
+This initiative focuses on optimizing processes, eliminating bottlenecks, and leveraging innovative tools to ensure a seamless patient experience.
+Initially launched on a small scale, the ETC will serve as a pilot model to refine and evaluate its efficacy before potential scaling.
+</p>
+
+<h3>Key Features of the Express Treatment Centre</h3>
+
+1. Target Operating Hours:
+   - 8:00 AM to 6:00 PM, covering peak demand times aligned with office hours, school schedules, and other daily activities.
+
+2. Efficient Staffing:
+   - Two teams will work 2.5-hour shifts ensuring staff remain alert and energized, minimizing burnout.
+      - Team A: 8 AM - 10:30 AM
+      - Team B: 10:30 AM - 1 PM (Team A on break)
+      - Team A: 1 PM - 3:30 PM (Team B on break)
+      - Team B: 3:30 PM - 6 PM (Team A's shift ends)
+      - Team B: Shift ends at 6:00 PM
+   - Staff currently treating patients during a shift change must complete their duties before transitioning out, ensuring uninterrupted care.
+      - If a patient's treatment is ongoing or the patient has not been discharged yet, the staff must continue providing care until the treatment is complete, ensuring the patient is not abandoned mid-treatment or near its conclusion.    
+
+3. Streamlined Patient Flow: Using the Leaky Token Bucket Algorithm
+   - Patients are assigned an Express Treatment Centre (ETC) through a web application or on-site kiosks.
+   - Upon arrival at the site, patients are allocated an e-ticket, which includes their ETC assignment (if the patient is not already at the A&E site).
+   - After being assigned the ETC, patients are directed to the waiting room near the ETC.
+   - The waiting room acts as the "bucket" in the Leaky Bucket Algorithm, with patients waiting for their turn. Patients are called into the department based on their e-ticket token number, which will be displayed on information screens in the waiting room.
+   - As their e-ticket number is displayed, patients proceed to the ETC for treatment.
+   - Treatment in the ETC is based on the information entered by the patient on the web app or kiosks, which can be accessed via a QR code on their e-ticket.
+   - Finally, after receiving treatment, patients will either be discharged or re-directed for further care, based on the analysis of their data and treatment needs.
+
+<p>
+The Leaky Token Bucket Algorithm is a method used to manage the flow of data or people. Imagine a bucket with a small hole at the bottom, and each
+token represents an item (like a patient or data). As tokens enter the bucket, they leak out at a steady, controlled pace. This ensures a smooth, 
+manageable flow without overwhelming the system or causing congestion.</p>
+
+4. Simplified Discharge Process:
+   - Patients receive a discharge stamp on their prescription or an update on their e-ticket upon completion of treatment.
+   - For follow-up care, automated notifications or referral notes are sent directly via the e-ticket system.
+
+<h3>Bottlenecks Addressed</h3>
+
+1. Staff Shortages:
+   - Spliting shifts ensure a steady rotation of staff, preventing exhaustion and maintaining efficiency.
+
+2. Ambiguous Triage Criteria:
+   - Resolved through pre-sorting using the web app and kiosk systems. Patients are routed directly to the appropriate department.
+
+3. High Patient Volumes:
+   - Controlled using the leaky token bucket model, which ensures smooth patient flow based on e-tickets token number.
+
+4. Communication Gaps:
+   - The e-ticket system provides patients with clear instructions, including the department and waiting area they need to proceed to.
+
+5. Discharge Delays:
+   - A dedicated staff member oversees discharges, ensuring patients leave promptly.
+   - The discharge stamp or e-ticket update minimizes confusion and formalizes the process.
+
+<h3>Approach</h3>
+
+<p>The ETC will be implemented on a small scale initially to assess its viability. This controlled rollout will:</p>
+
+   - Allow for iterative improvements based on real-world performance.
+   - Provide data-driven insights to refine processes and identify potential scaling opportunities.
+   - Minimize risks associated with large-scale implementation.
+
+<p>If the pilot proves successful, the model will be expanded to other sites. If challenges arise that cannot be mitigated, scaling will be reconsidered.</p>
+
+<p>The Express Treatment Centre represents a proactive step toward enhancing patient care for minor injuries. By focusing on efficiency,
+clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
+periods. Starting small allows for evaluation and development of the approach, ensuring that the model is robust before scaling to broader implementation.</p>
+
+### Creating a new Site: Type - Satellite Site
+### To calculate where we must create the new Site we use the following data: Patient X, Patient Y
 
 <h4>We will make the following Assumptions</h4>
 <p>For the purposes of this analysis and planning, we make the following assumptions:</p>
@@ -421,25 +503,25 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
  2. Regulatory Approvals:
     - It is assumed that the necessary regulatory approvals, such as zoning permissions and adherence to building codes, have been secured to allow for the construction of these new satellite sites.
  3. Infrastructure and Transport Feasibility:
+    - It is assumed that space for these sites is available and suitable for installation without significant delays or obstacles.
     - The satellite sites will be situated in locations with adequate transport infrastructure to support quick and reliable patient transfers between the satellite and associated main sites. This includes the availability of ambulances, well-maintained road networks, and manageable response times.
  4. Financial Feasibility:
-    - We assume that sufficient funding is available to establish and operate these new satellite sites, including the costs for construction, staffing, and equipment procurement.
+    - Financial resources for building, equipping, and staffing these satellite sites are assumed to be available, ensuring operational readiness.
  5. Population and Traffic Flow Considerations:
      - Patients may not always be at home when they require care; hence, high-traffic areas or densely populated zones are assumed to be better indicators for site placement.
-
- - **Something to consider: Patients may not be at home they might be at office or in the supermarket, hence, dense population/traffic flow might be better indicators.**
  
 <p>To further enhance placement decisions, data such as population density, traffic flow patterns, and patient registration statistics (e.g., Pat_Loc_GPs) will be integrated into the site selection process. These insights, combined with tools like weighted-mean calculations, help predict demand in real time, particularly during peak hours or seasons.</p>
 
 <h4>New Satellite Sites Integrated with Emergency, Minor Injuries Unit, and GP Services</h4>
-<p>We propose the creation of new, smaller-scale <b>Satellite Sites</b> that integrate <b>Emergency Life-Saving Services</b>, <b>Minor Injuries Units (MIU)</b>, and <b>GP services</b>. These sites will be strategically associated with Main Sites to ensure continuity of care, efficient patient transfers, and access to advanced facilities when required.</p>
-
- - Key Assumptions:
-    - It is assumed that space for these sites is available and suitable for construction without significant delays or obstacles.
-    - Regulatory and legal barriers, such as zoning laws and site approvals, are assumed to be addressed before implementation.
-    - Financial resources for building, equipping, and staffing these satellite sites are assumed to be available, ensuring operational readiness.
+<p>The creation of new, smaller-scale <b>Satellite Sites</b> that integrate <b>Emergency Life-Saving Services</b>, <b>Minor Injuries Units (MIU)</b>, and <b>GP services</b>. These sites will be linked to Main Sites by Site Codes to ensure continuity of care, facilitate efficient patient transfers, and provide access to advanced facilities when needed.</p>
 
 <p>Satellite sites will act as the first point of care, providing essential services such as life-saving treatment and telemedicine consultations until patients can be transferred to the main site for escalated care. Each satellite site will be tagged with a **Site Code**, ensuring seamless integration with the main A&E system. For example, a satellite site associated with **Site_Code: 2** could also support telemedicine, urgent care, or diagnostic services. Clear escalation protocols will be in place to guide patient transfers when necessary. For instance, a critical patient flagged at a satellite site will receive life-saving care on-site while arrangements for immediate transport to the associated Main Site are made. This ensures no interruption in the continuity of care.</p>
+
+<h3>Use of Prefabricated Buildings:</h3>
+
+   - The use of prefabricated buildings can significantly reduce the cost of establishing satellite A&E sites.
+   - These buildings are modular, easy to customize, and can be quickly integrated, allowing for a fast setup.
+   - This approach helps streamline the allocation of staffing and the procurement of equipment, ensuring the site can become operational with minimal delay.
 
 #############################################################################################################################
 The Beacon system for public usage. 
@@ -448,16 +530,16 @@ Signal sent through mobile devices through the web app. To be used only during e
 What happens if the person collapsed is alone and no one is doing anything to help????
 #############################################################################################################################
 
-### Using Weighted Mean of Data to find the Optimal Location for Creating new Departments
+### Using Weighted Mean of Data to find the Optimal Location for Creating Satellite Sites
  
-How it would work: 
+How it would work (backend of the web app): 
  - For each patient, calculate the distance to the closest department.
- - Store the distances in an array and sort it in descending order. Sort distances to identify outliers that might disproportionately influence the mean. Consider limiting weights for patients far outside the target area (eg. > 40 miles).
- - Take the Weighted Mean of their X and Y co-ordinates: This will be the New Departments location. 
+ - Store these distances in an array and sort them in descending order. This helps identify outliers that might disproportionately influence the mean. Consider limiting the weights for patients located far outside the target area (e.g., > 40 miles).
+ - Calculate the Weighted Mean of their X and Y coordinates to determine the optimal location for the new department.
 
- - Formula -> Weighted Mean = (Items * Weight) / Sum of all Weights
-   - Items: represents Patient X and Y (separately)
-   - Weight: represents the distance for each patient to the closest department
+   <p> Formula- </p> <p>Weighted Mean = (Items * Weight) / Sum of all Weights</p>
+   - Items: Refers to the X and Y coordinates of each patient (separately).
+   - Weight: Represents the distance from each patient to the nearest department.
   <br>
   
   ![Weighted Mean Formula](./dat_vis_assets/formulas.png)
@@ -472,16 +554,17 @@ How it would work:
    - X1 : is the X co-ordinate of the patient
    - Y1 : is the Y co-ordinate of the patient
 
-  <h4>An Alternative to Simplify the Calculation</h4> 
-  To simplify calculations we can group patients by postcode or GP cluster. Reverse-Engineering the Pat_Loc_GPs we can group patients by postcode or GP area to simplify calculations for the weighted mean. Aggregate data by groups, then using Pat_Loc_GPs as a proxy for grouping patients into clusters. For Example:
+  <h4>Simplifying the Calculation</h4> 
+  <p>To simplify calculations we can group patients by postcode or GP cluster. Reverse-Engineering the Pat_Loc_GPs we can group patients by postcode or GP area to simplify calculations for the weighted mean. Aggregate data by groups, then using Pat_Loc_GPs as a proxy for grouping patients into clusters. For Example:</p>
    - Patients within the same postcode or within a specific radius of a GP cann be treated as a single group.
    - Assign a central point for each group, reducing the computational complexity.   
 
   <h4>Visualizing the Weighted Mean of the data using K-Means Clustering and Vonoroi Diagram</h4> 
-  To enhance the current method by we are integrating K-Means Clustering to find the optimal locations for new departments and improve demand distribution, visualizing it on a Vonoroi Diagram. 
+  <p>To enhance the current method by we are integrating K-Means Clustering to find the optimal locations for new departments and improve demand distribution, visualizing it on a Vonoroi Diagram.</p> 
 
 ## K-Means Clustering
 <p>Is a technique used in data analysis to group similar similar data points together. It's like sorting a collection of items into categories based on their characteristics, so that items in the same category (or group) are more similar to each other than to items in other categories. In K-Means, K represents the number of groups (or clusters) we want to create. The algorithm works by:</p>
+
   - Choosing K initial cluster centers (called centroids) at random.
   - Assigning each data point to the closest centroid.
   - Recalculating the centroids based on the new groupings of data points.
@@ -573,103 +656,51 @@ The website below can be used as a tool to demostrate how we will implement it. 
  - By applying both K-Means Clustering and Voronoi Diagrams, we create a powerful framework for optimizing A&E department locations and improving overall patient flow.
 
 ## Expanding Capacity in Existing Departments
-When faced with the challenge of increasing capacity in healthcare facilities, this approach prioritizes feasibility and efficiency. Before considering the creation of new departments, first evaluation— whether expansion is possible within existing sites. This involves assessing available space and determining if additional capacity can be accommodated effectively.
 
-If expansion is viable, direct focus on increasing staffing levels and patient beds to enhance the facility's ability to handle surges in patient demand. However, in scenarios where physical expansion is constrained—either due to space limitations or logistical challenges— deploy re-purposed Mega Hauler Trucks and Shipping Containers housing the complete suite of technology and bedding that is able to provide full care to patients, serving as temporary extensions to existing facilities, providing crucial support during high-demand periods.
+<p>When faced with the challenge of increasing capacity in healthcare facilities, this approach prioritizes feasibility and efficiency. Before 
+considering the creation of new departments, first evaluation— whether expansion is possible within existing sites. This involves assessing 
+available space and determining if additional capacity can be accommodated effectively. If expansion is viable, direct focus on increasing staffing 
+levels and patient beds to enhance the facility's ability to handle surges in patient demand. However, in scenarios where physical expansion is 
+constrained—either due to space limitations or logistical challenges— deploy re-purposed Mega Hauler Trucks and Shipping Containers housing the 
+complete suite of technology and bedding that is able to provide full care to patients, serving as temporary extensions to existing facilities, 
+providing crucial support during high-demand periods. This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, 
+meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.</p>
 
-This dual-layered strategy ensures that healthcare systems remain adaptive and scalable, meeting patient needs efficiently without the need for costly and time-consuming permanent infrastructure changes.
-
-### Creating New Department: Only For Minor Injuries Unit 
-### Express Treatment Centre | ETC - Concept Overview (ELABORATE ON ALL THE POINTS BELOW)
-
-<p>
-The Express Treatment Centre | ETC is a specialized department designed to deliver swift, high-quality care to patients with minor injuries.
-This initiative focuses on optimizing processes, eliminating bottlenecks, and leveraging innovative tools to ensure a seamless patient experience.
-Initially launched on a small scale, the ETC will serve as a pilot model to refine and evaluate its efficacy before potential scaling.
-</p>
-
-<h3>Key Features of the Express Treatment Centre</h3>
-
-1. Target Operating Hours:
-   - 8:00 AM to 6:00 PM, covering peak demand times aligned with office hours, school schedules, and other daily activities.
-
-2. Efficient Staffing:
-   - Two teams will work 2.5-hour shifts ensuring staff remain alert and energized, minimizing burnout.
-      - Team A: 8 AM - 10:30 AM
-      - Team B: 10:30 AM - 1 PM (Team A on break)
-      - Team A: 1 PM - 3:30 PM (Team B on break)
-      - Team B: 3:30 PM - 6 PM (Team A's shift ends)
-      - Team B: Shift ends at 6:00 PM
-   - Staff currently treating patients during a shift change must complete their duties before transitioning out, ensuring uninterrupted care.
-      - If a patient's treatment is ongoing or the patient has not been discharged yet, the staff must continue providing care until the treatment is complete, ensuring the patient is not abandoned mid-treatment or near its conclusion.    
-
-3. Streamlined Patient Flow: Using the Leaky Token Bucket Algorithm
-   - Patients are assigned an Express Treatment Centre (ETC) through a web application or on-site kiosks.
-   - Upon arrival at the site, patients are allocated an e-ticket, which includes their ETC assignment (if the patient is not already at the A&E site).
-   - After being assigned the ETC, patients are directed to the waiting room near the ETC.
-   - The waiting room acts as the "bucket" in the Leaky Bucket Algorithm, with patients waiting for their turn. Patients are called into the department based on their e-ticket token number, which will be displayed on information screens in the waiting room.
-   - As their e-ticket number is displayed, patients proceed to the ETC for treatment.
-   - Treatment in the ETC is based on the information entered by the patient on the web app or kiosks, which can be accessed via a QR code on their e-ticket.
-   - Finally, after receiving treatment, patients will either be discharged or re-directed for further care, based on the analysis of their data and treatment needs.
-
-<p>
-The Leaky Token Bucket Algorithm is a method used to manage the flow of data or people. Imagine a bucket with a small hole at the bottom, and each
-token represents an item (like a patient or data). As tokens enter the bucket, they leak out at a steady, controlled pace. This ensures a smooth, 
-manageable flow without overwhelming the system or causing congestion.</p>
-
-4. Simplified Discharge Process:
-   - Patients receive a discharge stamp on their prescription or an update on their e-ticket upon completion of treatment.
-   - For follow-up care, automated notifications or referral notes are sent directly via the e-ticket system.
-
-<h3>Bottlenecks Addressed</h3>
-
-1. Staff Shortages:
-   - Spliting shifts ensure a steady rotation of staff, preventing exhaustion and maintaining efficiency.
-
-2. Ambiguous Triage Criteria:
-   - Resolved through pre-sorting using the web app and kiosk systems. Patients are routed directly to the appropriate department.
-
-3. High Patient Volumes:
-   - Controlled using the leaky token bucket model, which ensures smooth patient flow based on e-tickets token number.
-
-4. Communication Gaps:
-   - The e-ticket system provides patients with clear instructions, including the department and waiting area they need to proceed to.
-
-5. Discharge Delays:
-   - A dedicated staff member oversees discharges, ensuring patients leave promptly.
-   - The discharge stamp or e-ticket update minimizes confusion and formalizes the process.
-
-<h3>Approach</h3>
-
-<p>The ETC will be implemented on a small scale initially to assess its viability. This controlled rollout will:</p>
-
-   - Allow for iterative improvements based on real-world performance.
-   - Provide data-driven insights to refine processes and identify potential scaling opportunities.
-   - Minimize risks associated with large-scale implementation.
-
-<p>If the pilot proves successful, the model will be expanded to other sites. If challenges arise that cannot be mitigated, scaling will be reconsidered.</p>
-
-<p>The Express Treatment Centre represents a proactive step toward enhancing patient care for minor injuries. By focusing on efficiency,
-clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
-periods. Starting small allows for evaluation and development of the approach, ensuring that the model is robust before scaling to broader implementation.</p>
-
+### Introduction of a new System 
 ### HERO: Health Emergency Response Operations
 
-### Addressing the Expansion
+<p>The HERO concept aims to address healthcare capacity challenges during times of high demand by utilizing mobile units - trucks and shipping 
+containers that will be repurposed and designed to be equipped with medical facilities. These units can be quickly deployed and integrated with 
+main A&E sites providing an effective solution to meet urgent needs. The units will support a range of services - from initial assessment to 
+diagnostics, wound care and dressing, minor burns treatment, vaccination and so on. This ensures patients receive timely attention without 
+overwhelming existing facilities. By integrating these with the Site using the SIte Code, clear communication, and digital queue management, 
+HERO is designed to maintain a smooth flow of healthcare services during emergencies and peak periods.</p>
 
-1. Space Readiness for Expansion:
+<h3>Trucks Mentioned/Referred to: Denby Eco-Link</h3>
 
-Acknowledging the importance of ensuring that any available space is not already being utilized for other purposes, a thorough assessment will be conducted to identify areas that can be converted quickly and efficiently when needed. These spaces will be maintained in a ready-to-use condition, ensuring minimal downtime when expansion is required.
+![Big Truck](dat_vis_assets/bigTruck.jpeg)
 
-2. Pre-Designed Trucks and Containers:
+<b>Image Source: Wikipedia</b>
 
-Instead of committing significant funds to the construction of permanent expansions, which require substantial time, money, and planning, allocating these resources to pre-designed and repurposed trucks and shipping containers. These units will be fully equippedw ith beds, equipment, computers and ready to deploy during times of extreme need, ensuring a cost-effective and scalable solution to temporary capacity challenges.
+<h3>Shipping Containers Mentioned/Referred to: Reefer Container carried on Articulated Lorries</h3>
 
-3. Integration with Main Sites:
+![Shipping Container](dat_vis_assets/container.png)
+
+<b>Image Source: tritoncontainer.com</b>
+
+![Artic Lorry](dat_vis_assets/articlo.jpg)
+
+<b>Image Source: Wikipedia</b>
+
+1. Pre-Designed Trucks and Containers:
+
+<p>Instead of committing significant funds to the construction of permanent expansions, which require substantial time, money, and planning, allocating these resources to pre-designed and repurposed trucks and shipping containers. These units will be fully equippedw ith beds, equipment, computers and ready to deploy during times of extreme need, ensuring a cost-effective and scalable solution to temporary capacity challenges.</p>
+
+2. Integration with Main Sites:
 
 Integration between the trucks, containers, and main sites will be streamlined using the same software system currently employed at the main sites. By simply labeling the mobile units as extensions (e.g., "Mobile Unit - Site Code: N"), the system will maintain seamless operations, including patient record management, staff allocation, and resource tracking. Using the existing software as a main sites make this a straightforward process, minimizing the potential for disruptions or inefficiencies.
 
-4. Clear Communication and Signage:
+3. Clear Communication and Signage:
 
 To ensure clarity for both patients and staff, large, clearly visible signage will be placed on these mobile units. The signage will explain the purpose of the trucks and containers and direct individuals to their specific locations, eliminating confusion about why they are being directed to these temporary facilities.
 
@@ -678,23 +709,23 @@ The primary purpose of these mobile units is not to replace the existing sites b
 
 Taking into account that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than coming to a halt due to the overwhelming demand.
 
-5. Staff Readiness Plan:
+4. Staff Readiness Plan:
 
 While the physical infrastructure (trucks and containers) is ready for deployment, it’s equally crucial to have a standby staffing plan. This could include:
  - A roster of on-call staff trained to work in these temporary units.
  - Partnerships with local healthcare providers or temporary staffing agencies to fill gaps quickly.
 
-6. Modular Flexibility for Containers:
+5. Modular Flexibility for Containers:
 
 Equip containers with interchangeable interiors so they can serve multiple roles (e.g., triage, diagnostics, or even administrative functions) based on the needs of the site. For example, during one surge, a container might act as a vaccination center, while in another it serves as a diagnostic lab.
 
-7. Digital Queue Management:
+6. Digital Queue Management:
 
  - Using the same digital queue management system accessible via a web applications or kiosks at the site.
  - Patients can check estimated wait times for both the main site and mobile units.
  - This ensures transparency and helps patients understand why they are being redirected.
 
-8. Multi-Purpose Design for Trucks and Containers:
+7. Multi-Purpose Design for Trucks and Containers:
 
  - Beyond healthcare services, these units can also serve other purposes during quieter periods, such as:
     - Community health education centers.
@@ -721,7 +752,7 @@ Equip containers with interchangeable interiors so they can serve multiple roles
       - A specialized team will be pre-assigned and on standby to staff the mobile units during surge conditions.
       - Staff allocation will be planned in advance, ensuring there is no delay in deployment. This includes creating a roster of healthcare professionals trained specifically for mobile unit operations.
 
-Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.
+<h3>Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.</h3>
 
    <h3>Question: Where will patients wait for the Mobile Units, especially in cold or harsh weather conditions</h3>
 
@@ -759,7 +790,6 @@ Power Supply for the Mobile Units: electric Generator, Equipment fixed securely 
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
 
-Add Visuals For The Mobile Units Layout: articulated vehicles
 Example of tent as waiting area for the mobile units: Negative Pressure Inflatable Medical Tents.
 Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything: Screen for the Management (an example of how the Mobile Units will be signaled during extreme loads at a or multiple site)
 an example area where people are playing board games: Games Room
