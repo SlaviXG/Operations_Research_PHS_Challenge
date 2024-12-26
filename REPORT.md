@@ -903,12 +903,19 @@ meeting patient needs efficiently without the need for costly and time-consuming
 ### Introduction of a new System 
 ### HERO: Health Emergency Response Operations
 
-<p>The HERO concept aims to address healthcare capacity challenges during times of high demand by utilizing mobile units - trucks and shipping 
-containers that will be repurposed and designed to be equipped with medical facilities. These units can be quickly deployed and integrated with 
-main A&E sites providing an effective solution to meet urgent needs. The units will support a range of services - from initial assessment to 
-diagnostics, wound care and dressing, minor burns treatment, vaccination and so on. This ensures patients receive timely attention without 
-overwhelming existing facilities. By integrating these with the Site using the SIte Code, clear communication, and digital queue management, 
-HERO is designed to maintain a smooth flow of healthcare services during emergencies and peak periods.</p>
+<p>The HERO concept is designed to address healthcare capacity challenges during periods of high demand by deploying mobile units, such as trucks 
+and repurposed shipping containers, equipped with essential medical facilities. These units can be rapidly deployed and integrated with main 
+Accident & Emergency (A&E) sites, offering an efficient solution to meet urgent medical needs. The units are equipped to support a range of services, 
+including initial assessments, diagnostics, wound care, minor burns treatment, vaccinations, and more. This ensures that patients receive timely 
+attention without overburdening existing healthcare facilities. By integrating these units with the main site using a Site Code, alongside clear 
+communication protocols and digital queue management, HERO ensures a seamless healthcare service delivery even during emergencies and peak periods.</p>
+
+<h3>Example Use Case:</h3>
+
+   - In the event of a technical malfunction or issue at a main site that reduces its ability to operate at full capacity, HERO units can be deployed as a temporary extension to support ongoing operations.
+   - HERO units are equipped with life support and life-saving equipment, allowing them to effectively respond to emergencies.
+   - HERO units can be mobilized for specific healthcare needs, such as large-scale vaccination campaigns.
+      - For example, during flu outbreaks, HERO units can be deployed to schools and offices to administer new vaccines, effectively bringing healthcare services directly to the people.
 
 <h3>Trucks Mentioned/Referred to: Denby Eco-Link</h3>
 
@@ -1023,8 +1030,6 @@ Taking into account that in extreme cases, even these mobile units may become ov
 ![Medical Waiting Tent](dat_vis_assets/tents.jpg)
 
 <b>Image Source: stretchstructures.com</b>
-
-### One more use case: Calling on these mobile units in-case there is a techincal malfunction at a main site, or an issue has occured at the main iste due to which the site is not running at 100% capability. And HERO should have a life support and life saving equipment in case of emergencies. They can also be used for vaccination. For eg. if there is a flu, and schools and offices have been ordered to issue shots of a new vaccine, the HERo units can be deployed to them for registering the vaccine, it would be like bringing the hospital to them.  
 
 <hr>
 
