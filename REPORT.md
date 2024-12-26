@@ -279,10 +279,45 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 ![Sample Ticket with QR Code from Kiosk](./dat_vis_assets/kiosk.png) 
 
 <h3>ID Tags/Keychains with QR Codes:</h3>
-<p>ID tags or keychains with QR codes, containing the patient's complete profile, can be issued to elderly individuals and children for easy carrying in emergency situations. These tags can be ordered for anyone, and they will feature the patient's unique token number and a QR code linked to their profile on the PHS web app. The QR code can be scanned at on-site kiosks to quickly generate the patient's e-ticket. In emergency cases, ambulances can scan the QR code to instantly load the patient's data, ensuring that they are treated swiftly and accurately without delay.
+<p>ID tags or keychains with QR codes, which can be scanned to access the patient's complete profile at the A&E Site, can be issued to elderly individuals and children for easy carrying in emergency situations. These tags can be ordered for anyone, and they will feature the patient's unique token number and a QR code linked to their profile on the PHS web app. The QR code can be scanned at on-site kiosks to quickly generate the patient's e-ticket. In emergency cases, ambulances can scan the QR code to instantly load the patient's data, ensuring that they are treated swiftly and accurately without delay.
 </p>
 
-### Adding airport like screens to display the departments and which level they are on along with the load of the site. 
+![QR Code Key Chain](dat_vis_assets/PHS.png)
+
+
+### Implementing Airport-Style Information Displays for Patient Guidance
+
+<p>For improved patient navigation at A&E sites, we can implement information display screens similar to the Flight Information Display Systems (FIDS) used in airports. These systems provide clear and concise information to guide travelers to their respective gates, terminals, or platforms.</p>
+
+<h3>Inspiration from Airport Displays:</h3>
+
+ - Displayed Information:
+   <p>Airport FIDS typically show details such as Boarding Time, Destination, Flight Number, Gate Number, and Status (e.g., Boarding, On-Time, Delayed).</p>
+
+ - Signage and Directions:
+   <p>Clear directional signage is placed above or near the screens, pointing travelers towards specific gates or areas (e.g., "Gates A1-A21 →").</p>
+
+<h3>Proposed Application for A&E Sites:</p>
+
+ - Patient Information Display Screens (PIDS):
+   <p>These screens will guide patients to the appropriate department or waiting area with the following details:</p>
+
+      - Next Patient Call Time: Displays the estimated time the next patient will be attended, replacing traditional “Waiting Time” metrics for better clarity.
+      - Department Type: Identifies the nature of the department, such as Emergency Department (ED), Minor Injuries Unit (MIU), or General Practice (GP).
+      - Department Name: Specifies the department’s focus, such as Cardiology, Orthopedics, or Dermatology.
+      - Building Level: Indicates the floor or level where the department is located for easy navigation.
+      - Status: Provides real-time updates, such as “No Delays,” “Slight Delays,” or “High Volume.”
+
+ - Enhanced Navigation:
+   <p>Clear and visible directional signage will complement these displays, pointing patients toward elevators, stairs, or pathways to reach their assigned department (e.g., “Level 2: Departments A1-A5 →”).</p>
+
+<h3>Benefits of PIDS:</h3>
+
+ - Improved Clarity: Patients can easily locate their assigned department without confusion or the need for repeated inquiries.
+ - Transparency: Real-time updates on status and patient flow build trust and reduce anxiety.
+ - Streamlined Navigation: Reduces bottlenecks and misdirection, ensuring smoother patient movement throughout the facility.
+
+<p>This approach leverages proven airport systems to optimize patient guidance, aligning with the goal of creating a seamless and efficient A&E experience.</p>
 
 <hr>
 
@@ -704,26 +739,26 @@ HERO is designed to maintain a smooth flow of healthcare services during emergen
 
 2. Integration with Main Sites:
 
-Integration between the trucks, containers, and main sites will be streamlined using the same software system currently employed at the main sites. By simply labeling the mobile units as extensions (e.g., "Mobile Unit - Site Code: N"), the system will maintain seamless operations, including patient record management, staff allocation, and resource tracking. Using the existing software as a main sites make this a straightforward process, minimizing the potential for disruptions or inefficiencies.
+<p>Integration between the trucks and containers with the main sites will be streamlined using the same software system currently employed at the main sites. By simply labeling the mobile units as extensions (e.g., "Mobile Unit - Site Code: N"), the system will maintain seamless operations, including patient record management, staff allocation, and resource tracking. Using the existing software as a main sites make this a straightforward process, minimizing the potential for disruptions or inefficiencies.</p>
 
 3. Clear Communication and Signage:
 
-To ensure clarity for both patients and staff, large, clearly visible signage will be placed on these mobile units. The signage will explain the purpose of the trucks and containers and direct individuals to their specific locations, eliminating confusion about why they are being directed to these temporary facilities.
+<p>To ensure clarity for both patients and staff, large, clearly visible signage will be placed on these mobile units. The signage will explain the purpose of the trucks and containers and direct individuals to their specific locations, eliminating confusion about why they are being directed to these temporary facilities.</p>
 
-Purpose and Role of Trucks and Containers: 
-The primary purpose of these mobile units is not to replace the existing sites but to alleviate the load on these facilities during times of high demand. These trucks and containers will act as temporary extensions, providing care for minor issues and diseases and ensuring that no patient is left standing or unattended for hours during chaotic times.
-
-Taking into account that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than coming to a halt due to the overwhelming demand.
+<b>Purpose and Role of Trucks and Containers:</b> 
+<p>The primary purpose of these mobile units is not to replace the existing sites but to alleviate the load on these facilities during times of high demand. These trucks and containers will act as temporary extensions, providing care for minor issues and diseases and ensuring that no patient is left standing or unattended for hours during chaotic times.
+Taking into account that in extreme cases, even these mobile units may become overcrowded. However, the goal is not to eliminate all delays but to keep the flow of traffic moving smoothly. Even if the process is slower, maintaining a steady flow ensures that care is provided, and the system remains functional rather than coming to a halt due to the overwhelming demand.</p>
 
 4. Staff Readiness Plan:
 
-While the physical infrastructure (trucks and containers) is ready for deployment, it’s equally crucial to have a standby staffing plan. This could include:
+<p>While the physical infrastructure (trucks and containers) is ready for deployment, it’s equally crucial to have a standby staffing plan. This could include:</p>
+ 
  - A roster of on-call staff trained to work in these temporary units.
  - Partnerships with local healthcare providers or temporary staffing agencies to fill gaps quickly.
 
 5. Modular Flexibility for Containers:
 
-Equip containers with interchangeable interiors so they can serve multiple roles (e.g., triage, diagnostics, or even administrative functions) based on the needs of the site. For example, during one surge, a container might act as a vaccination center, while in another it serves as a diagnostic lab.
+<p>Equip containers with interchangeable interiors so they can serve multiple roles (e.g., triage, diagnostics, or even administrative functions) based on the needs of the site. For example, during one surge, a container might act as a vaccination center, while in another it serves as a diagnostic lab.</p>
 
 6. Digital Queue Management:
 
@@ -808,3 +843,7 @@ Loading Function Backend Visual how will it look like for someone in the backend
 an example layout or image of the satellite site: pre-fabricated homes style design
 A visual aid of how the very fast department will look like
 Visual of how a beacon system will work.
+
+### Detailed Explaination of the Computations that were performed including all py files.
+
+### Limitations and caveats section at the end.
