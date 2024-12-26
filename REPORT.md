@@ -274,7 +274,7 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 <b><i>This system ensures a seamless and efficient patient registration process, reducing waiting times and allowing quicker access to care.</i></b><br>
 <b>The colored box next to the QR code represents the current load at the site assigned to you, while the color blocks at the bottom correspond to the overall load levels for all sites.</b>
 
-![Sample Ticket with QR Code from Kiosk](./dat_vis_assets/Kiosk.png) 
+![Sample Ticket with QR Code from Kiosk](/dat_vis_assets/Kiosk.png) 
 
 <h3>ID Tags/Keychains with QR Codes:</h3>
 <p>ID tags or keychains with QR codes, which can be scanned to access the patient's complete profile at the A&E Site, can be issued to elderly individuals and children for easy carrying in emergency situations. These tags can be ordered for anyone, and they will feature the patient's unique token number and a QR code linked to their profile on the PHS web app. The QR code can be scanned at on-site kiosks to quickly generate the patient's e-ticket. In emergency cases, ambulances can scan the QR code to instantly load the patient's data, ensuring that they are treated swiftly and accurately without delay.
