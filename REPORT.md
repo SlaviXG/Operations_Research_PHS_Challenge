@@ -167,6 +167,10 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
 
+<h3>Backend Display of the Loading Function in Operation</h3>
+
+[HERO (Mobile Units)](#hero-health-emergency-response-operations) mentioned in detail below.
+
 ![Display](/dat_vis_assets/displayBack.png)
 
 ### Data Collection & Structuring   
@@ -193,8 +197,7 @@ allowing for faster and more efficient treatment. Patients profile is created wi
 
 <p>
 Utilizing this data to our advantage: we can streamline the reallocation of patients. By employing the loading function to assign the most 
-suitable A&E site to each patient, we address a major bottleneck: the inefficiency of patients needing to reallocate themselves. This approach also 
-ensures that patients arriving at the hospital are informed about exactly where they need to go, improving overall efficiency and reducing confusion.
+suitable A&E site to each patient, we address a major bottleneck: the inefficiency of patients needing to reallocate themselves. This approach also ensures that patients arriving at the hospital are informed about exactly where they need to go, improving overall efficiency and reducing confusion.
 </p>
 
 <hr>
@@ -310,7 +313,6 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
  3. Generating a Patient Ticket:
   - The kiosk provides the patient with a printed or digital ticket containing:
     - QR Code: This can be scanned to directly load all the patient details previously entered into the system.
-    - Priority Level: Displays the acuity level based on the patient’s symptoms, indicating whether the case is high acuity (urgent) or low acuity (non-urgent). 
     - Waiting Room Number: The number assigned to the waiting room where the patient must wait.
     - Ticket Number: A unique number to maintain queue order.
       
@@ -320,7 +322,7 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 <p>If a patient misses the appointment time:</p>
 
-1. When the patient's token number is called, if the patient does not show up, we will move on to the next token number in line.
+1. When the patient's token number is called/displayed on the information screen, if the patient does not show up, we will move on to the next token number in line.
 2. If the patient returns after missing their initial appointment time, they can proceed immediately, before the next scheduled token, to avoid having their ticket remain pending.
 3. The same applies if the patient arrives within 15 minutes of their appointment time.
 4. If the patient arrives 15 minutes or more after their appointment time, their ticket will be invalidated, and they will need to book another appointment and generate a new e-ticket.
@@ -377,7 +379,8 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
    <p>Airport FIDS typically show details such as Boarding Time, Destination, Flight Number, Gate Number, and Status (e.g., Boarding, On-Time, Delayed).</p>
 
  - Signage and Directions:
-   <p>Clear directional signage is placed above or near the screens, pointing travelers towards specific gates or areas (e.g., "Gates A1-A21 →").</p>
+   <p>Clear directional signage is placed above or near the screens, pointing travelers towards specific gates or areas (e.g., "Gates A1-A21 →").
+   </p>
 
 <h3>Proposed Application for A&E Sites:</p>
 
@@ -471,7 +474,7 @@ Get people to host Board games and invite the other people waiting in queue or j
 
 ## Event Driven Process Chain to Demonstrate the analogy in action. <br>Following Two scenarios:<br>  
 
- <b>Event-Driven Process Chains (EPC) and State Tables</b>
+ <b>Event-Driven Process Chains (EPC)</b>
  - Document the flow of patients through the system using EPCs or state tables to:
     - Identify ineffeciencies and decision points.
     - Clearly define transitions.
@@ -493,9 +496,7 @@ Get people to host Board games and invite the other people waiting in queue or j
 
 <p>This structured flow ensures that patients already on-site are efficiently triaged, directed to the correct department, and treated based on urgency.</p>
 
-### UPDATE CHANGE FCFS TO TOKEN NUMBER BASED
-
-![Patient at Site](./dat_vis_assets/arrived.jpg)
+![Patient at Site](./dat_vis_assets/atsite.drawio.png)
 
 <hr>
 
@@ -960,17 +961,10 @@ Taking into account that in extreme cases, even these mobile units may become ov
 
 ### Based on all of this how would the solution change:
 
-   <h4>Existing Solution includes: </h4>
+<h4>Existing Solution includes: </h4>
 
-   - Queuing Theory: No Change required for this as it can be applied to the Mobile Units as well.
-   - Loading Function: The loading function will updated here and instead of using the large scale version where we would find the optimal Site Locationfor the patient, we will use the loading function on a smaller scale to direct patients to either the Main SIte or the Mobile Units based on the Patient_Wait_Time/Age_Group/Symptom_Severity. Load Score adjusted to: Patient_Wait_Time + Age_Group + Symptom_Severity.  
-   - Airport Style Management System:
-      - Self-Service Kiosk: Will also be updated
-      - Clear Signage: No Change, there will still be clear signage for directing the patients to in the Main Site Building or the Mobile Units.   
-      - Screens Displaying the real-time data: All the screens displaying the real-time data will show a split view of the data between the Main Site Building and the Mobile Unit at the Site.    
-      - Pre-Sorted Ticket: The Pre-Sorted ticket  
-   - Casino Pschology: No change here either, the same 
-  
+   -  
+
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
 ### Comparison of the consequences and selection of the right alternative
@@ -981,7 +975,7 @@ Taking into account that in extreme cases, even these mobile units may become ov
 ## Implementation of Solution
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
-A visual aid of how the very fast department will look like
+A visual aid of how the very fast department will look like.
 Visual of how a beacon system will work.
 
 ### Detailed Explaination of the Computations that were performed including all py files.
