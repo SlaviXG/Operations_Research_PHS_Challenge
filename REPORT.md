@@ -82,6 +82,7 @@ To simplify the complexity of patient management, categories are grouped and mod
    
    <h4>Granular Analysis for Patient Redirection</h4>
    <p>Instead of evaluating the load at the site level, we compare department-specific Load Scores across all nearby sites. This allows the system to recommend the optimal department within the most suitable site for patient redirection. For example, an overloaded ED at Site A may not preclude sending patients to its MIU if that department has a manageable Load Score.</p>
+    
     - Sample Scenraio:
         - Scenario 1: Manageable Department Load
            - Department Type: ED
@@ -360,6 +361,8 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 ![Sample Ticket with QR Code from Kiosk](/dat_vis_assets/Kiosk.png) 
 
+### Instant ID
+
 <h3>ID Tags/Keychains with QR Codes:</h3>
 <p>ID tags or keychains with QR codes, which can be scanned to access the patient's complete profile at the A&E Site, can be issued to elderly individuals and children for easy carrying in emergency situations. These tags can be ordered for anyone, and they will feature the patient's unique token number and a QR code linked to their profile on the PHS web app. The QR code can be scanned at on-site kiosks to quickly generate the patient's e-ticket. In emergency cases, ambulances can scan the QR code to instantly load the patient's data, ensuring that they are treated swiftly and accurately without delay.
 </p>
@@ -634,12 +637,79 @@ periods. Starting small allows for evaluation and development of the approach, e
    - These buildings are modular, easy to customize, and can be quickly integrated, allowing for a fast setup.
    - This approach helps streamline the allocation of staffing and the procurement of equipment, ensuring the site can become operational with minimal delay.
 
-#############################################################################################################################
-The Beacon system for public usage. 
-Purpose: To be able to find satellite sites in public.
-Signal sent through mobile devices through the web app. To be used only during emergency such as collapsing in the public.
-What happens if the person collapsed is alone and no one is doing anything to help????
-#############################################################################################################################
+### The Beacon System: A Public Emergency Response Platform
+
+<p>The Beacon System is designed to allow individuals in public spaces to send out emergency signals when they collapse or face a medical emergency, such as a heart attack. This system uses a web app to transmit a distress signal to nearby Satellite Sites (medical facilities or paramedic stations located in high-traffic areas such as supermarkets and busy public spaces). The goal is to ensure rapid response and assistance, even if the individual is alone and unable to call for help themselves, someone else—such as a family member, friend, or a random person on the street—can call on their behalf.</p>
+
+<h3>Key Features of the Beacon System:</h3>
+
+1. Emergency Alert Transmission:
+   - Signal through Web App:
+      - The Beacon web app allows individuals to send an emergency signal containing their GPS location, condition (e.g., heart attack, collapse), and medical profile (if set up in advance).
+
+   - Web App Integration:
+      - The web app facilitates the emergency alert system, ensuring that the signal is sent to Satellite Sites and emergency responders without the need for a mobile app.
+
+2. Simultaneous Alert to Multiple Satellite Sites:
+   - Multi-Site Notification:
+      - When the emergency signal is triggered, the system sends an alert to multiple Satellite Sites near the user’s location. These sites include nearby medical facilities, paramedics, and other emergency responders located in high-traffic areas (such as supermarkets, shopping centers, or transport hubs).
+   
+   - First-Responder Site:
+      - The first Satellite Site to respond within a 1-mile radius of the user is designated as the first responder, ensuring the closest help is dispatched immediately.
+      - If no response is received from any Satellite Sites within the 1-mile radius, the call will automatically be re-routed to emergency services (e.g., 999 or local emergency numbers).
+
+3. Response and Communication:
+   - Automated Location Sharing:
+      - The user’s GPS location is automatically shared with the responding Satellite Site or emergency services, ensuring that responders know exactly where to go.
+   
+   - Real-Time Communication:
+      - Once a Satellite Site responds, they can establish direct communication with the person in distress (if conscious) or continue with the response process to ensure help is on the way.
+
+4. Emergency Medical Information Access:
+   - Integrated Medical Profiles:
+      - If the user has pre-registered medical information (e.g., allergies, chronic conditions, medications), this data is included with the emergency alert to help responders prepare in advance.
+
+<h3>System Flow:</h3>
+
+1. Pre-Registration:
+   - No pre-registration will be required for accessing The Beacon system. If the individual has a [PHS Keychain/ID](#instant-id) issued it can be used by the satellite site to access the patients details that was registered on their profile on the PHS web app. 
+   
+2. Triggering the Emergency Alert:
+   - When a medical emergency occurs (e.g., heart attack, collapse), the user or a nearby witness triggers the alert through the web app.
+
+3. Signal Sent to Satellite Sites:
+   - The Beacon web app sends the emergency signal to multiple Satellite Sites within a defined radius of the user,  that have been located in high-traffic areas, like supermarkets or shopping malls.
+
+4. First-Responder Site:
+   - The first responder (the Satellite Site nearest to the user within a 1-mile radius) receives the alert, and help is dispatched immediately.
+   - If no response is received from any nearby Satellite Site, the system automatically redirects the alert to emergency services (such as 999 or local equivalent).
+
+5. Response from Medical Facility:
+   - The responding Satellite Site can communicate with the individual (if conscious) or continue dispatching help to their location, ensuring immediate medical assistance.
+
+6. Fallback Measures:
+   - If the situation requires further assistance or no responders are available within the 1-mile radius, the emergency services are notified as the final step for quick intervention.
+
+<h3>Example Use Case:</h3>
+<p>Scenario: A person collapses in a public area, and they are alone, unable to call for help.</p>
+
+1. The individual, upon feeling unwell or about to collapse, triggers the emergency Beacon signal through the PHS web app. 
+
+2. This sends a signal containing the person's GPS location and contact (phone number) to the all Satellite Sites within the 1 mile radius or paramedics located near high-traffic areas such as supermarkets, shopping malls, or transit hubs.
+
+3. The first Satellite Site to respond (within a 1-mile radius) receives the alert, and help is dispatched immediately to the individual’s location.
+
+4. If no Satellite Site responds within the 1-mile radius, the system automatically redirects the call to emergency services (such as 999 or the local emergency number).
+
+5. The first responder (the nearest Satellite Site) reaches the person in distress. The response team proceeds with appropriate medical intervention.
+
+<h3>Key Benefits of the Beacon System:</h3>
+
+   - Faster Emergency Response: By notifying multiple Satellite Sites at once, the system ensures rapid help from the nearest available responder, reducing response time.
+   - Medical Service Availability: Individuals can rely on the Beacon system to alert the Satellite Sites emergency services quickly in public spaces.
+   - Improved Emergency Outcomes: Immediate access to medical information and precise location sharing helps responders act more efficiently and save lives.
+
+<p>The Beacon System is an emergency response solution that leverages a web app to simultaneously notify multiple Satellite Sites (nearby medical facilities and paramedic teams) in case of a public medical emergency. This ensures that the nearest responder is alerted quickly and can take immediate action. If no one within a 1-mile radius responds, the call is automatically redirected to emergency services. This system significantly reduces response time and increases the likelihood of timely and effective intervention.</p>
 
 ### Using Weighted Mean of Data to find the Optimal Location for Creating Satellite Sites
  
