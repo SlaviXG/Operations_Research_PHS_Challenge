@@ -1024,6 +1024,8 @@ Taking into account that in extreme cases, even these mobile units may become ov
 
 <b>Image Source: stretchstructures.com</b>
 
+### One more use case: Calling on these mobile units in-case there is a techincal malfunction at a main site, or an issue has occured at the main iste due to which the site is not running at 100% capability. And HERO should have a life support and life saving equipment in case of emergencies. They can also be used for vaccination. For eg. if there is a flu, and schools and offices have been ordered to issue shots of a new vaccine, the HERo units can be deployed to them for registering the vaccine, it would be like bringing the hospital to them.  
+
 <hr>
 
 ### Based on all of this how would the solution change:
@@ -1043,25 +1045,25 @@ Taking into account that in extreme cases, even these mobile units may become ov
 <h3>How does the solution change: </h3>
 
    - <b>Queuing Theory Application:</b> 
-      - Express Treatment Centre: <p>The queuing theory model remains unchanged and continues to be applied effectively to the Express Treatment Centre. This ensures efficient resource allocation and minimized delays, particularly for patients requiring swift attention.</p> 
+      - Express Treatment Centre: <p>The queuing theory model remains unchanged and continues to be applied effectively to the Express Treatment Centre. This ensures efficient queue management, particularly for patients requiring swift attention.</p> 
       - Satellite Sites: <p>Similar to the Express Treatment Centre, the queuing theory is applicable to Satellite Sites. It ensures streamlined patient flow, especially for cases managed under Minor Injuries Units (MIU) and GP services, where low-acuity cases can be addressed promptly.</p>
-      - Beacon System: <p>The queuing theory does not apply to the Beacon System. Under life-threatening circumstances, the focus shifts entirely to basic triage and rapid intervention. Issuing tickets or prioritizing patients via traditional queuing mechanisms is bypassed to expedite emergency response and treatment.</p>
+      - Beacon System: <p>The queuing theory does not apply to the Beacon System. Under life-threatening circumstances, the focus shifts entirely to rapid intervention. Issuing tickets or prioritizing patients via traditional queuing mechanisms is bypassed to expedite emergency response and treatment.</p>
       - K-Means Clustering and Voronoi Diagram: <p>Queuing theory is not relevant for K-Means Clustering and Voronoi Diagrams, as these are purely mathematical and visualization tools used for analyzing spatial data and optimizing site placements rather than managing patient queues.</p>
       - HERO (Mobile Units): <p>The queuing theory for HERO mobile units remains consistent with the original solution. Mobile units will prioritize high-acuity cases as needed while managing resources to ensure timely care for lower-acuity patients.</p>
 
    - <b>Loading Function</b>
-      - Express Treatment Centre: <p>The Loading Function will be used to evaluate the department's real-time load and help allocate staff and resources dynamically. For instance, if the Express Treatment Centre becomes overwhelmed, additional staff from other areas of the site can be temporarily redirected to assist.</p>
-      - Satellite Sites: <p>At Satellite Sites, the Loading Function will calculate individual department loads (e.g., MIU, GP) to ensure that resources are balanced between these smaller units and their associated Main Sites. Overloaded satellite sites will trigger reallocation of patients to nearby less crowded facilities.</p>
+      - Express Treatment Centre: <p>The Loading Function will be used to evaluate the department's real-time load and help allocate staff and resources dynamically. For instance, if the Express Treatment Centre starts becoming overwhelmed, additional staff can be temporarily redirected to assist and patients can be re-allocated to departments with comparitively lower loads.</p>
+      - Satellite Sites: <p>At Satellite Sites, the Loading Function will calculate the total load of the satellite site to ensure that resources are balanced between these smaller units and their associated Main Sites. Overloaded satellite sites will trigger reallocation of patients to nearby satellite sites with comparitively lower loads.</p>
       - Beacon System: <p>Not applicable for the Beacon System as its focus is on life-threatening emergencies where triage bypasses traditional resource management systems. Load Scores may only serve as a passive informational tool for backend monitoring in extreme circumstances.
       - K-Means Clustering and Voronoi Diagram: These tools aid in site placement and resource optimization, but they do not interact directly with real-time load management.</p>
-      - HERO (Mobile Units): <p>The Loading Function helps determine when and where to deploy HERO units. Mobile units are dispatched to sites with a Load Score exceeding 150%, addressing temporary surges in patient volume.</p>
+      - HERO (Mobile Units): <p>The Loading Function helps determine when and where to deploy HERO units. Mobile units are dispatched to sites with a Load Score exceeding 125%, addressing temporary surges in patient volume or a main site facing techincal issues.</p>
 
    - <b>E-Ticket System</b>
-      - Express Treatment Centre: <p>The E-Ticket system facilitates streamlined patient flow by assigning tickets based on the department’s load and availability. This ensures minimal wait times for patients with less critical conditions while maintaining fairness in service delivery.</p>
-      - Satellite Sites: <p>Patients arriving at Satellite Sites will receive e-tickets through kiosks or the web app. These tickets will integrate seamlessly with the site’s system, guiding patients to appropriate departments for swift treatment.</p>
+      - Express Treatment Centre: <p>The E-Ticket system will facilitate streamlined patient flow at the ETC. Patients going for MIU/GP servces will be alloted the ETC before any other departments during it's operating hours.</p>
+      - Satellite Sites: <p>Patients arriving at Satellite Sites will have e-tickets through kiosks or the web app. These tickets will integrate seamlessly with the site’s system, guiding patients to the nearest satellite site for swift treatment in case of MIU/GP services.</p>
       - Beacon System: <p>The E-Ticket system is not applicable here, as life-threatening cases require immediate action without the formalities of ticket generation. However, the system could generate a rapid acknowledgment message or recommendation for the nearest available ED.</p>
       - K-Means Clustering and Voronoi Diagram: <p>E-Tickets are not relevant to these models, as they focus on spatial optimization rather than patient flow or registration.</p>
-      - HERO (Mobile Units): <p>Mobile Units will use the E-Ticket system to manage and prioritize patients efficiently, allowing for quick triage and treatment without overwhelming the staff.</p>
+      - HERO (Mobile Units): <p>Mobile Units will use the E-Ticket system to manage and prioritize patients efficiently, allowing for quick triage and treatment without overwhelming the staff. When HERO mobile units will arrive on-site the patients will be assigned to them first.</p>
 
    - <b>PHS Web Application</b>
       - Express Treatment Centre: <p>The web app remains integral for pre-sorting patients before they arrive, minimizing bottlenecks by directing patients to either the Express Treatment Centre or other appropriate departments.</p>
@@ -1071,11 +1073,11 @@ Taking into account that in extreme cases, even these mobile units may become ov
       - HERO (Mobile Units): <p>The web app integrates with HERO by enabling patients to see when and where mobile units are available for temporary care during site overloads.</p>
 
    - <b>Health Check-in Kiosks</b>
-      - Express Treatment Centre: <p>Kiosks streamline on-site registration by generating tickets and ensuring patients are directed to the correct department without delays. They support efficiency in this high-speed care environment.</p>
-      - Satellite Sites: <p>Satellite Site kiosks provide an easy and efficient way for patients to register and receive tickets, maintaining continuity in service quality with the main A&E sites.</p>
+      - Express Treatment Centre: <p>Kiosks streamline on-site registration by generating tickets for this department without delays.</p>
+      - Satellite Sites: <p>Satellite Site will have kiosks present providing an easy and efficient way for patients to receive tickets, maintaining continuity in service quality.</p>
       - Beacon System: <p>Kiosks are not applicable to the Beacon System, as they require formal triage and ticketing, which is bypassed in life-threatening cases.</p>
       - K-Means Clustering and Voronoi Diagram: <p>Kiosks do not directly relate to these tools but will operate in optimized locations identified through clustering and diagram analysis.</p>
-      - HERO (Mobile Units): <p>Portable kiosks may be integrated into HERO units to facilitate quick patient registration and data collection during temporary deployments.</p>
+      - HERO (Mobile Units): <p>Kiosks will not be present in these mobile units, but the kiosk at the main site will generate a ticket directing the patient to go to HERO unit present at the site first in case of MIU/GP services</p>
 
    - <b>Instant ID</b>
       - Express Treatment Centre: <p>Instant IDs enhance efficiency by enabling quick patient identification and retrieval of medical records during high patient volumes.</p>
@@ -1089,14 +1091,14 @@ Taking into account that in extreme cases, even these mobile units may become ov
       - Satellite Sites: <p>Display screens help patients navigate satellite facilities, ensuring clarity and reducing confusion, especially during busy periods.</p>
       - Beacon System: <p>Not applicable, as the focus is on rapid emergency response rather than structured patient navigation.</p>
       - K-Means Clustering and Voronoi Diagram: <p>Display screens may present visualizations of site usage patterns or inform patients about new site placements.</p>
-      - HERO (Mobile Units): <p>Portable display screens integrated with HERO units can guide patients and provide real-time updates on treatment progress.</p>
+      - HERO (Mobile Units): <p>Portable display screens integrated with HERO units can guide patients and provide real-time updates and directing them to the correct Mobile Unit. Eg. "Proceed to HERO 1A"</p>
 
    - <b>Casino Psychology</b>
-      - Express Treatment Centre: <p>Casino psychology principles (e.g., pleasant lighting, calming music) are applied to waiting areas to reduce patient stress and enhance their experience during short wait times.</p>
-      - Satellite Sites: <p>Satellite Sites incorporate similar features to maintain a positive and stress-free environment for patients.</p>
+      - Express Treatment Centre: <p>Casino psychology principles (e.g., pleasant lighting, calming music) are applied to waiting areas to reduce patient stress and enhance their experience during short wait times. The board Games will not be present for this department specifically but will be available at the site.</p>
+      - Satellite Sites: <p>Satellite Sites will incorporate similar features to maintain a positive and stress-free environment for patients. There won't be board games present for these sites either.</p>
       - Beacon System: <p>Not applicable here, as the focus is on urgent care rather than enhancing patient comfort during waiting times.</p>
       - K-Means Clustering and Voronoi Diagram: <p>Casino psychology does not directly interact with these tools.</p>
-      - HERO (Mobile Units): <p>HERO units adopt casino psychology principles, such as stress-reducing lighting and music, to create a calming atmosphere.</p>
+      - HERO (Mobile Units): <p>HERO units adopt casino psychology principles, such as stress-reducing lighting and music, to create a calming atmosphere. Board Games will be made available in the tents outside.</p>
 
    - <b>Event-driven Process Chains</b>
       - Express Treatment Centre: <p>Event-driven chains are streamlined to ensure that patients move swiftly through the care process, minimizing delays at every stage.</p>
