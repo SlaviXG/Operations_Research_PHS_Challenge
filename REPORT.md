@@ -606,6 +606,11 @@ manageable flow without overwhelming the system or causing congestion.</p>
 clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
 periods. Starting small allows for evaluation and development of the approach, ensuring that the model is robust before scaling to broader implementation.</p>
 
+
+![Express Treatment centre Concept](dat_vis_assets/ETC.jpeg)
+
+<b>Image Generated from: https://deepai.org/machine-learning-model/text2img</b>
+
 <hr>
 
 ### Creating a new Site: Type - Satellite Site
@@ -751,6 +756,11 @@ periods. Starting small allows for evaluation and development of the approach, e
    - Improved Emergency Outcomes: Immediate access to medical information and precise location sharing helps responders act more efficiently and save lives.
 
 <p>The Beacon System is an emergency response solution that leverages a web app to simultaneously notify multiple Satellite Sites (nearby medical facilities and paramedic teams) in case of a public medical emergency. This ensures that the nearest responder is alerted quickly and can take immediate action. If no one within a 1-mile radius responds, the call is automatically redirected to emergency services. This system significantly reduces response time and increases the likelihood of timely and effective intervention.</p>
+
+
+![Beacon System](dat_vis_assets/beacon.jpeg)
+
+<b>Image generated from: https://deepai.org/machine-learning-model/text2img</b>
 
 <hr>
 
@@ -1095,18 +1105,6 @@ Taking into account that in extreme cases, even these mobile units may become ov
       - K-Means Clustering and Voronoi Diagram: <p>Chains do not directly interact with these tools but are influenced by site placement optimizations.</p>
       - HERO (Mobile Units): <p>Event-driven chains guide the deployment, setup, and operation of mobile units to ensure rapid response and efficient care delivery.</p>
 
-## Choosing Resolving Method 
-### Analyze the Alternatives to understand outcomes of each (consequences) 
-### Comparison of the consequences and selection of the right alternative
-
-## Resolving Problem
-### Results and Conclusions
-
-## Implementation of Solution
-### Implementation of the result and evaluation of the degree/percentage of success.
-
-A visual aid of how the very fast department will look like.
-Visual of how a beacon system will work.
 
 ### Detailed Explaination of the Computations that were performed including all py files.
 
