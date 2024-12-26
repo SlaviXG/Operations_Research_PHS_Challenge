@@ -68,33 +68,71 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <h4>The Statistical Approach</h4>
 
- - To effectively manage patient flow and optimize resource allocation across multiple sites, we have developed a Loading Function to quantify the busyness of A&E sites in real-time. This function allows us to dynamically assess how full or strained a site is, ensuring that patients can be directed to the most appropriate location for care while preventing site overload:
-    - Load Score = { (Beds Occupied / Site Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
-       1. [ Beds Occupied / Site Capacity ] : This term represents the percentage of beds currently in use at the site, giving a clear and intuitive indicator of how full the site is. Example: If 80 out of 100 beds are occupied, this component will contribute 80% to the Load Score.
+ - To effectively manage patient flow and optimize resource allocation across multiple A&E sites, we have developed a Loading Function to dynamically assess the busyness of the specific departments (e.g., Emergency Department [ED], Minor Injuries Unit [MIU], etc.) of an A&E site instead of calculating the load on the entire site. This ensures that patient redirection decisions are made based on a granular understanding of department-specific loads, as overall site load may not fully capture the operational strain on individual departments.
+    - Load Score Formula = { (Beds Occupied / Department Capacity) * 100 } + { (Wait Time(mins) / Critical Wait Time(mins)) * 100 } 
+       1. [ Beds Occupied / Site Capacity ] : This component calculates the percentage of patients in a specific department (e.g., ED, MIU), providing a department-specific indicator of capacity strain.
+         - Example: If the ED has 30 out of 50 beds occupied, this contributes 60% to the Load Score for that department.
        2. [ Wait Time / Critical Wait Time ] :
-          - Wait Time - The patient wait time needs to be incorporated in a way that reflects its severity, and we will consider the upper bound of the wait time range to account for the worst-case scenario.
-          - Critical Wait Time - Normalizes wait time by dividing the actual wait time by a critical threshold (e.g., 240 minutes = 4 hours).
+          - Wait Time - Captures the time patients are currently waiting within a department. The upper bound of the wait time range is used to account for worst-case scenarios.
+          - Critical Wait Time - Normalizes the wait time against a threshold, such as 240 minutes (4 hours), to express the severity of delays in proportion to what is deemed acceptable.
     - Interpretation: 
       - If the Load Score is ->
         - 100% or more then site is overloaded.
-        - Scores under 80% indicate a manageable load suggesting the site can still handle additional patients.
+        - Scores under 65% indicate a manageable load suggesting the site can still handle additional patients.
+   
+   <h4>Granular Analysis for Patient Redirection</h4>
+   <p>Instead of evaluating the load at the site level, we compare department-specific Load Scores across all nearby sites. This allows the system to recommend the optimal department within the most suitable site for patient redirection. For example, an overloaded ED at Site A may not preclude sending patients to its MIU if that department has a manageable Load Score.</p>
     - Sample Scenraio:
-        - Scenario 1: Manageable Load
-           - Beds Occupied: 60
-           - Site Capacity: 100
+        - Scenario 1: Manageable Department Load
+           - Department Type: ED
+           - Beds Occupied: 25
+           - Department Capacity: 50
            - Wait Time: 30 mins
            - Critical Wait Time: 240 minutes
-           - Load Score -> { (60 / 100) * 100 } + { (30 / 240) * 100 } = 60 + 12.5 = 72.5%
+           - Load Score: { (25 / 50) * 100 } + { (30 / 240) * 100 } = 50 + 12.5 = 62.5%
            - Interpretation: The site is operating well within the Load Score.
              
-        - Scenario 2: Critical Overload
-           - Beds Occupied: 95
-           - Site Capacity: 100
-           - Patient Wait Time: 300 mins (5 hours)
-           - Critical Wait Time: 240 minutes
-           - Load Score { (95 / 100) * 100 } + { (300 / 240) * 100 }  = 95 + 125 = 220%
-           - Interpretation: The site is severely overloaded, both in bed occupancy and wait times, requiring immediate re-direction of patient flow.
+        - Scenario 2: Overloaded ED but Manageable MIU
+         - Site A
+           - Department Type: ED
+            - Beds Occupied: 48
+            - Site Capacity: 50
+            - Patient Wait Time: 180 mins (3 hours)
+            - Critical Wait Time: 240 minutes
+            - Load Score (ED): { (48 / 50) * 100 } + { (180 / 240) * 100 }  = 96 + 75 = 171%
+            - Interpretation: The ED is critically overloaded.
+
+           - Department Type: MIU
+            - Beds Occupied: 10
+            - Capacity: 30
+            - Wait Time: 20 mins
+            - Load Score (MIU): { (10 / 30) * 100 } + { (20 / 240) * 100 } = 33.3 + 8.3 = 41.6%
+            - Interpretation: The MIU is underutilized and can handle additional patients.
+      
+      - System Recommendation: Redirect patients with minor injuries or non-emergency conditions to the MIU of Site A to reduce ED strain.
+
+        - Scenario 3: Site-Level Overload but Departmental Opportunities
+         - Site B:
+          - Department Type: ED
+          - Beds Occupied: 40
+          - Capacity: 50
+          - Wait Time: 150 mins
+          - Load Score (ED): { (40 / 50) * 100 } + { (150 / 240) * 100 } = 80 + 62.5 = 142.5%
+          - Interpretation: The ED is severely strained.
+         - MIU:
+          - Beds Occupied: 5
+          - Capacity: 20
+          - Wait Time: 15 mins
+          - Load Score (MIU): { (5 / 20) * 100 } + { (15 / 240) * 100 } = 25 + 6.25 = 31.25%
+          - Interpretation: The MIU is lightly loaded.
+
+      - System Recommendation: Route patients requiring minor care to Site B's MIU instead of Site A's ED to balance load between the departments.
          
+   <p>By incorporating department-specific Load Scores, this approach ensures optimal use of available resources, minimizes patient wait times, and balances workload across both sites and individual departments.</p>
+
+   <h3>Making Emergency Department (ED) Load Scores Accessible to the Public</h3>
+   <p>While the ED Load Score is primarily designed for internal use by hospitals for efficient staff allocation and ambulance routing, it is equally critical to make this information available to the general public in emergency situations. By integrating real-time ED Load Scores into the PHS web app, individuals can make informed decisions about where to take a critically ill person in life-threatening scenarios, ensuring faster access to emergency care.</p>
+
 ## Course of Action:
 ### - E-Ticket System 
 ### - Casino Psychology
@@ -204,12 +242,47 @@ loaded into the system, allowing staff to provide appropriate treatment promptly
 a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 <b><i>This system ensures a seamless and efficient patient registration process, minimizing delays and enabling faster access to care.</i></b><br>
-<b>The colored box next to the QR code represents the current load at the site assigned to you, while the color blocks at the bottom correspond to the overall load levels for all sites.</b>
+<b>The colored box next to the QR code represents the current load at the site assigned to the patient, while the color blocks at the bottom correspond to the all types of load levels for a site.</b>
 <br>
 
 ![Sample Ticket with QR Code from web app](./dat_vis_assets/webapp.png) 
 
 <br>
+
+<h3>Public Accessibility through the PHS Web App</h3>
+
+   - Real-Time Load Visibility: The PHS web app will display real-time ED load information for all A&E sites nearby. Users can view a color-coded or percentage-based load status to identify which ED is the least strained and most capable of handling emergencies.
+   - Designed for Emergencies: Unlike standard appointment booking or check-in processes, this feature bypasses all detailed patient registration requirements. It is specifically tailored for time-sensitive situations where there is no time to enter symptoms or other details.
+   - Enhanced Communication: Users can also directly contact the identified ED through the app, notifying them of the incoming critical case, which allows the hospital to prepare accordingly.
+
+   <b>Example Scenario: Responding to a Life-Threatening Emergency</b>
+
+   1. The Emergency:
+      - A person suffers a heart attack at home or in the office. A family member or colleague realizes that immediate action is required to save the individual's life.
+
+   2. Accessing the PHS Web App:
+      - The family member or colleague uses the PHS web app on their smartphone or computer to quickly check the real-time ED load of A&E sites in their vicinity.
+   
+   3. Identifying the Optimal ED:
+      - The app displays three nearby A&E sites with their respective ED load status:
+         - Site A: 120% Load (Severely Overloaded)
+         - Site B: 85% Load (Manageable)
+         - Site C: 65% Load (Lightly Loaded)
+         - Example Message: "Please proceed to Site C if you or someone nearby is experiencing life-threatening symptoms."
+
+   4. Direct Contact:
+      - Through the app, they call the ED at Site C to inform the staff about the critical nature of the situation and the patient’s expected arrival. They can also call and request an ambulance if transportation is not available at the moment. 
+
+   5. Transport and Arrival:
+      - The patient is taken directly to the ED at Site C, avoiding delays caused by overcrowded facilities and ensuring they receive timely care.   
+
+<h3>Benefits of Public Access to ED Load Scores</h3>
+
+   - Improved Decision-Making: Empower individuals to make quick, informed decisions during emergencies by showing real-time ED availability near them.
+   - Reduced Delays: Help prevent patients from being taken to overburdened EDs, where wait times could be critical, by identifying the most optimal site for immediate care.
+   - Enhanced Coordination: Allow ED staff to anticipate critical cases and prepare ahead, reducing response time upon the patient's arrival.
+
+<p>By making this information publicly accessible in a simple, user-friendly format, the PHS web app can play a vital role in saving lives during emergencies. It bridges the gap between internal hospital systems and public usability, ensuring that critical care reaches those who need it most—when they need it the most.</p>
 
 ### Achieving Pre-Sorting through Kiosks on Site: Health Check-In Kiosk 
 
@@ -272,7 +345,7 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 <b><p>This is a sample ticket generated by the kiosk for patients already on-site. The ticket includes a QR Code that can be scanned at the department. Once scanned, the patient’s details—such as patient name, age, medical history, allergies, and current symptoms—are automatically loaded into the system, allowing staff to provide appropriate treatment promptly. The patient’s identity can be verified by asking them to present a valid ID, which can then be matched with their name and date of birth.</b></p>
 <b><i>This system ensures a seamless and efficient patient registration process, reducing waiting times and allowing quicker access to care.</i></b><br>
-<b>The colored box next to the QR code represents the current load at the site assigned to you, while the color blocks at the bottom correspond to the overall load levels for all sites.</b>
+<b>The colored box next to the QR code represents the current load at the site assigned to the patient, while the color blocks at the bottom correspond to the all types of load levels for a site.</b>
 
 ![Sample Ticket with QR Code from Kiosk](/dat_vis_assets/Kiosk.png) 
 
