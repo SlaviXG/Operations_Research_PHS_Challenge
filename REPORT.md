@@ -431,11 +431,11 @@ Get people to host Board games and invite the other people waiting in queue or j
             - "We’ve reserved a spot for you at the MIU Department. Proceed to Site B for quick care."              
 
  ### Hosting Board Games to Enrich the Waiting Experience
- <p>To make long waits more enjoyable, A&E sites can host board games in waiting areas. Patients can join games to pass the time, fostering human interaction and creating a positive, engaging environment.</p>
- Why do this:<br>
-  - Increases social interaction and emotional well-being.<br>
-  - Reduces the perceived length of the wait.<br>
-  - Gives patients a safe, uplifting space to smile and relax during stressful situations.<br>
+ <p>To make long waits more enjoyable, A&E sites can host board games in waiting areas. Patients can join games to pass the time, fostering human interaction and creating a positive, engaging environment. Why do this:</p>
+
+  - Increases social interaction and emotional well-being.
+  - Reduces the perceived length of the wait.
+  - Gives patients a safe, uplifting space to smile and relax during stressful situations.
 
 ![Board Games Room](dat_vis_assets/boardgames.jpeg)
 
@@ -606,6 +606,8 @@ manageable flow without overwhelming the system or causing congestion.</p>
 clarity, and quality, this initiative has the potential to redefine how MIUs operate, providing faster and more reliable care during high-demand
 periods. Starting small allows for evaluation and development of the approach, ensuring that the model is robust before scaling to broader implementation.</p>
 
+<hr>
+
 ### Creating a new Site: Type - Satellite Site
 ### To calculate where we must create the new Site we use the following data: Patient X, Patient Y
 
@@ -633,9 +635,15 @@ periods. Starting small allows for evaluation and development of the approach, e
 
 <h3>Use of Prefabricated Buildings:</h3>
 
+<p>A prefabricated building, informally a prefab, is a building that is manufactured and constructed using prefabrication. It consists of factory-made components or units that are transported and assembled on-site to form the complete building. Various materials were combined to create a part of the installation process. [Definition from Wikipedia]</p>
+
    - The use of prefabricated buildings can significantly reduce the cost of establishing satellite A&E sites.
    - These buildings are modular, easy to customize, and can be quickly integrated, allowing for a fast setup.
    - This approach helps streamline the allocation of staffing and the procurement of equipment, ensuring the site can become operational with minimal delay.
+
+![Pre-fabricated Medical Building](dat_vis_assets/prefab.jpeg)
+
+<b>Image Generated from: [deepai.org](https://deepai.org/machine-learning-model/text2img)</b>
 
 ### The Beacon System: A Public Emergency Response Platform
 
