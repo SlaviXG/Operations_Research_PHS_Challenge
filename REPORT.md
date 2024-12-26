@@ -1,20 +1,19 @@
 # Operational Research Challenge
 
 ### The Structure that we will implement for this report: The Problem - The Methodoly we used to solve it - Details of the solution with the diagrams to support the theory Diagrams
-(This is to get the reader interested from the start)
 
 ## Problem Formulation 
 ### Part One: The central problem we aim to solve is optimizing the allocation and utilization of Accident & Emergency (A&E) services between departments provided. This includes minimizing unnecessary use of A&E services, improving patient flow efficiency, and ensuring that patients receive timely and appropriate care.
 
-# Key Questions to Address
+# Addressed questions
  - How can we reduce unnecessary A&E attendances through reallocation and pre-arrival guidance?
  - What are the optimal resource allocation strategies to minimize waiting times at A&E?
  - Where should additional resources (e.g., MIUs, GP capacity) be allocated geographically to ease pressure on A&E?
  - How do different attendance types (e.g., planned, unplanned, frequent re-attenders) impact A&E demand and resource needs?
  - How can we improve patient understanding of the best facility to visit based on their condition?
 
-## The Correlation Matrix
-### What is a Correlation Matrix -- A correlation matrix is a table that shows the correlation coefficients between variables. These coefficients measure the strength and direction of relationships: 
+## Exploration stage - Correlation Matrix
+### These coefficients measure the strength and direction of relationships: 
 
  - Values range between -1 (perfect negative correlation) and 1 (perfect positive correlation).
  - Positive correlation: As one variable increases, so does the other.
@@ -30,7 +29,7 @@
  3. <b>Validating Assumptions for Resource Allocation:<br></b> <u>Number_Of_Attendances and Site_Loc_GPs (Correlation -> 0.12):</u> A weak positive relationship shows that the number of local GPs has a minimal direct impact on A&E attendances. This insight supports the focus on patient-centric factors like travel time, site capacity, and wait times, rather than relying solely on GP availability.
 
 <h3>Why the Correlation Matrix Matters</h3>
-<p>The correlation matrix is not just a statistical tool but a decision-making guide that was instrumental in:</p>
+<p>The correlation matrix is a decision-making guide that was instrumental in:</p>
 
  - Prioritizing Variables for Analysis: Understanding which factors (e.g., patient location, site capacity, GP coverage) are most influential in patient flow and resource utilization.
  - Shaping Strategies: Using the identified relationships to design interventions like patient redistribution, optimal site selection and dynamic resource allocation.
