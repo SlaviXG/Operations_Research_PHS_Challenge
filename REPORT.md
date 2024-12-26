@@ -55,9 +55,9 @@
 
 To simplify the complexity of patient management, categories are grouped and modeled to address their specific needs:
  - MIU/Other:
-    - Treated as First Come First Serve (FCFS) for low-acuity cases.
-    - Simplified queue for predicting wait times and optimizing resource allocation (eg. triage nurses, rooms)
-    - Goal: Minimize the wait times for minor injuries, avoiding bottlenecks
+    - Treated as Token Number Based in the MIU/Other and GP services.
+    - Simplified queue for predicting wait times and optimizing resource allocation (eg. triage nurses, rooms).
+    - Goal: Minimize the wait times for for low-acuity cases, avoiding bottlenecks
  - ED (Emergency Department):
     - Modeled as Priority Queuing System for high-acuity cases.
     - Cases with priority:
@@ -140,14 +140,14 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 ### Integration of the Loading Function in the Framework
 
- 1. <b>Backend System for Efficient Site Management:</b> The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
-     - Real-Time Monitoring -- The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
+ 1. <b>Backend System for Efficient Site Management:</b> The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:-
+     - Real-Time Monitoring - The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
         - Green (Load Score < 50%): Manageable load.
         - Yellow (Load Score between 50%–90%): Approaching capacity.
         - Red (Load Score from 90%-100% or higher): Overloaded and requires immediate attention.
      - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources to handle surges.
      - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure off of sites with a high Load Score.
- 2. [Web Application](#data-utilization) for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
+ 2. [Web Application](#data-utilization) <b>for Patient Guidance:</b> The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:-
     - Pre-Sorting Patients: When patients input their symptoms into the web application (mentioned below) the system determines the appropriate care type (e.g., ED, MIU, or GP).
     - Directing Patients to the Optimal Site:
        - The Loading Function identifies the best site based on the calculated Load Score, balancing proximity, resource availability, and wait times.
@@ -158,7 +158,8 @@ To simplify the complexity of patient management, categories are grouped and mod
           - “Site is free.”
           - “Site is moderately busy.”
           - “Site is at capacity.”
- - Example Use Case -- A patient opens the [web application](#data-utilization) to report symptoms of mild chest pain. The system:
+ - Example Use Case:- A patient opens the [web application](#data-utilization) to report symptoms of mild chest pain. The system:
+
     1. Identifies the patient’s location and care type (Emergency Department required).
     2. Calculates the Load Scores for nearby A&E sites and recommends the least burdened site.
     3. Displays a recommendation:
@@ -368,6 +369,7 @@ a valid ID, which can then be matched with their name and date of birth.</b></p>
 
 ![QR Code Key Chain](dat_vis_assets/PHS.png)
 
+<hr>
 
 ### Implementing Airport-Style Information Displays for Patient Guidance
 
@@ -521,7 +523,7 @@ Get people to host Board games and invite the other people waiting in queue or j
 
 <hr>
 
-### Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
+## Part Two: Expanding the Capacity in departments/creating new departments and see how the solution would change.
 
 ### Creating New Department: Type - Minor Injuries Unit 
 
@@ -643,6 +645,39 @@ periods. Starting small allows for evaluation and development of the approach, e
 
 <b>Image Generated from: [deepai.org](https://deepai.org/machine-learning-model/text2img)</b>
 
+<h3>Example Scenario: Parent Bringing Injured Child to a Satellite Site</h3>
+
+<p>Scenario Description: A parent, notices their child has fallen and injured their leg while playing in the neighborhood playground. The child is in pain, and the leg appears swollen and bruised. The parent decides to take their child to the nearest Satellite A&E Site, which is located just 10 minutes away, instead of driving to the main hospital 40 minutes away.</p>
+
+1. Arrival at the Satellite Site:
+   - Parent drives to the satellite site and quickly carries the child into the facility.
+   - The reception desk at the satellite site has a streamlined check-in process. Parent scans the childs Instant ID keychain at the Health Check-in kiosk or at the the reception desk.
+
+2. Initial Assessment:
+   - Within a few minutes, a nurse assesses the childs condition. The nurse determines it’s not a life-threatening injury but suspects a possible fracture in the leg.
+   - Child is provided immediate pain relief, and their leg is immobilized to prevent further injury.
+
+3. Diagnostic Services:
+   - The satellite site is equipped with basic diagnostic tools. Child is sent for an X-ray, which confirms a minor fracture.
+   - The medical team applies a temporary splint and explains the treatment plan to the Parent.
+
+4. Telemedicine Consultation:
+   - Using the telemedicine facility integrated into the satellite site, a consultant at the associated main hospital reviews the childs X-ray in real-time.
+   - The consultant provides instructions for follow-up care and recommends that the child visits the main site withe the site code 3 for a permanent cast within the next 48 hours.
+
+5. Care Continuity and Transfer Protocol:
+   - Since child's condition is stable, there is no immediate need to transfer them to the main hospital. Parent is provided with:
+      - A discharge summary.
+      - Instructions for follow-up care.
+      - The location and contact details of the associated main site.
+   - The childs PHS profile is also updated to reflect all of these.  
+
+6. Outcome:
+   - Child receives prompt and effective care without the delay of traveling to the main hospital.
+   - Parent feels reassured knowing that the satellite site has stabilized their child’s condition and has coordinated the next steps of the care seamlessly.
+
+<hr>
+
 ### The Beacon System: A Public Emergency Response Platform
 
 <p>The Beacon System is designed to allow individuals in public spaces to send out emergency signals when they collapse or face a medical emergency, such as a heart attack. This system uses a web app to transmit a distress signal to nearby Satellite Sites (medical facilities or paramedic stations located in high-traffic areas such as supermarkets and busy public spaces). The goal is to ensure rapid response and assistance, even if the individual is alone and unable to call for help themselves, someone else—such as a family member, friend, or a random person on the street—can call on their behalf.</p>
@@ -716,6 +751,8 @@ periods. Starting small allows for evaluation and development of the approach, e
    - Improved Emergency Outcomes: Immediate access to medical information and precise location sharing helps responders act more efficiently and save lives.
 
 <p>The Beacon System is an emergency response solution that leverages a web app to simultaneously notify multiple Satellite Sites (nearby medical facilities and paramedic teams) in case of a public medical emergency. This ensures that the nearest responder is alerted quickly and can take immediate action. If no one within a 1-mile radius responds, the call is automatically redirected to emergency services. This system significantly reduces response time and increases the likelihood of timely and effective intervention.</p>
+
+<hr>
 
 ### Using Weighted Mean of Data to find the Optimal Location for Creating Satellite Sites
  
@@ -939,7 +976,25 @@ Taking into account that in extreme cases, even these mobile units may become ov
       - A specialized team will be pre-assigned and on standby to staff the mobile units during surge conditions.
       - Staff allocation will be planned in advance, ensuring there is no delay in deployment. This includes creating a roster of healthcare professionals trained specifically for mobile unit operations.
 
-<h3>Power Supply for the Mobile Units: electric Generator, Equipment fixed securely to the mobile units so that it doesn't move in transit.</h3>
+<h3>Power Supply for the Mobile Units: </h3>
+
+<p>Ensuring a reliable and uninterrupted power supply for the mobile units is critical to their functionality, especially for supporting life-saving equipment and diagnostic tools. Below are the proposed methods for powering these units, both during transit and while stationed at a site:</p>
+
+1. Electric Generators
+   - The mobile units will be equipped with onboard electric generators to provide a primary power source.
+   - These generators are designed to operate independently, ensuring continuous functionality even in remote locations.
+   - The equipment inside the mobile units will be securely mounted to prevent movement or damage during transit, maintaining operational readiness at all times.
+
+2. Connection to Main Site Power Grid (When Stationary)
+   - While stationed at a main or satellite site, the mobile units can be plugged into the site's electrical infrastructure to conserve generator fuel and reduce emissions.
+   - A dedicated external power port will allow the mobile unit to draw power directly from the main site’s electrical system, ensuring seamless integration with the site’s existing infrastructure.
+
+3. Battery Backup System
+   - Each mobile unit will be equipped with a high-capacity battery backup system to provide emergency power in case of generator failure or interruptions in the main power grid.
+   - These batteries can be charged while the unit is plugged into the site’s grid or while the generator is running.
+
+4. Hybrid Approach
+   - A hybrid system combining generators and grid connectivity ensures maximum reliability and adaptability, regardless of the location or circumstances.
 
    <h3>Question: Where will patients wait for the Mobile Units, especially in cold or harsh weather conditions</h3>
 
@@ -959,11 +1014,86 @@ Taking into account that in extreme cases, even these mobile units may become ov
 
 <b>Image Source: stretchstructures.com</b>
 
+<hr>
+
 ### Based on all of this how would the solution change:
 
-<h4>Existing Solution includes: </h4>
+<h3>Initial Solution includes: </h3>
 
-   -  
+   - Queuing Theory
+   - Loading Function
+   - E-Ticket System
+   - PHS Web Application
+   - Health Check-in Kiosks
+   - Instant ID
+   - Patient Information Display Screens  
+   - Casino Psychology
+   - Event-driven Process Chain: Patient On & Off Site 
+
+<h3>How does the solution change: </h3>
+
+   - <b>Queuing Theory Application:</b> 
+      - Express Treatment Centre: <p>The queuing theory model remains unchanged and continues to be applied effectively to the Express Treatment Centre. This ensures efficient resource allocation and minimized delays, particularly for patients requiring swift attention.</p> 
+      - Satellite Sites: <p>Similar to the Express Treatment Centre, the queuing theory is applicable to Satellite Sites. It ensures streamlined patient flow, especially for cases managed under Minor Injuries Units (MIU) and GP services, where low-acuity cases can be addressed promptly.</p>
+      - Beacon System: <p>The queuing theory does not apply to the Beacon System. Under life-threatening circumstances, the focus shifts entirely to basic triage and rapid intervention. Issuing tickets or prioritizing patients via traditional queuing mechanisms is bypassed to expedite emergency response and treatment.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Queuing theory is not relevant for K-Means Clustering and Voronoi Diagrams, as these are purely mathematical and visualization tools used for analyzing spatial data and optimizing site placements rather than managing patient queues.</p>
+      - HERO (Mobile Units): <p>The queuing theory for HERO mobile units remains consistent with the original solution. Mobile units will prioritize high-acuity cases as needed while managing resources to ensure timely care for lower-acuity patients.</p>
+
+   - <b>Loading Function</b>
+      - Express Treatment Centre: <p>The Loading Function will be used to evaluate the department's real-time load and help allocate staff and resources dynamically. For instance, if the Express Treatment Centre becomes overwhelmed, additional staff from other areas of the site can be temporarily redirected to assist.</p>
+      - Satellite Sites: <p>At Satellite Sites, the Loading Function will calculate individual department loads (e.g., MIU, GP) to ensure that resources are balanced between these smaller units and their associated Main Sites. Overloaded satellite sites will trigger reallocation of patients to nearby less crowded facilities.</p>
+      - Beacon System: <p>Not applicable for the Beacon System as its focus is on life-threatening emergencies where triage bypasses traditional resource management systems. Load Scores may only serve as a passive informational tool for backend monitoring in extreme circumstances.
+      - K-Means Clustering and Voronoi Diagram: These tools aid in site placement and resource optimization, but they do not interact directly with real-time load management.</p>
+      - HERO (Mobile Units): <p>The Loading Function helps determine when and where to deploy HERO units. Mobile units are dispatched to sites with a Load Score exceeding 150%, addressing temporary surges in patient volume.</p>
+
+   - <b>E-Ticket System</b>
+      - Express Treatment Centre: <p>The E-Ticket system facilitates streamlined patient flow by assigning tickets based on the department’s load and availability. This ensures minimal wait times for patients with less critical conditions while maintaining fairness in service delivery.</p>
+      - Satellite Sites: <p>Patients arriving at Satellite Sites will receive e-tickets through kiosks or the web app. These tickets will integrate seamlessly with the site’s system, guiding patients to appropriate departments for swift treatment.</p>
+      - Beacon System: <p>The E-Ticket system is not applicable here, as life-threatening cases require immediate action without the formalities of ticket generation. However, the system could generate a rapid acknowledgment message or recommendation for the nearest available ED.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>E-Tickets are not relevant to these models, as they focus on spatial optimization rather than patient flow or registration.</p>
+      - HERO (Mobile Units): <p>Mobile Units will use the E-Ticket system to manage and prioritize patients efficiently, allowing for quick triage and treatment without overwhelming the staff.</p>
+
+   - <b>PHS Web Application</b>
+      - Express Treatment Centre: <p>The web app remains integral for pre-sorting patients before they arrive, minimizing bottlenecks by directing patients to either the Express Treatment Centre or other appropriate departments.</p>
+      - Satellite Sites: <p>The web app enables patients to identify the nearest satellite site and pre-book appointments based on the site's load and availability. This enhances convenience and reduces on-site wait times.</p>
+      - Beacon System: <p>The web app provides critical information on ED loads for life-threatening cases, allowing users to locate and navigate to the nearest available site promptly.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>The web app may display outputs from these tools to inform users of new or optimized site placements but does not directly interact with them.</p>
+      - HERO (Mobile Units): <p>The web app integrates with HERO by enabling patients to see when and where mobile units are available for temporary care during site overloads.</p>
+
+   - <b>Health Check-in Kiosks</b>
+      - Express Treatment Centre: <p>Kiosks streamline on-site registration by generating tickets and ensuring patients are directed to the correct department without delays. They support efficiency in this high-speed care environment.</p>
+      - Satellite Sites: <p>Satellite Site kiosks provide an easy and efficient way for patients to register and receive tickets, maintaining continuity in service quality with the main A&E sites.</p>
+      - Beacon System: <p>Kiosks are not applicable to the Beacon System, as they require formal triage and ticketing, which is bypassed in life-threatening cases.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Kiosks do not directly relate to these tools but will operate in optimized locations identified through clustering and diagram analysis.</p>
+      - HERO (Mobile Units): <p>Portable kiosks may be integrated into HERO units to facilitate quick patient registration and data collection during temporary deployments.</p>
+
+   - <b>Instant ID</b>
+      - Express Treatment Centre: <p>Instant IDs enhance efficiency by enabling quick patient identification and retrieval of medical records during high patient volumes.</p>
+      - Satellite Sites: <p>At Satellite Sites, Instant IDs help streamline patient care by ensuring continuity of medical records between satellite and main sites.</p>
+      - Beacon System: <p>Instant IDs are less applicable here, as critical cases do not rely on formal identification processes. However, they can still assist in retrieving patient records post-triage.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Instant IDs do not interact directly with these tools but support seamless patient data management in optimized site locations.</p>
+      - HERO (Mobile Units): <p>Instant IDs ensure rapid identification and retrieval of patient records, essential for temporary units handling surge volumes.</p>
+
+   - <b>Patient Information Display Screens</b>
+      - Express Treatment Centre: <p>Screens provide real-time updates on department availability, guiding patients efficiently through the site.</p>
+      - Satellite Sites: <p>Display screens help patients navigate satellite facilities, ensuring clarity and reducing confusion, especially during busy periods.</p>
+      - Beacon System: <p>Not applicable, as the focus is on rapid emergency response rather than structured patient navigation.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Display screens may present visualizations of site usage patterns or inform patients about new site placements.</p>
+      - HERO (Mobile Units): <p>Portable display screens integrated with HERO units can guide patients and provide real-time updates on treatment progress.</p>
+
+   - <b>Casino Psychology</b>
+      - Express Treatment Centre: <p>Casino psychology principles (e.g., pleasant lighting, calming music) are applied to waiting areas to reduce patient stress and enhance their experience during short wait times.</p>
+      - Satellite Sites: <p>Satellite Sites incorporate similar features to maintain a positive and stress-free environment for patients.</p>
+      - Beacon System: <p>Not applicable here, as the focus is on urgent care rather than enhancing patient comfort during waiting times.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Casino psychology does not directly interact with these tools.</p>
+      - HERO (Mobile Units): <p>HERO units adopt casino psychology principles, such as stress-reducing lighting and music, to create a calming atmosphere.</p>
+
+   - <b>Event-driven Process Chains</b>
+      - Express Treatment Centre: <p>Event-driven chains are streamlined to ensure that patients move swiftly through the care process, minimizing delays at every stage.</p>
+      - Satellite Sites: <p>Chains are adapted to ensure seamless integration with main sites, allowing efficient escalation and transfer of critical cases.</p>
+      - Beacon System: <p>Chains prioritize emergency interventions, bypassing standard processes to ensure immediate care for life-threatening cases.</p>
+      - K-Means Clustering and Voronoi Diagram: <p>Chains do not directly interact with these tools but are influenced by site placement optimizations.</p>
+      - HERO (Mobile Units): <p>Event-driven chains guide the deployment, setup, and operation of mobile units to ensure rapid response and efficient care delivery.</p>
 
 ## Choosing Resolving Method 
 ### Analyze the Alternatives to understand outcomes of each (consequences) 
