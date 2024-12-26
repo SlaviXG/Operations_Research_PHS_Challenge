@@ -167,7 +167,7 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
 
-
+![Display](/dat_vis_assets/displayBack.png)
 
 ### Data Collection & Structuring   
 ### PHS Web App: Streamlined Patient Registration and Appointment Management 
@@ -981,11 +981,6 @@ Taking into account that in extreme cases, even these mobile units may become ov
 ## Implementation of Solution
 ### Implementation of the result and evaluation of the degree/percentage of success.
 
-
-Loading Function Backend Visual how will it look like for someone in the backend keeping eye on everything: Screen for the Management 
-(an example of how the Mobile Units will be signaled during extreme loads at a or multiple site)
-
-an example layout or image of the satellite site: pre-fabricated homes style design
 A visual aid of how the very fast department will look like
 Visual of how a beacon system will work.
 
