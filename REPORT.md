@@ -143,8 +143,8 @@ To simplify the complexity of patient management, categories are grouped and mod
  1. <b>Backend System for Efficient Site Management:</b> The backend system utilizes the Loading Function to continuously monitor the operational status of all A&E sites. This information ensures that resources are allocated dynamically to maintain balance across the network:
      - Real-Time Monitoring -- The backend calculates the Load Score periodically (e.g., every 15 minutes). Each site’s score is visualized on a central dashboard, color-coded to indicate site status:
         - Green (Load Score < 50%): Manageable load.
-        - Yellow (Load Score 50%–80%): Approaching capacity.
-        - Red (Load Score >= 100%): Overloaded and requires immediate attention.
+        - Yellow (Load Score between 50%–90%): Approaching capacity.
+        - Red (Load Score from 90%-100% or higher): Overloaded and requires immediate attention.
      - Resource Allocation: Sites with high Load Scores trigger alerts to reallocate staff or resources to handle surges.
      - Patient Redirection: The system identifies alternative sites with lower Load Scores and redirects non-critical patients to those locations to alleviate pressure off of sites with a high Load Score.
  2. [Web Application](#data-utilization) for Patient Guidance -- The Loading Function also plays a vital role in patient-facing systems, ensuring that patients are directed to the most appropriate site for their needs:
@@ -167,10 +167,7 @@ To simplify the complexity of patient management, categories are grouped and mod
 
 <p>This integration of the Loading Function ensures that it is not just a theoretical concept but a practical tool driving better patient care and resource management in line with the Airport Management framework.</p>    
 
-Question to answer: What about the ED in all of this?
-This is where the Backend of the Loading function comes in use for the Hospital and the ambulances where they can be re-driected to the the most
-optimal site before they arrive at one. If in a situation where the patient is being brought in through other modes (not through an ambulance essentially)
-they will allowed to pass through for their treatment first.   
+
 
 ### Data Collection & Structuring   
 ### PHS Web App: Streamlined Patient Registration and Appointment Management 

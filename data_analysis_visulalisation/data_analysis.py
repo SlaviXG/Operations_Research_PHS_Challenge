@@ -23,8 +23,9 @@ The script prints the results for each site, providing a condensed overview of k
 """
 import pandas as pd
 
+filename = "./OR_AE2_Project_Adjusted.xlsx"
 # Read the Excel file into a DataFrame
-df = pd.read_excel('../OR_AE2_Project_Adjusted.xlsx', engine='openpyxl')
+df = pd.read_excel(filename, engine='openpyxl')
 
 # Loop over Site_Code from 1 to 11
 for site_code in range(1, 12):
