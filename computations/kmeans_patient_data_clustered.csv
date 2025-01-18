@@ -1,0 +1,6 @@
+Patient,Symptom_Severity,Medical_History,Cluster,Cluster_Name
+1,1,2,0,Virtual
+2,3,5,0,Virtual
+3,9,8,1,On-Site
+4,6,7,1,On-Site
+5,4,4,0,Virtual
