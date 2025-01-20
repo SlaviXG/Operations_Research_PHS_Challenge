@@ -27,6 +27,8 @@
     - OR_AE2_project_Adjusted.xlsx
     - requirements.txt
 
- - REPORT.md
+ - REPORT.md: 
  This markdown file shows the starting point of the solution and how it evolved overtime after many improvements and optimizations.
+
+ The Final Solution & Business Report can be accessed here - [Google Drive](https://drive.google.com/drive/folders/1U0JCtNGPOIYZ_wSNDNThLanDSq2r4YAu?usp=sharing)
 
